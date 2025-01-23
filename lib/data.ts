@@ -49,6 +49,35 @@ export const features = [
   },
 ];
 
+export const useCases = [
+  {
+    title: 'Nonprofits',
+    icon: 'HeartHandshake',
+  },
+  {
+    title: 'Schools',
+    icon: 'School',
+  },
+  {
+    title: 'Communities',
+    icon: 'Users',
+  },
+  {
+    title: 'Teams',
+    icon: 'Trophy',
+  },
+  {
+    title: 'Churches',
+    icon: 'Church',
+    className: 'md:col-start-2 lg:col-start-auto',
+  },
+  {
+    title: 'Offices',
+    icon: 'Briefcase',
+    className: 'md:col-start-3 lg:col-start-auto',
+  },
+];
+
 export const plans = [
   {
     title: 'Free',
@@ -56,12 +85,12 @@ export const plans = [
     features: ['1 Admin', '3 Events', '15 Signup Slots', 'Basic Notifications'],
   },
   {
-    title: 'Individual',
+    title: 'Individuals',
     price: 5,
     features: ['1 Admin', 'Unlimited Events', 'Unlimited Sign-ups', 'Advanced Notifications'],
   },
   {
-    title: 'Organization',
+    title: 'Organizations',
     price: 25,
     features: [
       '3 Admins',

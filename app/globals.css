@@ -71,7 +71,7 @@
 }
 
 body {
-  @apply bg-background;
+  @apply bg-gray-100;
   @apply font-sans text-foreground;
 }
 
@@ -108,6 +108,10 @@ h5 {
 }
 
 h6 {
+  @apply text-base;
+}
+
+p {
   @apply text-base;
 }
 

@@ -13,9 +13,11 @@ export function Footer() {
             <p>Group Sign-ups Made Simple.</p>
           </div>
           <div className="self-end text-right text-stone-500">
-            <p className="text-primary-600">hello@usevillage.app</p>
+            <p className="font-medium text-primary-600">hello@usevillage.app</p>
 
-            <p>&copy; {new Date().getFullYear()} Roadshow Creative. All rights reserved.</p>
+            <p className="text-sm">
+              &copy; {new Date().getFullYear()} Roadshow Creative. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
