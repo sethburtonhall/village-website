@@ -1,27 +1,23 @@
 'use server';
 
 import { createClient } from '@supabase/supabase-js';
-import { z } from 'zod';
+import { waitlistSchema } from '@/lib/schemas';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-const schema = z.object({
-  email: z.string().email('Please enter a valid email address'),
-});
-
-export async function addToWaitlist(
-  prevState: { message?: string; success?: boolean } | null,
-  formData: FormData
-) {
+export async function addToWaitlist(formData: FormData) {
   const email = formData.get('email');
 
-  const result = schema.safeParse({ email });
-
+  // Validate the input
+  const result = waitlistSchema.safeParse({ email });
   if (!result.success) {
-    return { message: 'Invalid email address', success: false };
+    return {
+      success: false,
+      message: result.error.errors[0].message,
+    };
   }
 
   try {
@@ -40,11 +36,14 @@ export async function addToWaitlist(
       };
     }
 
-    return { message: 'You have successfully joined the waitlist!', success: true };
+    return {
+      success: true,
+      message: 'You have successfully joined the waitlist!',
+    };
   } catch (error) {
     return {
-      message: error instanceof Error ? error.message : 'Something went wrong. Please try again.',
       success: false,
+      message: error instanceof Error ? error.message : 'Something went wrong. Please try again.',
     };
   }
 }
