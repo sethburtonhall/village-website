@@ -10,6 +10,7 @@ import type { z } from 'zod';
 import { cn } from '@/lib/utils';
 import { addToWaitlist } from '@/app/actions';
 import { waitlistSchema } from '@/lib/schemas';
+import { mailingListIds } from '@/lib/constants';
 
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { AnimatedSubscribeButton } from '@/components/ui/animated-subscribe-button';
@@ -95,6 +96,7 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
           aria-label="Waitlist signup form"
           noValidate
         >
+          <input type="hidden" name="mailingLists" value={mailingListIds} />
           <div className="flex-1">
             <label htmlFor="email" className="sr-only">
               Email address
@@ -107,6 +109,7 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
                 <input
                   {...register('email')}
                   type="email"
+                  name="email"
                   id="email"
                   placeholder="Enter your email"
                   className={cn(
@@ -120,23 +123,35 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
                   aria-required="true"
                 />
               </div>
-              {(errors.email || (state?.message && !state.success)) && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="flex items-center justify-center gap-2 rounded bg-red-100 p-3 font-bold text-destructive"
-                  role="alert"
-                  id="email-error"
-                >
-                  <TriangleAlert className="size-4" aria-hidden="true" />
-                  <p className="text-sm">{errors.email?.message || state?.message}</p>
-                </motion.div>
-              )}
             </div>
           </div>
           <SubmitButton type={type} success={state?.success} />
         </form>
+        {(errors.email || (state?.message && !state.success)) && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="flex items-center justify-center gap-2 rounded bg-red-100 p-3 font-bold text-destructive"
+            role="alert"
+            id="email-error"
+          >
+            <TriangleAlert className="size-4" aria-hidden="true" />
+            <p className="text-sm">{errors.email?.message || state?.message}</p>
+          </motion.div>
+        )}
+        {state?.success && state.message && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="flex items-center justify-center gap-2 rounded bg-green-100 p-3 font-bold text-green-700"
+            role="status"
+          >
+            <CheckIcon className="size-4" aria-hidden="true" />
+            <p className="text-sm">{state.message}</p>
+          </motion.div>
+        )}
       </MotionWrapper>
     </div>
   );

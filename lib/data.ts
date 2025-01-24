@@ -80,12 +80,12 @@ export const plans = [
   {
     title: 'Free',
     price: 0,
-    features: ['1 Admin', '3 Events', '15 Sign-up Slots', 'Basic Notifications'],
+    features: ['1 Admin', '3 Events', '15 Slots per Event', 'Email Notifications'],
   },
   {
     title: 'Individuals',
     price: 5,
-    features: ['1 Admin', 'Unlimited Events', 'Unlimited Sign-ups', 'Advanced Notifications'],
+    features: ['1 Admin', 'Unlimited Events', 'Unlimited Slots', 'Email and SMS Notifications'],
   },
   {
     title: 'Organizations',
@@ -93,8 +93,8 @@ export const plans = [
     features: [
       '3 Admins',
       'Unlimited Events',
-      'Unlimited Sign-ups',
-      'Advanced Notifications',
+      'Unlimited Slots',
+      'Email and SMS Notifications',
       'Custom Branding',
       'Export Sign-ups as a CSV',
     ],

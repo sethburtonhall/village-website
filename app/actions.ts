@@ -1,12 +1,12 @@
 'use server';
 
-import { createClient } from '@supabase/supabase-js';
 import { waitlistSchema } from '@/lib/schemas';
+import { mailingListIds } from '@/lib/constants';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+interface LoopsResponse {
+  success: boolean;
+  message?: string;
+}
 
 export async function addToWaitlist(email: string) {
   // Validate the input
@@ -18,30 +18,48 @@ export async function addToWaitlist(email: string) {
     };
   }
 
-  try {
-    const { error } = await supabase.from('waitlist').insert([{ email: result.data.email }]);
+  // Loops
+  const formBody = `email=${encodeURIComponent(email)}&mailingLists=${encodeURIComponent(mailingListIds)}`;
 
-    if (error) {
-      if (error.code === '23505') {
-        return {
-          message: 'This email is already on the waitlist. Please try again.',
-          success: false,
-        };
+  try {
+    console.log('Sending request to Loops:', { email, mailingListIds });
+
+    const response = await fetch(
+      'https://app.loops.so/api/newsletter-form/cm6ae3ywd00sv655eyr9ub70g',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody,
       }
+    );
+
+    const data = (await response.json()) as LoopsResponse;
+    console.log('Loops response:', {
+      status: response.status,
+      statusText: response.statusText,
+      data,
+      headers: Object.fromEntries(response.headers.entries()),
+    });
+
+    if (!data.success) {
+      console.log('Loops error:', data);
       return {
-        message: 'Something went wrong. Please try again.',
         success: false,
+        message: data.message || 'Unable to join waitlist. Please try again.',
       };
     }
 
     return {
       success: true,
-      message: 'You have successfully joined the waitlist!',
+      message: "You're on the list! We'll keep you updated on Village's progress.",
     };
   } catch (error) {
+    console.error('Waitlist error:', error);
     return {
       success: false,
-      message: error instanceof Error ? error.message : 'Something went wrong. Please try again.',
+      message: 'Unable to join waitlist. Please try again later.',
     };
   }
 }
