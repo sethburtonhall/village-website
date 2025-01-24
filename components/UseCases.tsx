@@ -27,7 +27,7 @@ export function UseCases() {
               <MotionWrapper
                 key={index}
                 index={index}
-                className={cn('stack items-center', useCase.className, {
+                className={cn('stack items-center', {
                   'md:col-start-2 lg:col-start-auto': index === useCases.length - 2,
                   'md:col-start-3 lg:col-start-auto': index === useCases.length - 1,
                 })}
