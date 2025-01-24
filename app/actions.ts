@@ -8,9 +8,7 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-export async function addToWaitlist(formData: FormData) {
-  const email = formData.get('email');
-
+export async function addToWaitlist(email: string) {
   // Validate the input
   const result = waitlistSchema.safeParse({ email });
   if (!result.success) {

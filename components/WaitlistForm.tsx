@@ -1,7 +1,7 @@
 'use client';
 
 import { useFormStatus } from 'react-dom';
-import { startTransition, useActionState, useRef } from 'react';
+import { startTransition, useActionState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -42,7 +42,7 @@ function SubmitButton({ type, success }: { type?: 'light' | 'dark'; success?: bo
 
 export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
   const [state, formAction] = useActionState(
-    async (_, formData: FormData) => addToWaitlist(formData),
+    (prevState: unknown, formData: FormData) => addToWaitlist(formData.email),
     null
   );
 
@@ -56,6 +56,12 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
     resolver: zodResolver(waitlistSchema),
   });
 
+  useEffect(() => {
+    if (state?.success) {
+      formRef.current?.reset();
+    }
+  }, [state?.success]);
+
   return (
     <div className={cn('mx-auto max-w-lg space-y-2 text-center', type === 'dark' && 'text-white')}>
       <h2>Join the Waitlist Today!</h2>
@@ -64,18 +70,12 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
         <p>It takes a village. Be among the first to bring yours together.</p>
         <form
           ref={formRef}
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit((data) => {
-              startTransition(() => {
-                const formData = new FormData();
-                formData.append('email', data.email);
-                console.log(formData);
-                formAction(formData);
-              });
-            })(e);
-            state?.success && formRef.current?.reset();
-          }}
+          onSubmit={handleSubmit((data) => {
+            startTransition(() => {
+              console.log(data);
+              formAction(data);
+            });
+          })}
           className="stack sm:flex-row sm:gap-4"
         >
           <div className="flex-1">

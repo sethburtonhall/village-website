@@ -39,10 +39,6 @@ export const AnimatedSubscribeButton = React.forwardRef<
   const initialChild = childrenArray[0];
   const changeChild = childrenArray[1];
 
-  const buttonContent = React.cloneElement(initialChild as React.ReactElement, {
-    children: pending ? 'Joining...' : (initialChild as React.ReactElement).props.children,
-  });
-
   return (
     <AnimatePresence mode="wait">
       {isSubscribed ? (
@@ -98,7 +94,7 @@ export const AnimatedSubscribeButton = React.forwardRef<
             initial={{ x: 0 }}
             exit={{ x: 50, transition: { duration: 0.1 } }}
           >
-            {buttonContent}
+            {initialChild}
           </motion.span>
         </motion.button>
       )}
