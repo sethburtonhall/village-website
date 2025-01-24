@@ -1,5 +1,3 @@
-'use client';
-
 export function JsonLd() {
   const schema = {
     '@context': 'https://schema.org',

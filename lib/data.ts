@@ -1,6 +1,6 @@
 import { LayoutDashboard, CalendarPlus, Share2, Users, Send, TabletSmartphone } from 'lucide-react';
 
-export const quickFeatures = [
+export const steps = [
   {
     title: 'Create a free account',
     description: 'Start your community journey today.',

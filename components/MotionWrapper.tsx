@@ -25,3 +25,5 @@ export const MotionWrapper = forwardRef<HTMLDivElement, MotionWrapperProps>(
     );
   }
 );
+
+MotionWrapper.displayName = 'MotionWrapper';

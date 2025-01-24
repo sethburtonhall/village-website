@@ -5,7 +5,7 @@ import { MagicCard } from '@/components/ui/magic-card';
 
 import { ArrowRight, ArrowDown } from 'lucide-react';
 
-import { quickFeatures } from '@/lib/data';
+import { steps } from '@/lib/data';
 
 export function HowItWorks() {
   return (
@@ -14,7 +14,7 @@ export function HowItWorks() {
         <div className="mx-auto max-w-6xl space-y-8 text-center">
           <h1>How it works</h1>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
-            {quickFeatures.map((feature, index) => (
+            {steps.map((feature, index) => (
               <>
                 <MotionWrapper key={`card-${index}`} index={index}>
                   <MagicCard
@@ -32,7 +32,7 @@ export function HowItWorks() {
                     </CardHeader>
                   </MagicCard>
                 </MotionWrapper>
-                {index < quickFeatures.length - 1 && (
+                {index < steps.length - 1 && (
                   <MotionWrapper
                     key={`arrow-${index}`}
                     index={index}

@@ -3,12 +3,10 @@ import * as motion from 'motion/react-client';
 
 interface JiggleTextProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
   text: string;
-  pulseColor?: string;
-  duration?: string;
 }
 
 export const JiggleText = React.forwardRef<HTMLDivElement, JiggleTextProps>(
-  ({ text, className, pulseColor = '#0096ff', duration = '1.5s', ...props }, ref) => {
+  ({ text, className }) => {
     return (
       <motion.div
         animate={{

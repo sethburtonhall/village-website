@@ -19,7 +19,7 @@ import { TriangleAlert, CheckIcon, ClipboardList } from 'lucide-react';
 
 type FormData = z.infer<typeof waitlistSchema>;
 
-function SubmitButton({ type, success }: { type?: 'light' | 'dark'; success?: boolean }) {
+function SubmitButton({ success }: { success?: boolean }) {
   const { pending } = useFormStatus();
 
   return (
@@ -41,7 +41,7 @@ function SubmitButton({ type, success }: { type?: 'light' | 'dark'; success?: bo
   );
 }
 
-export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
+export function WaitlistForm() {
   const [state, formAction] = useActionState(
     (prevState: unknown, formData: FormData) => addToWaitlist(formData.email),
     null
@@ -80,7 +80,7 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
 
   return (
     <div
-      className={cn('mx-auto max-w-lg space-y-2 text-center', type === 'dark' && 'text-white')}
+      className={cn('mx-auto max-w-lg space-y-2 text-center')}
       role="region"
       aria-labelledby="waitlist-title"
     >
@@ -125,7 +125,7 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
               </div>
             </div>
           </div>
-          <SubmitButton type={type} success={state?.success} />
+          <SubmitButton success={state?.success} />
         </form>
         {(errors.email || (state?.message && !state.success)) && (
           <motion.div

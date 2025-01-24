@@ -4,7 +4,7 @@ import { useFormStatus } from 'react-dom';
 import { ClipboardList, CheckIcon } from 'lucide-react';
 import { AnimatedSubscribeButton } from '@/components/ui/animated-subscribe-button';
 
-export function SubmitButton({ type, success }: { type?: 'light' | 'dark'; success?: boolean }) {
+export function SubmitButton({ success }: { success?: boolean }) {
   const { pending } = useFormStatus();
 
   return (
