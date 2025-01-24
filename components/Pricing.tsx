@@ -13,14 +13,14 @@ import { plans } from '@/lib/data';
 export function Pricing() {
   return (
     <section className="pb-28">
-      <div className="container mx-auto max-w-6xl space-y-12 text-center">
+      <div className="mx-auto space-y-12 text-center">
         <div>
           <h1>Affordable Plans, No Surprises</h1>
           <p className="text-lg">Start for free and upgrade for premium features as you grow.</p>
         </div>
 
-        <div className="mx-auto max-w-5xl px-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="container mx-auto px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
             {plans.map((plan, index) => {
               const isFeatured = index == 1;
               return (

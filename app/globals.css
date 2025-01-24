@@ -18,6 +18,8 @@
     --muted-foreground: 25 5.3% 44.7%;
     --accent: 60 4.8% 95.9%;
     --accent-foreground: 24 9.8% 10%;
+    --info: 226 64% 46.7%;
+    --info-foreground: 60 9.1% 97.8%;
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
     --warning: 43 67% 89%;
@@ -54,6 +56,8 @@
     --muted-foreground: 24 5.4% 63.9%;
     --accent: 12 6.5% 15.1%;
     --accent-foreground: 60 9.1% 97.8%;
+    --info: 226 64% 46.7%;
+    --info-foreground: 60 9.1% 97.8%;
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
     --warning: 43 67% 89%;
@@ -145,14 +149,5 @@ section {
 @layer utilities {
   .stack {
     @apply flex flex-col gap-4;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

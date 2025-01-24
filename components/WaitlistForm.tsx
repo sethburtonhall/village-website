@@ -56,6 +56,21 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
     resolver: zodResolver(waitlistSchema),
   });
 
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent) => {
+    e.preventDefault();
+    handleSubmit((data) => {
+      startTransition(() => {
+        formAction(data);
+      });
+    })();
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleFormSubmit(e);
+    }
+  };
+
   useEffect(() => {
     if (state?.success) {
       formRef.current?.reset();
@@ -63,46 +78,58 @@ export function WaitlistForm({ type = 'dark' }: { type?: 'light' | 'dark' }) {
   }, [state?.success]);
 
   return (
-    <div className={cn('mx-auto max-w-lg space-y-2 text-center', type === 'dark' && 'text-white')}>
-      <h2>Join the Waitlist Today!</h2>
+    <div
+      className={cn('mx-auto max-w-lg space-y-2 text-center', type === 'dark' && 'text-white')}
+      role="region"
+      aria-labelledby="waitlist-title"
+    >
+      <h2 id="waitlist-title">Join the Waitlist Today!</h2>
 
       <MotionWrapper className="space-y-4">
         <p>It takes a village. Be among the first to bring yours together.</p>
         <form
           ref={formRef}
-          onSubmit={handleSubmit((data) => {
-            startTransition(() => {
-              console.log(data);
-              formAction(data);
-            });
-          })}
+          onSubmit={handleFormSubmit}
+          onKeyDown={handleKeyPress}
           className="stack sm:flex-row sm:gap-4"
+          aria-label="Waitlist signup form"
+          noValidate
         >
           <div className="flex-1">
             <label htmlFor="email" className="sr-only">
-              Email
+              Email address
             </label>
-            <div className="space-y-2">
-              <input
-                {...register('email')}
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                className={cn(
-                  'w-full rounded-md border-0 p-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-base placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-primary',
-                  errors.email && 'ring-red-500 focus:ring-red-500'
-                )}
-                aria-label="Email address"
-                aria-invalid={errors.email ? 'true' : 'false'}
-              />
+            <div className="space-y-2" role="group" aria-labelledby="email-label">
+              <div>
+                <span id="email-label" className="sr-only" content="h-0">
+                  Enter your email address to join the waitlist
+                </span>
+                <input
+                  {...register('email')}
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  className={cn(
+                    'w-full rounded-md border-0 p-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-base placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-primary',
+                    errors.email && 'ring-red-500 focus:ring-red-500'
+                  )}
+                  aria-describedby={
+                    errors.email || (state?.message && !state.success) ? 'email-error' : undefined
+                  }
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-required="true"
+                />
+              </div>
               {(errors.email || (state?.message && !state.success)) && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   className="flex items-center justify-center gap-2 rounded bg-red-100 p-3 font-bold text-destructive"
+                  role="alert"
+                  id="email-error"
                 >
-                  <TriangleAlert className="size-4" />
+                  <TriangleAlert className="size-4" aria-hidden="true" />
                   <p className="text-sm">{errors.email?.message || state?.message}</p>
                 </motion.div>
               )}

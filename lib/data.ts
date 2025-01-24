@@ -1,4 +1,4 @@
-import { UserPlus, CalendarPlus, Share2, Users, Mail, Smartphone } from 'lucide-react';
+import { LayoutDashboard, CalendarPlus, Share2, Users, Send, TabletSmartphone } from 'lucide-react';
 
 export const quickFeatures = [
   {
@@ -19,7 +19,7 @@ export const features = [
   {
     title: 'Admin Dashboard',
     description: 'Create an account to manage your events and group sign-ups in one place.',
-    icon: UserPlus,
+    icon: LayoutDashboard,
   },
   {
     title: 'Event Creation',
@@ -40,12 +40,12 @@ export const features = [
   {
     title: 'Email Notifications',
     description: 'Automatic email updates for admins and participants about sign-ups and changes.',
-    icon: Mail,
+    icon: Send,
   },
   {
     title: 'Mobile-Friendly Design',
     description: 'Clean, intuitive interface optimized for all devices.',
-    icon: Smartphone,
+    icon: TabletSmartphone,
   },
 ];
 
@@ -69,12 +69,10 @@ export const useCases = [
   {
     title: 'Churches',
     icon: 'Church',
-    className: 'md:col-start-2 lg:col-start-auto',
   },
   {
     title: 'Offices',
     icon: 'Briefcase',
-    className: 'md:col-start-3 lg:col-start-auto',
   },
 ];
 
@@ -82,7 +80,7 @@ export const plans = [
   {
     title: 'Free',
     price: 0,
-    features: ['1 Admin', '3 Events', '15 Signup Slots', 'Basic Notifications'],
+    features: ['1 Admin', '3 Events', '15 Sign-up Slots', 'Basic Notifications'],
   },
   {
     title: 'Individuals',

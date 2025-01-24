@@ -27,7 +27,10 @@ export function UseCases() {
               <MotionWrapper
                 key={index}
                 index={index}
-                className={cn('stack items-center', useCase.className)}
+                className={cn('stack items-center', useCase.className, {
+                  'md:col-start-2 lg:col-start-auto': index === useCases.length - 2,
+                  'md:col-start-3 lg:col-start-auto': index === useCases.length - 1,
+                })}
               >
                 <Icon className="size-10 text-primary-600" />
                 <h3>{useCase.title}</h3>

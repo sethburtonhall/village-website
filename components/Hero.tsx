@@ -30,9 +30,10 @@ export function Hero() {
           </h1>
         </div>
         <p className="mx-auto max-w-3xl text-center text-base md:text-xl">
-          Other group signup apps are overcomplicated.{' '}
+          Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles.{' '}
           <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>{' '}
-          eliminates complexity and streamlines the process of organizing community events.
+          eliminates complexity and streamlines the process of organizing community events. No PhD
+          required.
         </p>
       </div>
     </MotionWrapper>

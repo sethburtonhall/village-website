@@ -3,7 +3,7 @@ import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { MagicCard } from '@/components/ui/magic-card';
 
-import { ArrowBigRight, ArrowBigDown } from 'lucide-react';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 
 import { quickFeatures } from '@/lib/data';
 
@@ -38,8 +38,8 @@ export function HowItWorks() {
                     index={index}
                     className="flex justify-center px-4"
                   >
-                    <ArrowBigDown className="block size-10 text-primary-600 md:hidden" />
-                    <ArrowBigRight className="hidden size-10 text-primary-600 md:block" />
+                    <ArrowDown className="block size-10 text-primary-600 md:hidden" />
+                    <ArrowRight className="hidden size-10 text-primary-600 md:block" />
                   </MotionWrapper>
                 )}
               </>

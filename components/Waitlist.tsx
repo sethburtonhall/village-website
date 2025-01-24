@@ -4,7 +4,13 @@ import { WaitlistForm } from '@/components/WaitlistForm';
 
 export function Waitlist({ type = 'dark' }: { type?: 'light' | 'dark' }) {
   return (
-    <section className={cn(type === 'dark' ? 'bg-primary-600 text-white' : 'bg-white')}>
+    <section
+      id="waitlist"
+      className={cn(
+        'scroll-mt-[4.5rem]',
+        type === 'dark' ? 'bg-primary-600 text-white' : 'bg-white'
+      )}
+    >
       <WaitlistForm type={type} />
     </section>
   );

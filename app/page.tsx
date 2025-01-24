@@ -9,10 +9,12 @@ import { UseCases } from '@/components/UseCases';
 import { Pricing } from '@/components/Pricing';
 import { Footer } from '@/components/Footer';
 import { DotPattern } from '@/components/ui/dot-pattern';
+import { WelcomeToast } from '@/components/WelcomeToast';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <WelcomeToast />
       <Header />
 
       <div className="relative">
