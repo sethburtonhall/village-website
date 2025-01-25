@@ -1,13 +1,4 @@
-import {
-  LayoutDashboard,
-  CalendarPlus,
-  Share2,
-  Users,
-  Send,
-  TabletSmartphone,
-  MapPin,
-  CookingPot,
-} from 'lucide-react';
+import { LayoutDashboard, CalendarPlus, Share2, Users, Send, TabletSmartphone } from 'lucide-react';
 
 export const steps = [
   {

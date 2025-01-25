@@ -63,7 +63,7 @@ export function Communities() {
         <div className="stack">
           <h1>Your Communities</h1>
           <p className="text-lg">
-            It takes a village to bring people together. We're here to help you build yours.
+            It takes a village to bring people together. We&apos;re here to help you build yours.
           </p>
         </div>
         <MotionWrapper>
