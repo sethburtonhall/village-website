@@ -14,7 +14,7 @@ export function Pricing() {
   return (
     <section className="pb-28">
       <div className="mx-auto space-y-12 text-center">
-        <div>
+        <div className="stack">
           <h1>Affordable Plans, No Surprises</h1>
           <p className="text-lg">Start for free and upgrade for premium features as you grow.</p>
         </div>

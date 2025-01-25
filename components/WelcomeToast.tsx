@@ -15,13 +15,13 @@ export const WelcomeToast = () => {
     // Add a small delay to ensure components are mounted
     const timer = setTimeout(() => {
       toast({
-        title: 'MVP Beta launching soon!',
-        description: 'Village is currently in active development!',
+        title: 'Status: Active Development',
+        description: 'Join our waitlist to gain early access!',
         variant: 'info',
         duration: Infinity,
         action: (
-          <ToastAction altText="Join the Waitlist!">
-            <ScrollLink>Join the Waitlist!</ScrollLink>
+          <ToastAction altText="Join the Waitlist">
+            <ScrollLink>Join the Waitlist</ScrollLink>
           </ToastAction>
         ),
       });

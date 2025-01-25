@@ -1,4 +1,13 @@
-import { LayoutDashboard, CalendarPlus, Share2, Users, Send, TabletSmartphone } from 'lucide-react';
+import {
+  LayoutDashboard,
+  CalendarPlus,
+  Share2,
+  Users,
+  Send,
+  TabletSmartphone,
+  MapPin,
+  CookingPot,
+} from 'lucide-react';
 
 export const steps = [
   {
@@ -49,7 +58,7 @@ export const features = [
   },
 ];
 
-export const useCases = [
+export const communities = [
   {
     title: 'Nonprofits',
     icon: 'HeartHandshake',
@@ -59,7 +68,7 @@ export const useCases = [
     icon: 'School',
   },
   {
-    title: 'Communities',
+    title: 'Volunteers',
     icon: 'Users',
   },
   {
@@ -71,8 +80,16 @@ export const useCases = [
     icon: 'Church',
   },
   {
+    title: 'Neighborhoods',
+    icon: 'MapPin',
+  },
+  {
     title: 'Offices',
     icon: 'Briefcase',
+  },
+  {
+    title: 'Pot Lucks',
+    icon: 'CookingPot',
   },
 ];
 

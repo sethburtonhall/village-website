@@ -1,6 +1,7 @@
 'use client';
 
 import confetti from 'canvas-confetti';
+import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
 import type { ButtonProps } from '@/components/ui/button';
@@ -46,7 +47,7 @@ export function ConfettiButton({
   };
 
   return (
-    <Button variant={variant} onClick={handleClick} className={className} {...props}>
+    <Button variant={variant} onClick={handleClick} className={cn('p-3', className)} {...props}>
       {children}
     </Button>
   );

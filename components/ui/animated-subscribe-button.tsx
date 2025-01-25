@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils';
 import { HTMLMotionProps } from 'motion/react';
 import { AnimatePresence, motion } from 'motion/react';
 import React, { useEffect, useState } from 'react';
-import { useFormStatus } from 'react-dom';
 
 interface AnimatedSubscribeButtonProps extends Omit<HTMLMotionProps<'button'>, 'ref'> {
   subscribeStatus?: boolean;
@@ -12,6 +11,7 @@ interface AnimatedSubscribeButtonProps extends Omit<HTMLMotionProps<'button'>, '
   className?: string;
   'aria-live'?: 'polite' | 'assertive' | 'off';
   'aria-busy'?: boolean;
+  pending?: boolean;
 }
 
 export const AnimatedSubscribeButton = React.forwardRef<
@@ -25,6 +25,7 @@ export const AnimatedSubscribeButton = React.forwardRef<
       className,
       children,
       disabled,
+      pending,
       'aria-live': ariaLive,
       'aria-busy': ariaBusy,
       ...props
@@ -32,7 +33,6 @@ export const AnimatedSubscribeButton = React.forwardRef<
     ref
   ) => {
     const [isSubscribed, setIsSubscribed] = useState<boolean>(subscribeStatus);
-    const { pending } = useFormStatus();
 
     // Update internal state when prop changes
     useEffect(() => {
@@ -92,7 +92,7 @@ export const AnimatedSubscribeButton = React.forwardRef<
             className={cn(
               'relative flex h-12 w-fit cursor-pointer items-center justify-center rounded-lg border-none bg-primary px-6 text-primary-foreground',
               className,
-              pending && 'cursor-wait'
+              pending && 'cursor-wait bg-primary/60 text-primary-foreground/40'
             )}
             onClick={(e) => {
               if (!disabled && !pending) {
@@ -111,9 +111,10 @@ export const AnimatedSubscribeButton = React.forwardRef<
               key="reaction"
               className="relative flex items-center justify-center font-semibold"
               initial={{ x: 0 }}
-              exit={{ x: 50, transition: { duration: 0.1 } }}
+              animate={{ x: 0 }}
+              exit={{ x: 50, transition: { duration: 0.1 }, opacity: 0 }}
             >
-              {initialChild}
+              {pending && !isSubscribed ? 'Joining...' : initialChild}
             </motion.span>
           </motion.button>
         )}

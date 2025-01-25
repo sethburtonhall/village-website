@@ -1,7 +1,6 @@
 'use client';
 
-import { useFormStatus } from 'react-dom';
-import { startTransition, useActionState, useRef, useEffect } from 'react';
+import { startTransition, useActionState, useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -19,33 +18,18 @@ import { TriangleAlert, CheckIcon, ClipboardList } from 'lucide-react';
 
 type FormData = z.infer<typeof waitlistSchema>;
 
-function SubmitButton({ success }: { success?: boolean }) {
-  const { pending } = useFormStatus();
-
-  return (
-    <AnimatedSubscribeButton
-      className="w-full sm:w-[200px]"
-      type="submit"
-      disabled={pending}
-      subscribeStatus={success}
-    >
-      <span className="group inline-flex items-center">
-        <ClipboardList className="mr-2 size-4 transition-transform duration-300" />
-        Join the Waitlist
-      </span>
-      <span className="group inline-flex items-center">
-        <CheckIcon className="mr-2 size-4" />
-        Subscribed
-      </span>
-    </AnimatedSubscribeButton>
-  );
-}
-
 export function WaitlistForm() {
-  const [state, formAction] = useActionState(
-    (prevState: unknown, formData: FormData) => addToWaitlist(formData.email),
-    null
-  );
+  const [isPending, setIsPending] = useState(false);
+  const [state, formAction] = useActionState(async (prevState: unknown, formData: FormData) => {
+    try {
+      const result = await addToWaitlist(formData.email);
+      setIsPending(false);
+      return result;
+    } catch (error) {
+      setIsPending(false);
+      throw error;
+    }
+  }, null);
 
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -53,13 +37,21 @@ export function WaitlistForm() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(waitlistSchema),
   });
 
+  useEffect(() => {
+    if (state?.success) {
+      reset();
+    }
+  }, [state?.success, reset]);
+
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent) => {
     e.preventDefault();
     handleSubmit((data) => {
+      setIsPending(true);
       startTransition(() => {
         formAction(data);
       });
@@ -72,22 +64,18 @@ export function WaitlistForm() {
     }
   };
 
-  useEffect(() => {
-    if (state?.success) {
-      formRef.current?.reset();
-    }
-  }, [state?.success]);
-
   return (
     <div
       className={cn('mx-auto max-w-lg space-y-2 text-center')}
       role="region"
       aria-labelledby="waitlist-title"
     >
-      <h2 id="waitlist-title">Join the Waitlist Today!</h2>
+      <div className="stack mb-8">
+        <h2 id="waitlist-title">Join the Waitlist!</h2>
+        <p className="text-lg">It takes a village. Be among the first to bring yours together.</p>
+      </div>
 
       <MotionWrapper className="space-y-4">
-        <p>It takes a village. Be among the first to bring yours together.</p>
         <form
           ref={formRef}
           onSubmit={handleFormSubmit}
@@ -125,7 +113,22 @@ export function WaitlistForm() {
               </div>
             </div>
           </div>
-          <SubmitButton success={state?.success} />
+          <AnimatedSubscribeButton
+            className="w-full sm:w-[200px]"
+            type="submit"
+            disabled={isPending}
+            pending={isPending}
+            subscribeStatus={state?.success}
+          >
+            <span className="group inline-flex items-center">
+              <ClipboardList className="mr-2 size-4 transition-transform duration-300" />
+              Join the Waitlist
+            </span>
+            <span className="group inline-flex items-center">
+              <CheckIcon className="mr-2 size-4" />
+              Subscribed
+            </span>
+          </AnimatedSubscribeButton>
         </form>
         {(errors.email || (state?.message && !state.success)) && (
           <motion.div
@@ -145,7 +148,7 @@ export function WaitlistForm() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex items-center justify-center gap-2 rounded bg-green-100 p-3 font-bold text-green-700"
+            className="flex items-center gap-2 rounded bg-green-100 p-3 font-bold text-green-700"
             role="status"
           >
             <CheckIcon className="size-4" aria-hidden="true" />

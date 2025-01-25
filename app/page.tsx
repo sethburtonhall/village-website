@@ -5,7 +5,7 @@ import { Hero } from '@/components/Hero';
 import { HowItWorks } from '@/components/HowItWorks';
 import { Waitlist } from '@/components/Waitlist';
 import { Features } from '@/components/Features';
-import { UseCases } from '@/components/UseCases';
+import { Communities } from '@/components/Communities';
 import { Pricing } from '@/components/Pricing';
 import { Footer } from '@/components/Footer';
 import { DotPattern } from '@/components/ui/dot-pattern';
@@ -46,7 +46,7 @@ export default function Home() {
         />
       </div>
 
-      <UseCases />
+      <Communities />
 
       <div className="relative">
         <DotPattern

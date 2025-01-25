@@ -9,7 +9,12 @@ export function Features() {
   return (
     <section className="relative">
       <div className="container mx-auto max-w-6xl space-y-8 text-center">
-        <h1>Features</h1>
+        <div className="stack">
+          <h1>Base Features</h1>
+          <p className="text-lg">
+            We will be launching with these core features. More will be added as we go!
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
