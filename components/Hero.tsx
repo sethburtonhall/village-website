@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
 import { JiggleText } from '@/components/ui/jiggle-text';
-import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
+import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
             simple and
             <span className="relative">
               <ConfettiButton variant="ghost" className="font-extrabold md:text-7xl">
-                <AnimatedGradientText className="flex gap-2 text-3xl md:text-5xl lg:text-7xl">
+                <AnimatedGradientTextAlt className="flex gap-2 text-3xl md:text-5xl lg:text-7xl">
                   <JiggleText className="scale-80 md:scale-75" text="🎉" />
                   <span
                     className={cn(
@@ -27,7 +27,7 @@ export function Hero() {
                   >
                     fun!
                   </span>
-                </AnimatedGradientText>
+                </AnimatedGradientTextAlt>
               </ConfettiButton>
             </span>
           </h1>

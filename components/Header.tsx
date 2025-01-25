@@ -8,7 +8,7 @@ export function Header() {
           <ClipboardList className="size-8 -rotate-3 text-primary-600" strokeWidth={2} />
           <h1
             id="logo"
-            className="cursor-default font-logo text-2xl font-extrabold text-foreground md:text-3xl"
+            className="cursor-default font-logo text-3xl font-extrabold text-foreground"
           >
             Village
           </h1>

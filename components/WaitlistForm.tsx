@@ -44,6 +44,7 @@ export function WaitlistForm() {
 
   useEffect(() => {
     if (state?.success) {
+      sessionStorage.setItem('isSubscribed', 'true');
       reset();
     }
   }, [state?.success, reset]);

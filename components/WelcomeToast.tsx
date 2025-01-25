@@ -9,8 +9,7 @@ export const WelcomeToast = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // const hasShownWelcome = sessionStorage.getItem('hasShownWelcome');
-    // if (hasShownWelcome) return;
+    if (sessionStorage.getItem('isSubscribed')) return;
 
     // Add a small delay to ensure components are mounted
     const timer = setTimeout(() => {
@@ -26,9 +25,6 @@ export const WelcomeToast = () => {
         ),
       });
     }, 1000);
-
-    // Save that we have shown the welcome toast
-    // sessionStorage.setItem('hasShownWelcome', 'true');
 
     return () => clearTimeout(timer);
   }, [toast]);
