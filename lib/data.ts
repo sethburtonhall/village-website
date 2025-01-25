@@ -99,7 +99,7 @@ export const plans = [
     title: 'Organizations',
     price: 25,
     features: [
-      '3 Admins',
+      'Invite Team Members',
       'Unlimited Events',
       'Unlimited Slots',
       'Email and SMS Notifications',

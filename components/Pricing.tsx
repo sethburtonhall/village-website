@@ -16,7 +16,10 @@ export function Pricing() {
       <div className="mx-auto space-y-12 text-center">
         <div className="stack">
           <h1>Affordable Plans, No Surprises</h1>
-          <p className="text-lg">Start for free and upgrade for premium features as you grow.</p>
+          <p className="block-p">
+            Start for free with these initial features and upgrade for premium features as you grow.
+            These prices are subject to change as the value of the product increases.
+          </p>
         </div>
 
         <div className="container mx-auto px-8">

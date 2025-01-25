@@ -11,7 +11,7 @@ export function Features() {
       <div className="container mx-auto max-w-6xl space-y-8 text-center">
         <div className="stack">
           <h1>Base Features</h1>
-          <p className="text-lg">
+          <p className="block-p">
             We will be launching with these core features. More will be added as we go!
           </p>
         </div>

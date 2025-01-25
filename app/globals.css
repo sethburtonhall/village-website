@@ -150,4 +150,10 @@ section {
   .stack {
     @apply flex flex-col gap-4;
   }
+
+  .block-p {
+    @apply mx-auto;
+    @apply text-center text-base md:text-lg;
+    @apply sm:max-w-lg md:max-w-xl lg:max-w-2xl;
+  }
 }

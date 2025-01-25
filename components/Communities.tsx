@@ -50,8 +50,8 @@ export function Communities() {
       <div className="mx-auto space-y-16 text-center">
         <div className="stack">
           <h1>Your Communities</h1>
-          <p className="text-lg">
-            It takes a village to bring people together. We&apos;re here to help you build yours.
+          <p className="block-p">
+            ’ It takes a village to bring people together. We&apos;re here to help you build yours.
           </p>
         </div>
         <MotionWrapper>

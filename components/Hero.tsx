@@ -32,7 +32,7 @@ export function Hero() {
             </span>
           </h1>
         </div>
-        <p className="mx-auto text-center text-base sm:max-w-lg md:max-w-xl md:text-xl lg:max-w-2xl">
+        <p className="block-p md:text-xl">
           Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles.{' '}
           <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>{' '}
           eliminates complexity and streamlines the process of organizing community events. No PhD
