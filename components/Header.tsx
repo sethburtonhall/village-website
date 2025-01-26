@@ -24,7 +24,7 @@ export function Header({ className }: { className?: string }) {
             id="logo"
             className="cursor-default font-logo text-3xl font-extrabold text-foreground"
           >
-            <Link href="/">VillagL</Link>
+            <Link href="/">Village</Link>
           </h1>
         </div>
         {/* <div className="flex items-center justify-center gap-4">
