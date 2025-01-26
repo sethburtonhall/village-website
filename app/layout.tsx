@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image-white.jpg',
         width: 1200,
         height: 630,
         alt: 'Village - Group Sign-ups Made Simple',

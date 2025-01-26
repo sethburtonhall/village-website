@@ -2,13 +2,18 @@ import { ClipboardList } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="px-4 py-12">
+    <footer className="bg-white px-4 py-12">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-2">
           <div className="stack !gap-2">
-            <div className="flex items-center gap-1">
-              <ClipboardList className="size-7 -rotate-3 text-primary-600" strokeWidth={2} />
-              <h1 className="font-logo text-2xl text-foreground">Village</h1>
+            <div className="group flex items-center gap-1">
+              <ClipboardList
+                className="size-7 -rotate-3 text-primary-600 group-hover:rotate-0"
+                strokeWidth={2}
+              />
+              <h1 className="font-logo text-2xl text-foreground">
+                <a href="/">Village</a>
+              </h1>
             </div>
             <p>Group Sign-ups Made Simple.</p>
           </div>

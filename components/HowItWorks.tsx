@@ -12,7 +12,7 @@ export function HowItWorks() {
     <section>
       <MotionWrapper className="pt-8">
         <div className="mx-auto max-w-6xl space-y-8 text-center">
-          <h1>How it works</h1>
+          <h1>How It Works</h1>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
             {steps.map((feature, index) => (
               <>

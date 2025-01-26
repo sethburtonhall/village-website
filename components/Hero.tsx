@@ -1,13 +1,30 @@
 import { cn } from '@/lib/utils';
+// import { Button } from '@/components/ui/button';
+
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
 import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
+import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
+
+import { ChevronRight } from 'lucide-react';
+
+// import { ArrowRight, Sparkles } from 'lucide-react';
 
 export function Hero() {
   return (
-    <MotionWrapper type="section" className="pb-0">
+    <MotionWrapper type="section" className="space-y-12 pb-0">
       <div className="space-y-4 p-8 pb-0 pt-4 md:pt-12 lg:px-16 lg:pt-12">
+        <AnimatedGradientText>
+          🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{' '}
+          <span
+            className={cn(
+              `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+            )}
+          >
+            Launching Early 2025
+          </span>
+        </AnimatedGradientText>
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
             Group{' '}
@@ -39,6 +56,18 @@ export function Hero() {
           required.
         </p>
       </div>
+      {/* <div className="flex items-center justify-center gap-4">
+        <Button variant="success" size="lg" className="group">
+          <a href="https://app.usevillage.app/sign-up" className="flex items-center">
+            <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
+            <span>Get Started</span>
+          </a>
+        </Button>
+        <Button variant="ghost" size="lg" className="group">
+          <a href="https://docs.usevillage.app">Learn More</a>
+          <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+        </Button>
+      </div> */}
     </MotionWrapper>
   );
 }

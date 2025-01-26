@@ -9,8 +9,9 @@ export function Features() {
   return (
     <section className="relative">
       <div className="container mx-auto max-w-6xl space-y-8 text-center">
-        <div className="stack">
-          <h1>Base Features</h1>
+        <div className="stack mb-16">
+          <p className="font-bold text-primary-600">Core Features</p>
+          <h1>Everything You Need to Organize Your Community</h1>
           <p className="block-p">
             We will be launching with these core features. More will be added as we go!
           </p>

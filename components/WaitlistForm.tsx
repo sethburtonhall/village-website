@@ -115,14 +115,14 @@ export function WaitlistForm() {
             </div>
           </div>
           <AnimatedSubscribeButton
-            className="w-full sm:w-[200px]"
+            className="w-full hover:bg-primary/80 sm:w-[200px]"
             type="submit"
             disabled={isPending}
             pending={isPending}
             subscribeStatus={state?.success}
           >
             <span className="group inline-flex items-center">
-              <ClipboardList className="mr-2 size-4 transition-transform duration-300" />
+              <ClipboardList className="mr-2 size-4 transition-transform duration-100 ease-linear group-hover:-rotate-12" />
               Join the Waitlist
             </span>
             <span className="group inline-flex items-center">

@@ -49,9 +49,10 @@ export function Communities() {
     <section className="overflow-hidden bg-white py-16">
       <div className="mx-auto space-y-16 text-center">
         <div className="stack">
-          <h1>Your Communities</h1>
+          <p className="font-bold text-primary-600">Communities</p>
+          <h1>From Nonprofits To Pot Lucks, We’ve Got You Covered</h1>
           <p className="block-p">
-            ’ It takes a village to bring people together. We&apos;re here to help you build yours.
+            It takes a village to bring people together. We&apos;re here to help you build yours.
           </p>
         </div>
         <MotionWrapper>
