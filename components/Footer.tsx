@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { ClipboardList } from 'lucide-react';
 
 export function Footer() {
@@ -12,7 +14,7 @@ export function Footer() {
                 strokeWidth={2}
               />
               <h1 className="font-logo text-2xl text-foreground">
-                <a href="/">Village</a>
+                <Link href="/">Village</Link>
               </h1>
             </div>
             <p>Group Sign-ups Made Simple.</p>

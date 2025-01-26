@@ -1,13 +1,11 @@
 import { cn } from '@/lib/utils';
-// import { Button } from '@/components/ui/button';
 
+// import { Button } from '@/components/ui/button';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
 import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
-
-import { ChevronRight } from 'lucide-react';
 
 // import { ArrowRight, Sparkles } from 'lucide-react';
 

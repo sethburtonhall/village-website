@@ -1,9 +1,10 @@
-// import { Button } from '@/components/ui/button';
-
-import { ClipboardList } from 'lucide-react';
-// import { ArrowRight} from 'lucide-react';
+import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
+
+// import { Button } from '@/components/ui/button';
+// import { ArrowRight} from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 
 export function Header({ className }: { className?: string }) {
   return (
@@ -23,7 +24,7 @@ export function Header({ className }: { className?: string }) {
             id="logo"
             className="cursor-default font-logo text-3xl font-extrabold text-foreground"
           >
-            <a href="/">Village</a>
+            <Link href="/">VillagL</Link>
           </h1>
         </div>
         {/* <div className="flex items-center justify-center gap-4">

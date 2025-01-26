@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { ToastAction } from '@/components/ui/toast';
-import { Button } from './ui/button';
 
 export const CookieToast = () => {
   const { toast } = useToast();
