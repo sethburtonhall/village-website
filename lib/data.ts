@@ -1,4 +1,4 @@
-import { LayoutDashboard, CalendarPlus, Share2, Users, Send, TabletSmartphone } from 'lucide-react';
+import { LayoutDashboard, CalendarPlus, Share2, Users, Send, Sparkles } from 'lucide-react';
 
 export const steps = [
   {
@@ -43,9 +43,10 @@ export const features = [
     icon: Send,
   },
   {
-    title: 'Premium Features & Support',
-    description: '',
-    icon: TabletSmartphone,
+    title: 'Premium Features',
+    description:
+      'Advanced analytics, role permissions, brand customization, priority support, and more.',
+    icon: Sparkles,
   },
 ];
 
