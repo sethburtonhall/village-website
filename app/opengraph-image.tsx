@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Village - Group Sign-ups Made Simple';
+export const alt = 'Village - Group Sign-ups Made Simple and 🎉 fun!';
 export const size = {
   width: 1200,
   height: 630,
@@ -45,7 +45,7 @@ export default async function Image() {
             maxWidth: '800px',
           }}
         >
-          Simple Group Sign-up Forms
+          Group Sign-ups Made Simple and 🎉 fun!
         </div>
         <div
           style={{

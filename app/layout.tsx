@@ -25,7 +25,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Village - Group Sign-ups Made Simple',
+    default: 'Village - Group Sign-ups Made Simple and 🎉 fun!',
     template: '%s | Village',
   },
   description:
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://usevillage.app'),
   openGraph: {
-    title: 'Village - Group Sign-ups Made Simple',
+    title: 'Village - Group Sign-ups Made Simple and 🎉 fun!',
     description:
       'Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles. Village eliminates complexity and streamlines the process of organizing community events. A simpler alternative to SignUpGenius and Lome, perfect for schools, churches, nonprofits, and community events. No PhD required.',
     url: 'https://usevillage.app',
@@ -64,19 +64,19 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-white.jpg',
+        url: 'https://usevillage.app/og-image-white.jpg',
         width: 1200,
         height: 630,
-        alt: 'Village - Group Sign-ups Made Simple',
+        alt: 'Village - Group Sign-ups Made Simple and 🎉 fun!',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village - Group Sign-ups Made Simple',
+    title: 'Village - Group Sign-ups Made Simple and 🎉 fun!',
     description:
       'Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles. Village eliminates complexity and streamlines the process of organizing community events. A simpler alternative to SignUpGenius and Lome, perfect for schools, churches, nonprofits, and community events. No PhD required.',
-    images: ['/twitter-image.jpg'],
+    images: ['https://usevillage.app/og-image-white.jpg'],
     creator: '@usevillage',
   },
   robots: {
