@@ -9,14 +9,12 @@ import { Communities } from '@/components/Communities';
 import { Pricing } from '@/components/Pricing';
 import { Footer } from '@/components/Footer';
 import { DotPattern } from '@/components/ui/dot-pattern';
-import { CookieToast } from '@/components/CookieToast';
 import { WelcomeToast } from '@/components/WelcomeToast';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <WelcomeToast />
-      <CookieToast />
       <Header />
 
       <div className="relative">

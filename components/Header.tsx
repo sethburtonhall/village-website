@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 // import { Button } from '@/components/ui/button';
-// import { ArrowRight} from 'lucide-react';
+// import { ArrowRight } from 'lucide-react';
 import { ClipboardList } from 'lucide-react';
 
 export function Header({ className }: { className?: string }) {
@@ -27,6 +27,7 @@ export function Header({ className }: { className?: string }) {
             <Link href="/">Village</Link>
           </h1>
         </div>
+        {/* CTAs */}
         {/* <div className="flex items-center justify-center gap-4">
           <Button variant="link" className="hover:no-underline">
             <a href="https://app.usevillage.app/login">Login</a>

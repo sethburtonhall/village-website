@@ -11,7 +11,7 @@ export const steps = [
   },
   {
     title: 'Share a link',
-    description: 'Invite sign-ups using a single link.',
+    description: 'Invite sign-ups using a link.',
   },
 ];
 
@@ -38,13 +38,13 @@ export const features = [
     icon: Users,
   },
   {
-    title: 'Email Notifications',
-    description: 'Automatic email updates for admins and participants about sign-ups and changes.',
+    title: 'Notifications',
+    description: 'Automatic updates for admins and participants about sign-ups and changes.',
     icon: Send,
   },
   {
-    title: 'Mobile-Friendly Design',
-    description: 'Clean, intuitive interface optimized for all devices.',
+    title: 'Premium Features & Support',
+    description: '',
     icon: TabletSmartphone,
   },
 ];
@@ -88,39 +88,45 @@ export const plans = [
   {
     title: 'Free',
     price: 0,
+    subheader: 'Best for casual event organizers',
     features: [
       '1 Admin',
-      '3 Events',
+      '3 Total Events',
       '15 Slots per Event',
       'Email Notifications',
-      'Email Support',
-      // 'Basic Analytics',
+      'Standard Support',
     ],
   },
   {
     title: 'Individuals',
     price: 7,
+    subheader: 'Best for small teams and clubs',
     features: [
-      '1 Admin',
+      '3 Seats',
+      '1 Admin & 2 Team Members',
       'Unlimited Events',
-      'Unlimited Slots',
+      '250 Slots',
       'Email and SMS Notifications',
-      'Advanced Analytics',
+      'Event Analytics',
+      'Basic Theme Customization',
       'Priority Support',
     ],
+    disclaimer: 'More Analytics Coming Soon!',
   },
   {
     title: 'Organizations',
     price: 25,
+    subheader: 'Best for schools, nonprofits, and orgs',
     features: [
-      'Unlimited Team Members',
+      'Unlimited Seats',
       'Unlimited Events',
       'Unlimited Slots',
       'Email and SMS Notifications',
-      'Advanced Analytics',
+      'Event Analytics',
+      'Full Custom Branding',
       'Priority Support',
-      'Custom Branding',
       'Export Sign-ups as a CSV',
     ],
+    disclaimer: 'Granular Role Permissions & Advanced Analytics Coming Soon!',
   },
 ];

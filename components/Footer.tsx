@@ -17,7 +17,10 @@ export function Footer() {
                 <Link href="/">Village</Link>
               </h1>
             </div>
-            <p>Group Sign-ups Made Simple.</p>
+            <p>
+              Group Sign-ups Made Simple and 🎉{' '}
+              <span className="gradiant-text font-medium">fun!.</span>
+            </p>
           </div>
           <div className="stack !gap-2 text-stone-500 md:items-end">
             <p className="font-medium text-primary-600">hello@usevillage.app</p>

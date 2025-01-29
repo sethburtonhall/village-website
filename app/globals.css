@@ -156,4 +156,8 @@ section {
     @apply text-center text-base md:text-lg;
     @apply sm:max-w-lg md:max-w-xl lg:max-w-2xl;
   }
+
+  .gradiant-text {
+    @apply inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent;
+  }
 }

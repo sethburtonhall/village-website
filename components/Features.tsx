@@ -12,9 +12,7 @@ export function Features() {
         <div className="stack mb-16">
           <p className="font-bold text-primary-600">Core Features</p>
           <h1>Everything You Need to Organize Your Community</h1>
-          <p className="block-p">
-            We will be launching with these core features. More will be added as we go!
-          </p>
+          <p className="block-p">Get started with these core features. Upgrade as you grow.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
