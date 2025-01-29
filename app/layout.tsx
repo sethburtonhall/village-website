@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://usevillage.app/og-image-white.jpg',
+        url: '/og-image-white.jpg',
         width: 1200,
         height: 630,
         alt: 'Village - Group Sign-ups Made Simple and 🎉 fun!',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: 'Village - Group Sign-ups Made Simple and 🎉 fun!',
     description:
       'Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles. Village eliminates complexity and streamlines the process of organizing community events. A simpler alternative to SignUpGenius and Lome, perfect for schools, churches, nonprofits, and community events. No PhD required.',
-    images: ['https://usevillage.app/og-image-white.jpg'],
+    images: ['/og-image-white.jpg'],
     creator: '@usevillage',
   },
   robots: {
