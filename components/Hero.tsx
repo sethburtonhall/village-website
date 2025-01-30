@@ -44,11 +44,14 @@ export function Hero() {
           </h1>
         </div>
         <p className="block-p md:text-xl">
-          Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles.{' '}
-          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>{' '}
-          eliminates complexity and streamlines the process of organizing community events. No PhD
-          required.
+          Eliminate complexity and streamline the process of organizing community events with{' '}
+          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span> .
         </p>
+        {/* <p className="block-p md:text-xl">
+          Other group sign-up apps are overcomplicated.{' '}
+          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>{' '}
+          eliminates complexity and streamlines the process of organizing community events.
+        </p> */}
       </div>
       {/* CTAs */}
       {/* <div className="flex items-center justify-center gap-4">
