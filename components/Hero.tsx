@@ -17,7 +17,7 @@ export function Hero() {
           🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{' '}
           <span className="gradiant-text">Early Access</span>
           <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-          <span className="gradiant-text">Q1 2025</span>
+          <span className="gradiant-text">Q2 2025</span>
         </AnimatedGradientText>
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
