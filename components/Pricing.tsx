@@ -12,7 +12,7 @@ import { plans } from '@/lib/data';
 
 export function Pricing() {
   return (
-    <section className="pb-28">
+    <section id="pricing" className="pb-28">
       <div className="mx-auto space-y-12 text-center">
         <div className="stack mb-24">
           <p className="font-bold text-primary-600">Pricing</p>
