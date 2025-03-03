@@ -45,7 +45,7 @@ export function Hero() {
         </div>
         <p className="block-p md:text-xl">
           Eliminate complexity and streamline the process of organizing community events with{' '}
-          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span> .
+          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>.
         </p>
         {/* <p className="block-p md:text-xl">
           Other group sign-up apps are overcomplicated.{' '}
