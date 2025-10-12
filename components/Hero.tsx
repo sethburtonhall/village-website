@@ -17,7 +17,7 @@ export function Hero() {
           🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{' '}
           <span className="gradiant-text">Early Access</span>
           <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-          <span className="gradiant-text">Q2 2025</span>
+          <span className="gradiant-text">2026</span>
         </AnimatedGradientText>
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
@@ -56,7 +56,7 @@ export function Hero() {
       {/* CTAs */}
       {/* <div className="flex items-center justify-center gap-4">
         <Button variant="success" size="lg" className="group">
-          <a href="https://app.usevillage.app/sign-up" className="flex items-center">
+          <a href="https://app.usevillage.app/signup" className="flex items-center">
             <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
             <span>Get Started</span>
           </a>

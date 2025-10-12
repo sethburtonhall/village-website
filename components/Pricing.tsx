@@ -85,17 +85,17 @@ export function Pricing() {
                           <li className="text-xs italic">{plan.disclaimer}</li>
                         </ul>
                         <div className="mt-auto">
-                          {/* <Button
-                        variant={isFeatured ? 'secondary' : 'success'}
-                        size="lg"
-                        className="group w-full rounded-md"
-                      >
-                        <a href="https://app.usevillage.app/sign-up" className="flex items-center">
-                          <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
-                          <span>Get Started</span>
-                        </a>
-                      </Button> */}
                           <Button
+                            variant={isFeatured ? 'secondary' : 'success'}
+                            size="lg"
+                            className="group w-full rounded-md"
+                          >
+                            <a href={plan.outsetaUrl} className="o-auth-popup flex items-center">
+                              <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
+                              <span>Get Started</span>
+                            </a>
+                          </Button>
+                          {/* <Button
                             variant={isFeatured ? 'success' : 'outline'}
                             size="lg"
                             className="w-full cursor-not-allowed rounded-md disabled:opacity-100"
@@ -103,7 +103,7 @@ export function Pricing() {
                           >
                             <Sparkles className="mr-2 size-4" />
                             <span>Available Soon</span>
-                          </Button>
+                          </Button> */}
                         </div>
                       </CardContent>
                     </div>
