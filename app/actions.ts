@@ -8,9 +8,9 @@ interface LoopsResponse {
   message?: string;
 }
 
-export async function addToWaitlist(email: string) {
+export async function addToWaitlist(email: string, website: string = '') {
   // Validate the input
-  const result = waitlistSchema.safeParse({ email });
+  const result = waitlistSchema.safeParse({ email, website });
   if (!result.success) {
     return {
       success: false,
