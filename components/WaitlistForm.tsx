@@ -20,9 +20,10 @@ type FormData = z.infer<typeof waitlistSchema>;
 
 export function WaitlistForm() {
   const [isPending, setIsPending] = useState(false);
+  const [formRenderedAt] = useState(() => Date.now());
   const [state, formAction] = useActionState(async (prevState: unknown, formData: FormData) => {
     try {
-      const result = await addToWaitlist(formData.email, formData.website);
+      const result = await addToWaitlist(formData.email, formData.website, formRenderedAt);
       setIsPending(false);
       return result;
     } catch (error) {
@@ -86,7 +87,7 @@ export function WaitlistForm() {
           noValidate
         >
           <input type="hidden" name="mailingLists" value={mailingListIds} />
-          {/* Honeypot field - hidden from users but visible to bots */}
+          {/* Honeypot fields - hidden from users but visible to bots */}
           <input
             {...register('website')}
             type="text"
@@ -94,6 +95,24 @@ export function WaitlistForm() {
             id="website"
             tabIndex={-1}
             autoComplete="off"
+            placeholder="Your website"
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              top: '-9999px',
+              opacity: 0,
+              pointerEvents: 'none',
+            }}
+            aria-hidden="true"
+          />
+          {/* Additional honeypot with common field name */}
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            tabIndex={-1}
+            autoComplete="off"
+            placeholder="Phone number"
             style={{
               position: 'absolute',
               left: '-9999px',
