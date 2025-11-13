@@ -18,6 +18,14 @@ export async function addToWaitlist(email: string, website: string = '') {
     };
   }
 
+  // Honeypot check - if website field is filled, it's a bot
+  if (website && website.trim() !== '') {
+    return {
+      success: false,
+      message: 'Invalid submission',
+    };
+  }
+
   // Loops
   const formBody = `email=${encodeURIComponent(email)}&mailingLists=${encodeURIComponent(mailingListIds)}`;
 
