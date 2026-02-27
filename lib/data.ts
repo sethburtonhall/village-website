@@ -93,7 +93,7 @@ export const plans = [
     subheader: 'Best for casual event organizers',
     features: [
       '1 Admin',
-      '3 Total Events',
+      '3 Active Events',
       '15 Slots per Event',
       'Email Notifications',
       'Standard Support',
