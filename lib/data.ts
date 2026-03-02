@@ -23,7 +23,8 @@ export const features = [
   },
   {
     title: 'Event Creation',
-    description: 'Set up events with customizable slots for tasks, items, or time blocks.',
+    description:
+      'Set up events with customizable slots for tasks, items, or time blocks and export sign-up data as a CSV.',
     icon: CalendarPlus,
   },
   {
@@ -38,15 +39,20 @@ export const features = [
     icon: Users,
   },
   {
-    title: 'Notifications',
-    description: 'Automatic updates for admins and participants about sign-ups and changes.',
+    title: 'Email Notifications',
+    description: 'Admins and participants receive email notifications about sign-ups and changes.',
+    icon: Send,
+  },
+  {
+    title: 'Branding & Customization',
+    description: 'Customize your event page with a custom logo and theme.',
     icon: Send,
   },
   {
     title: 'Premium Features',
-    description:
-      'Advanced analytics, role permissions, brand customization, priority support, and more.',
+    description: 'Team Members, SMS Notifications, Advanced Analytics, Role Permissions.',
     icon: Sparkles,
+    comingSoon: true,
   },
 ];
 
