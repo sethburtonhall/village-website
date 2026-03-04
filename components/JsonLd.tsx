@@ -11,7 +11,7 @@ export function JsonLd() {
       priceCurrency: 'USD',
     },
     description:
-      'Other group sign-up apps are overcomplicated, requiring a PhD in both bells and whistles. Village eliminates complexity and streamlines the process of organizing community events. A simpler alternative to SignUpGenius and Lome, perfect for schools, churches, nonprofits, and community events. No PhD required.',
+      'Village is a group event management tool built for communities, teams, nonprofits, schools, churches, and anyone who needs to organize people around shared activities. It lets you create events, build custom sign-up forms, share a public link, and manage attendees — all in one place.',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',

@@ -1,4 +1,4 @@
-import { LayoutDashboard, CalendarPlus, Share2, Users, Send, Sparkles } from 'lucide-react';
+import { LayoutDashboard, CalendarPlus, Share2, Users, Palette, Sparkles } from 'lucide-react';
 
 export const steps = [
   {
@@ -24,7 +24,7 @@ export const features = [
   {
     title: 'Event Creation',
     description:
-      'Set up events with customizable slots for tasks, items, or time blocks and export sign-up data as a CSV.',
+      'Set up events with customizable slots for tasks, items, or time blocks. Export sign-up data as a CSV anytime.',
     icon: CalendarPlus,
   },
   {
@@ -39,18 +39,15 @@ export const features = [
     icon: Users,
   },
   {
-    title: 'Email Notifications',
-    description: 'Admins and participants receive email notifications about sign-ups and changes.',
-    icon: Send,
-  },
-  {
     title: 'Branding & Customization',
-    description: 'Customize your event page with a custom logo and theme.',
-    icon: Send,
+    description:
+      'Personalize your event page with theme customization and a custom logo. Email notifications keep everyone automatically in the loop.',
+    icon: Palette,
   },
   {
     title: 'Premium Features',
-    description: 'Team Members, SMS Notifications, Advanced Analytics, Role Permissions.',
+    description:
+      'Team management, SMS notifications, advanced analytics, and granular role permissions — all on the roadmap.',
     icon: Sparkles,
     comingSoon: true,
   },

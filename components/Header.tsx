@@ -30,7 +30,7 @@ export function Header({ className }: { className?: string }) {
         {/* CTAs */}
         <div className="flex items-center justify-center gap-4">
           <Button variant="link" className="hover:no-underline">
-            <a href="http://localhost:3000/login">Login</a>
+            <a href="http://app.usevillage.app/login">Login</a>
           </Button>
           <Button variant="success">
             <a href="#pricing">Sign Up</a>
