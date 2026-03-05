@@ -130,6 +130,7 @@ export const plans = [
       'Theme Customization',
       'Custom Logo & Branding',
       'Export Sign-ups as a CSV',
+      'Event Analytics',
       'Priority Support',
     ],
     disclaimer:
