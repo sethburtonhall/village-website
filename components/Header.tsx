@@ -28,14 +28,15 @@ export function Header({ className }: { className?: string }) {
           </h1>
         </div>
         {/* CTAs */}
-        {/* <div className="flex items-center justify-center gap-4">
-          <Button variant="link" className="hover:no-underline">
+        <div className="flex items-center justify-center gap-4">
+          <a href="http://docs.usevillage.app">Docs</a>
+          {/* <Button variant="link" className="hover:no-underline">
             <a href="http://app.usevillage.app/login">Login</a>
           </Button>
           <Button variant="success">
             <a href="#pricing">Sign Up</a>
-          </Button>
-        </div> */}
+          </Button> */}
+        </div>
       </div>
     </header>
   );
