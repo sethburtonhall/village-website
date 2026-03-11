@@ -26,7 +26,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Village - Group Sign-ups Made Simple and 🎉 Fun!',
+    default: 'Village - Group sign-ups made simple & fun!',
     template: '%s | Village',
   },
   description:
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://usevillage.app'),
   openGraph: {
-    title: 'Village - Group Sign-ups Made Simple and 🎉 Fun!',
+    title: 'Village - Group sign-ups made simple & fun!',
     description:
       'Village is a group event management tool built for communities, teams, nonprofits, schools, churches, and anyone who needs to organize people around shared activities. It lets you create events, build custom sign-up forms, share a public link, and manage attendees — all in one place.',
     url: 'https://usevillage.app',
@@ -68,13 +68,13 @@ export const metadata: Metadata = {
         url: '/og-image-white.jpg',
         width: 1200,
         height: 630,
-        alt: 'Village - Group Sign-ups Made Simple and 🎉 Fun!',
+        alt: 'Village - Group sign-ups made simple & fun!',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village - Group Sign-ups Made Simple and 🎉 Fun!',
+    title: 'Village - Group sign-ups made simple & fun!',
     description:
       'Village is a group event management tool built for communities, teams, nonprofits, schools, churches, and anyone who needs to organize people around shared activities. It lets you create events, build custom sign-up forms, share a public link, and manage attendees — all in one place.',
     images: ['/og-image-white.jpg'],
