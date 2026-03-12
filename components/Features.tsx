@@ -29,11 +29,6 @@ export function Features() {
                   gradientFrom={'#22c55e'}
                   gradientTo={'#86efac'}
                 >
-                  {feature.comingSoon ? (
-                    <AnimatedGradientText className="absolute right-3 top-3 z-10 px-3 py-1 text-xs">
-                      <span className="gradiant-text">Coming soon</span>
-                    </AnimatedGradientText>
-                  ) : null}
                   <CardHeader className="flex flex-1 flex-col items-center justify-center">
                     <Icon className="mb-4 size-8 text-primary-600" />
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
