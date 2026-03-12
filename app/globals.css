@@ -78,6 +78,9 @@
     --color-4: 195 100% 63%;
     --color-5: 90 100% 63%;
   }
+  .theme {
+    --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+  }
 }
 
 * {
@@ -159,5 +162,16 @@ section {
 
   .gradiant-text {
     @apply inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent;
+  }
+}
+
+@theme inline {
+  @keyframes background-position-spin {
+  0% {
+    background-position: top center;
+    }
+  100% {
+    background-position: bottom center;
+    }
   }
 }

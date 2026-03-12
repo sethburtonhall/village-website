@@ -14,8 +14,8 @@ export const WelcomeToast = () => {
     // Add a small delay to ensure components are mounted
     const timer = setTimeout(() => {
       toast({
-        title: 'Status: Active Development',
-        description: 'Join our waitlist to gain early access!',
+        title: 'Status: Private Beta',
+        description: 'Join our waitlist to gain access!',
         variant: 'info',
         duration: Infinity,
         action: (

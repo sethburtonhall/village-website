@@ -66,9 +66,7 @@ export function Pricing() {
                             isFeatured && 'text-white'
                           )}
                         >
-                          {/* <Sparkles className="size-4" /> */}
                           {plan.subheader}
-                          {/* <Sparkles className="size-4" /> */}
                         </p>
                       </CardHeader>
 
@@ -78,11 +76,24 @@ export function Pricing() {
                             <li key={featureIndex} className="flex items-center gap-2 text-sm">
                               <CircleCheck className={cn('size-4 text-primary-600')} />
                               <span className={cn('text-foreground', isFeatured && 'text-white')}>
-                                {feature}
+                                {feature.toLowerCase().includes('features') ? (
+                                  <span className="text-lg font-bold">{feature}</span>
+                                ) : (
+                                  feature
+                                )}
                               </span>
                             </li>
                           ))}
-                          <li className="text-xs italic">{plan.disclaimer}</li>
+                          {plan.comingSoon && (
+                            <>
+                              <li className="pt-4 text-sm font-medium">
+                                <Sparkles className="inline size-3" /> Coming Soon
+                              </li>
+                              <li className="!mt-2 ml-2 max-w-xs text-xs italic">
+                                {plan.comingSoon}
+                              </li>
+                            </>
+                          )}
                         </ul>
                         <div className="mt-auto">
                           <Button
@@ -95,15 +106,6 @@ export function Pricing() {
                               <span>Get Started</span>
                             </a>
                           </Button>
-                          {/* <Button
-                            variant={isFeatured ? 'success' : 'outline'}
-                            size="lg"
-                            className="w-full cursor-not-allowed rounded-md disabled:opacity-100"
-                            disabled
-                          >
-                            <Sparkles className="mr-2 size-4" />
-                            <span>Available Soon</span>
-                          </Button> */}
                         </div>
                       </CardContent>
                     </div>

@@ -6,6 +6,8 @@ import { ConfettiButton } from '@/components/ConfettiButton';
 import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
+import { ScrollLink } from '@/components/ScrollLink';
+import { ChevronRight } from 'lucide-react';
 
 // import { ArrowRight, Sparkles } from 'lucide-react';
 
@@ -13,12 +15,15 @@ export function Hero() {
   return (
     <MotionWrapper type="section" className="space-y-12 pb-0">
       <div className="space-y-4 p-8 pb-0 pt-4 md:pt-12 lg:px-16 lg:pt-12">
-        <AnimatedGradientText>
-          🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />{' '}
-          <span className="gradiant-text">Early Access</span>
-          <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-          <span className="gradiant-text">2026</span>
-        </AnimatedGradientText>
+        <ScrollLink>
+          <AnimatedGradientText>
+            🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
+            <span className="gradiant-text">Private Beta</span>
+            <ChevronRight className="mx-2 h-4 w-4 shrink-0 text-fuchsia-400" />
+            {/* <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
+          <span className="gradiant-text">2026</span> */}
+          </AnimatedGradientText>
+        </ScrollLink>
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
             Group{' '}

@@ -11,6 +11,7 @@ interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {
   gradientOpacity?: number;
   gradientFrom?: string;
   gradientTo?: string;
+  backgroundClassName?: string;
 }
 
 export function MagicCard({
@@ -21,6 +22,7 @@ export function MagicCard({
   gradientOpacity = 0.8,
   gradientFrom = '#9E7AFF',
   gradientTo = '#FE8BBB',
+  backgroundClassName
 }: MagicCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
@@ -75,7 +77,7 @@ export function MagicCard({
 
   return (
     <div ref={cardRef} className={cn('group relative flex size-full rounded-xl', className)}>
-      <div className="absolute inset-px z-10 rounded-xl bg-background" />
+      <div className={cn('absolute inset-px z-10 rounded-xl bg-background', backgroundClassName)} />
       <div className="relative z-30 w-full">{children}</div>
       <motion.div
         className="pointer-events-none absolute inset-px z-10 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"

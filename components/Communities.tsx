@@ -2,28 +2,7 @@
 
 import { motion } from 'motion/react';
 import { MotionWrapper } from '@/components/MotionWrapper';
-import {
-  HeartHandshake,
-  School,
-  Users,
-  Trophy,
-  Church,
-  Briefcase,
-  MapPin,
-  CookingPot,
-} from 'lucide-react';
 import { communities } from '@/lib/data';
-
-const icons = {
-  HeartHandshake,
-  School,
-  Users,
-  Trophy,
-  Church,
-  Briefcase,
-  MapPin,
-  CookingPot,
-};
 
 export function Communities() {
   // Create two different sequences of communities
@@ -64,7 +43,7 @@ export function Communities() {
                   className="flex gap-4 px-8"
                 >
                   {topRowCommunities.map((community, index) => {
-                    const Icon = icons[community.icon as keyof typeof icons];
+                    const Icon = community.icon;
                     return (
                       <div
                         key={index}
@@ -88,7 +67,7 @@ export function Communities() {
                   className="flex translate-x-[-50%] gap-4 px-8"
                 >
                   {topRowCommunities.map((community, index) => {
-                    const Icon = icons[community.icon as keyof typeof icons];
+                    const Icon = community.icon;
                     return (
                       <div
                         key={`dup-${index}`}

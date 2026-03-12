@@ -1,4 +1,26 @@
-import { LayoutDashboard, CalendarPlus, Share2, Users, Palette, Sparkles } from 'lucide-react';
+import {
+  LayoutDashboard,
+  CalendarPlus,
+  Share2,
+  Users,
+  Palette,
+  Sparkles,
+  Form,
+  Copy,
+  MailCheck,
+  FileSpreadsheet,
+  HeartHandshake,
+  School,
+  Trophy,
+  Church,
+  Briefcase,
+  MapPin,
+  CookingPot,
+  ListTodo,
+  UserCog,
+  ClockCheck,
+  Mails,
+} from 'lucide-react';
 
 export const steps = [
   {
@@ -7,7 +29,7 @@ export const steps = [
   },
   {
     title: 'Create your first event',
-    description: 'Easily create and manage your events.',
+    description: 'Easily create & manage your events.',
   },
   {
     title: 'Share a link',
@@ -15,16 +37,10 @@ export const steps = [
   },
 ];
 
-export const features = [
-  {
-    title: 'Admin Dashboard',
-    description: 'Create an account to manage your events and group sign-ups in one place.',
-    icon: LayoutDashboard,
-  },
+export const coreFeatures = [
   {
     title: 'Event Creation',
-    description:
-      'Set up events with customizable slots for tasks, items, or time blocks. Export sign-up data as a CSV anytime.',
+    description: 'Start with simple event creation.',
     icon: CalendarPlus,
   },
   {
@@ -39,52 +55,98 @@ export const features = [
     icon: Users,
   },
   {
-    title: 'Branding & Customization',
+    title: 'Notifications & Reminders',
+    description: 'Automatic email notifications & reminders for event updates.',
+    icon: MailCheck,
+  },
+  {
+    title: 'Realtime Updates',
+    description: 'Watch your event come to life as sign-ups happen in real-time.',
+    icon: ClockCheck,
+  },
+  {
+    title: 'More Features',
     description:
-      'Personalize your event page with theme customization and a custom logo. Email notifications keep everyone automatically in the loop.',
+      'Timezone-aware events, Calendar integration, Admin signup management, & Favorite events.',
+    icon: Sparkles,
+  },
+];
+
+export const premiumFeatures = [
+  {
+    title: 'Advanced templates',
+    description: 'Create custom events with advanced templates.',
+    icon: Form,
+  },
+  {
+    title: 'Event duplication',
+    description: 'Duplicate events to save time and effort.',
+    icon: Copy,
+  },
+  {
+    title: 'Check-in mode',
+    description: 'Track attendance with in-person check-in.',
+    icon: ListTodo,
+  },
+  {
+    title: 'Export sign-ups as CSV',
+    description: 'Download sign-up data for your records.',
+    icon: FileSpreadsheet,
+  },
+  {
+    title: 'Group messaging',
+    description: 'Send messages to all participants at once.',
+    icon: Mails,
+  },
+  {
+    title: 'Realtime dashboard',
+    description: 'Event activity & analytics in real-time.',
+    icon: LayoutDashboard,
+  },
+  {
+    title: 'White-label branding',
+    description: 'Customize event pages with your own branding.',
     icon: Palette,
   },
   {
-    title: 'Premium Features',
-    description:
-      'Team management, SMS notifications, advanced analytics, and granular role permissions — all on the roadmap.',
-    icon: Sparkles,
-    comingSoon: true,
+    title: 'Priority support',
+    description: 'Get help faster with priority support.',
+    icon: UserCog,
   },
 ];
 
 export const communities = [
   {
     title: 'Nonprofits',
-    icon: 'HeartHandshake',
+    icon: HeartHandshake,
   },
   {
     title: 'Schools',
-    icon: 'School',
+    icon: School,
   },
   {
     title: 'Volunteers',
-    icon: 'Users',
+    icon: Users,
   },
   {
     title: 'Teams',
-    icon: 'Trophy',
+    icon: Trophy,
   },
   {
     title: 'Churches',
-    icon: 'Church',
+    icon: Church,
   },
   {
     title: 'Neighborhoods',
-    icon: 'MapPin',
+    icon: MapPin,
   },
   {
     title: 'Offices',
-    icon: 'Briefcase',
+    icon: Briefcase,
   },
   {
     title: 'Pot Lucks',
-    icon: 'CookingPot',
+    icon: CookingPot,
   },
 ];
 
@@ -96,44 +158,46 @@ export const plans = [
     subheader: 'Best for casual event organizers',
     features: [
       '1 Admin',
-      '3 Active Events',
-      '15 Slots per Event',
-      'Email Notifications',
-      'Standard Support',
+      '3 active events',
+      '15 slots per event',
+      'All Core features +',
+      'Standard support',
     ],
   },
   {
     title: 'Individual',
     outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=jW74MZmq#o-anonymous',
     price: 7,
-    subheader: 'Best for small teams and clubs',
+    subheader: 'Best for small teams & clubs',
     features: [
       '1 Admin',
-      'Unlimited Events',
-      '50 Slots per Event',
-      'Email Notifications',
-      'Theme Customization',
-      'Priority Support',
+      'Unlimited events',
+      '50 slots per event',
+      'All Free features +',
+      'Advanced templates',
+      'Real-time dashboard',
+      'Basic analytics',
+      'Group messaging',
+      'Priority support',
     ],
-    disclaimer: '✦ Coming Soon: Team Members, SMS Notifications & Event Analytics',
+    comingSoon: 'Team Members, SMS Notifications',
   },
   {
     title: 'Organization',
     outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=EWB46bQr#o-anonymous',
-    price: 25,
-    subheader: 'Best for schools, nonprofits, and orgs',
+    price: 15,
+    subheader: 'Best for schools, nonprofits, & orgs',
     features: [
       '1 Admin',
-      'Unlimited Events',
-      'Unlimited Slots',
-      'Email Notifications',
-      'Theme Customization',
-      'Custom Logo & Branding',
-      'Export Sign-ups as a CSV',
-      'Event Analytics',
-      'Priority Support',
+      'Unlimited events',
+      'Unlimited slots',
+      'All Individual features +',
+      'Event duplication',
+      'Check-in mode',
+      'Export sign-ups as CSV',
+      'White-label branding',
+      'Priority support',
     ],
-    disclaimer:
-      '✦ Coming Soon: Team Management, SMS Notifications, Advanced Analytics, & Granular Role Permissions',
+    comingSoon: 'Team Management, SMS Notifications, Advanced Analytics',
   },
 ];
