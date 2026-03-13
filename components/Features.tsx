@@ -1,6 +1,4 @@
 import { CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-
-import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { MagicCard } from '@/components/ui/magic-card';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { SparklesText } from '@/components/ui/sparkles-text';
