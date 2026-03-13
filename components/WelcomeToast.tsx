@@ -3,10 +3,31 @@
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { ToastAction } from '@/components/ui/toast';
-import { ScrollLink } from '@/components/ScrollLink';
 
 export const WelcomeToast = () => {
   const { toast } = useToast();
+
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById('waitlist');
+    if (waitlistSection) {
+      // Use scrollIntoView with block option for better mobile support
+      waitlistSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+
+      // Adjust for fixed header after scroll
+      setTimeout(() => {
+        const scrolledY = window.scrollY;
+        if (scrolledY) {
+          window.scroll({
+            top: scrolledY - 80,
+            behavior: 'smooth',
+          });
+        }
+      }, 100);
+    }
+  };
 
   useEffect(() => {
     if (sessionStorage.getItem('isSubscribed')) return;
@@ -19,8 +40,8 @@ export const WelcomeToast = () => {
         variant: 'info',
         duration: Infinity,
         action: (
-          <ToastAction altText="Join the Waitlist">
-            <ScrollLink>Join the Waitlist</ScrollLink>
+          <ToastAction altText="Join the Waitlist" onClick={scrollToWaitlist}>
+            Join the Waitlist
           </ToastAction>
         ),
       });
