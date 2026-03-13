@@ -96,7 +96,7 @@ export function Pricing() {
                           )}
                         </ul>
                         <div className="mt-auto">
-                          <Button
+                          {/* <Button
                             variant={isFeatured ? 'secondary' : 'success'}
                             size="lg"
                             className="group w-full rounded-md"
@@ -105,7 +105,7 @@ export function Pricing() {
                               <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
                               <span>Get Started</span>
                             </a>
-                          </Button>
+                          </Button> */}
                         </div>
                       </CardContent>
                     </div>
