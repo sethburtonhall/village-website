@@ -10,22 +10,7 @@ export const WelcomeToast = () => {
   const scrollToWaitlist = () => {
     const waitlistSection = document.getElementById('waitlist');
     if (waitlistSection) {
-      // Use scrollIntoView with block option for better mobile support
-      waitlistSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-
-      // Adjust for fixed header after scroll
-      setTimeout(() => {
-        const scrolledY = window.scrollY;
-        if (scrolledY) {
-          window.scroll({
-            top: scrolledY - 80,
-            behavior: 'smooth',
-          });
-        }
-      }, 100);
+      waitlistSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
