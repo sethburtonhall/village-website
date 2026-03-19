@@ -137,6 +137,15 @@ section {
   @apply bg-stone-100;
 }
 
+.privacy-section,
+.terms-section {
+  @apply p-0;
+
+  ul {
+    @apply list-disc space-y-2 pl-6;
+  }
+}
+
 /* Remove default browser outline */
 *:focus {
   outline: none;
@@ -167,11 +176,11 @@ section {
 
 @theme inline {
   @keyframes background-position-spin {
-  0% {
-    background-position: top center;
+    0% {
+      background-position: top center;
     }
-  100% {
-    background-position: bottom center;
+    100% {
+      background-position: bottom center;
     }
   }
 }
