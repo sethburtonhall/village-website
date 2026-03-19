@@ -5,6 +5,7 @@ import { useUser, UserButton } from '@clerk/nextjs';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { ClipboardList } from 'lucide-react';
 
 export function Header({ className }: { className?: string }) {
@@ -33,22 +34,27 @@ export function Header({ className }: { className?: string }) {
 
         {/* CTAs */}
         <div className="flex items-center justify-center gap-4">
-          <Button variant="ghost" className="text-md hover:no-underline" asChild>
-            <a href="https://docs.usevillage.app" className="hover:no-underline">
-              Docs
-            </a>
-          </Button>
-          <Button variant="ghost" className="text-md hover:no-underline" asChild>
-            <a href="#pricing" className="hover:no-underline">
-              Pricing
-            </a>
-          </Button>
+          <div className="flex items-center gap-0">
+            <Button variant="ghost" className="text-md hover:no-underline" asChild>
+              <a href="https://docs.usevillage.app" className="hover:no-underline">
+                Docs
+              </a>
+            </Button>
+            <Button variant="ghost" className="text-md hover:no-underline" asChild>
+              <a href="#pricing" className="hover:no-underline">
+                Pricing
+              </a>
+            </Button>
+          </div>
+          <Separator orientation="vertical" className="h-6" />
           {isLoaded &&
             (isSignedIn ? (
-              <UserButton />
+              <div className="ml-3">
+                <UserButton />
+              </div>
             ) : (
               <>
-                <Button variant="outline" className="text-md hover:no-underline" asChild>
+                <Button variant="ghost" className="text-md hover:no-underline" asChild>
                   <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}>Login</a>
                 </Button>
                 <Button variant="success" className="text-md" asChild>
