@@ -33,26 +33,29 @@ export function Header({ className }: { className?: string }) {
 
         {/* CTAs */}
         <div className="flex items-center justify-center gap-4">
-          <a
-            href="https://docs.usevillage.app"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Docs
-          </a>
-          {isLoaded && (
-            isSignedIn ? (
+          <Button variant="ghost" className="text-md hover:no-underline" asChild>
+            <a href="https://docs.usevillage.app" className="hover:no-underline">
+              Docs
+            </a>
+          </Button>
+          <Button variant="ghost" className="text-md hover:no-underline" asChild>
+            <a href="#pricing" className="hover:no-underline">
+              Pricing
+            </a>
+          </Button>
+          {isLoaded &&
+            (isSignedIn ? (
               <UserButton />
             ) : (
               <>
-                <Button variant="link" className="hover:no-underline" asChild>
+                <Button variant="outline" className="text-md hover:no-underline" asChild>
                   <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}>Login</a>
                 </Button>
-                <Button variant="success" asChild>
+                <Button variant="success" className="text-md" asChild>
                   <a href="https://app.usevillage.app/register/beta">Sign Up</a>
                 </Button>
               </>
-            )
-          )}
+            ))}
         </div>
       </div>
     </header>
