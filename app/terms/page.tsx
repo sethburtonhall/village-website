@@ -19,8 +19,8 @@ export default function TermsPage() {
           <div className="space-y-10 leading-relaxed text-stone-600">
             <section className="terms-section">
               <p>
-                These Terms of Service ("Terms") govern your use of Village, operated by Roadshow
-                Creative ("we," "us," or "our"). By creating an account or using Village, you agree
+                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of Village, operated by Roadshow
+                Creative (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By creating an account or using Village, you agree
                 to these Terms. If you do not agree, do not use Village.
               </p>
             </section>
@@ -36,7 +36,7 @@ export default function TermsPage() {
                 <li>Harass, threaten, or harm other users</li>
                 <li>Distribute spam or unsolicited communications</li>
                 <li>Collect personal data from users without appropriate consent</li>
-                <li>Attempt to gain unauthorized access to Village's systems</li>
+                <li>Attempt to gain unauthorized access to Village&apos;s systems</li>
               </ul>
             </section>
 
@@ -76,7 +76,7 @@ export default function TermsPage() {
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Price changes:</span> We may change
-                  subscription prices with at least 30 days' notice. Continued use after a price
+                  subscription prices with at least 30 days&apos; notice. Continued use after a price
                   change constitutes acceptance of the new price.
                 </li>
                 <li>
@@ -137,7 +137,7 @@ export default function TermsPage() {
                 7. Disclaimer of Warranties
               </h2>
               <p>
-                Village is provided "as is" and "as available" without warranties of any kind,
+                Village is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind,
                 express or implied. We do not warrant that the service will be uninterrupted,
                 error-free, or free of viruses or other harmful components. Your use of Village is
                 at your own risk.

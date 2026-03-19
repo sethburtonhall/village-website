@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -24,8 +23,8 @@ export default function AboutPage() {
             </p>
 
             <p>
-              We built Village because organizing people shouldn't require a spreadsheet degree.
-              Whether you're coordinating a school bake sale, a volunteer shift schedule, or a
+              We built Village because organizing people shouldn&apos;t require a spreadsheet degree.
+              Whether you&apos;re coordinating a school bake sale, a volunteer shift schedule, or a
               neighborhood cleanup day, Village gives you a clean, shareable sign-up link in minutes
               — no account required for participants.
             </p>
@@ -40,20 +39,20 @@ export default function AboutPage() {
             <p>
               Village is a product of{' '}
               <span className="font-medium text-stone-800">Roadshow Creative LLC</span>, a small
-              software studio focused on building tools that help real people do real things. We're
+              software studio focused on building tools that help real people do real things. We&apos;re
               a lean team that cares deeply about product quality and customer experience.
             </p>
 
             <h2 className="mb-4 mt-10 text-2xl font-semibold text-stone-800">Get in Touch</h2>
             <p>
-              We'd love to hear from you.&nbsp;
+              We&apos;d love to hear from you.&nbsp;
               <a
                 href="mailto:support@usevillage.app"
                 className="font-medium text-primary-600 hover:underline"
               >
                 Contact us
               </a>
-              &nbsp;any time. Whether it's feedback, a feature idea, or just a hello — we read every
+              &nbsp;any time. Whether it&apos;s feedback, a feature idea, or just a hello — we read every
               message.
             </p>
 

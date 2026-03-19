@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <div className="space-y-10 leading-relaxed text-stone-600">
             <section className="privacy-section">
               <p>
-                Roadshow Creative LLC ("we," "us," or "our") operates Village at usevillage.app.
+                Roadshow Creative LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates Village at usevillage.app.
                 This Privacy Policy explains what information we collect, how we use it, and the
                 choices you have. By using Village, you agree to the practices described here.
               </p>
@@ -137,7 +137,7 @@ export default function PrivacyPage() {
             </section>
 
             <section className="privacy-section">
-              <h2 className="mb-3 text-xl font-semibold text-stone-800">7. Children's Privacy</h2>
+              <h2 className="mb-3 text-xl font-semibold text-stone-800">7. Children&apos;s Privacy</h2>
               <p>
                 Village is not directed to children under 13. We do not knowingly collect personal
                 information from children. If you believe a child has provided us with their
