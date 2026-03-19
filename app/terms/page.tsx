@@ -19,9 +19,10 @@ export default function TermsPage() {
           <div className="space-y-10 leading-relaxed text-stone-600">
             <section className="terms-section">
               <p>
-                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of Village, operated by Roadshow
-                Creative (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By creating an account or using Village, you agree
-                to these Terms. If you do not agree, do not use Village.
+                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of Village, operated by
+                Roadshow Creative (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By
+                creating an account or using Village, you agree to these Terms. If you do not agree,
+                do not use Village.
               </p>
             </section>
 
@@ -45,14 +46,8 @@ export default function TermsPage() {
               <p>
                 You are responsible for maintaining the security of your account and password.
                 Roadshow Creative LLC cannot and will not be liable for any loss or damage from your
-                failure to comply with this security obligation. You must notify us immediately at{' '}
-                <a
-                  href="mailto:support@usevillage.app"
-                  className="text-primary-600 hover:underline"
-                >
-                  support@usevillage.app
-                </a>{' '}
-                if you suspect unauthorized use of your account.
+                failure to comply with this security obligation. You must notify us immediately if
+                you suspect unauthorized use of your account.
               </p>
             </section>
 
@@ -76,8 +71,8 @@ export default function TermsPage() {
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Price changes:</span> We may change
-                  subscription prices with at least 30 days&apos; notice. Continued use after a price
-                  change constitutes acceptance of the new price.
+                  subscription prices with at least 30 days&apos; notice. Continued use after a
+                  price change constitutes acceptance of the new price.
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Payment processing:</span> All
@@ -88,26 +83,41 @@ export default function TermsPage() {
 
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">
-                4. Cancellation and Refunds
+                4. Cancellation & Refund Policy
               </h2>
-              <p className="mb-3">
-                You may cancel your subscription at any time from your account settings.
-                Cancellation takes effect at the end of your current billing period — you will
-                retain access to paid features until then.
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Subscriptions & Billing</h3>
+              <p className="mb-4">
+                Village provides services on a subscription basis (Monthly or Annual). Your
+                subscription will automatically renew at the end of each billing cycle unless
+                cancelled through your account settings or by contacting our support team.
               </p>
-              <p className="mb-3 font-medium text-stone-700">
-                All subscription fees are non-refundable. No prorated refunds will be issued for the
-                unused portion of a billing period after cancellation.
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Cancellation</h3>
+              <p className="mb-4">
+                You may cancel your subscription at any time. To avoid being charged for the next
+                billing period, you must cancel at least 24 hours before your renewal date. Upon
+                cancellation, you will continue to have access to the premium features of Village
+                until the end of your current paid billing period.
               </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Refunds</h3>
+              <p className="mb-4">
+                All sales are final. Because our services are digital and granted immediately upon
+                payment, we do not offer refunds, credits, or prorated billing for subscriptions
+                that are cancelled mid-month.
+              </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Exceptions</h3>
               <p>
-                If you believe you were charged in error, please contact us at{' '}
+                In the event of a technical billing error or a failure to provide service as
+                described, please{' '}
                 <a
                   href="mailto:support@usevillage.app"
                   className="text-primary-600 hover:underline"
                 >
-                  support@usevillage.app
+                  contact us
                 </a>{' '}
-                within 14 days of the charge and we will review your case.
+                within 7 days of the transaction for a manual review of your account.
               </p>
             </section>
 
@@ -137,10 +147,10 @@ export default function TermsPage() {
                 7. Disclaimer of Warranties
               </h2>
               <p>
-                Village is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind,
-                express or implied. We do not warrant that the service will be uninterrupted,
-                error-free, or free of viruses or other harmful components. Your use of Village is
-                at your own risk.
+                Village is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without
+                warranties of any kind, express or implied. We do not warrant that the service will
+                be uninterrupted, error-free, or free of viruses or other harmful components. Your
+                use of Village is at your own risk.
               </p>
             </section>
 
@@ -178,12 +188,12 @@ export default function TermsPage() {
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">11. Contact Us</h2>
               <p>
-                Questions about these Terms? Contact us at{' '}
+                Questions about these Terms?{' '}
                 <a
                   href="mailto:support@usevillage.app"
                   className="text-primary-600 hover:underline"
                 >
-                  support@usevillage.app
+                  Contact us
                 </a>
                 .
               </p>
