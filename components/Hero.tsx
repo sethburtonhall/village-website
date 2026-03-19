@@ -1,29 +1,24 @@
 import { cn } from '@/lib/utils';
 
-// import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
 import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
-import { ScrollLink } from '@/components/ScrollLink';
-import { ChevronRight } from 'lucide-react';
-
-// import { ArrowRight, Sparkles } from 'lucide-react';
+import { ChevronRight, Sparkles, ArrowRight } from 'lucide-react';
 
 export function Hero() {
   return (
     <MotionWrapper type="section" className="space-y-12 pb-0">
       <div className="space-y-4 p-8 pb-0 pt-4 md:pt-12 lg:px-16 lg:pt-12">
-        <ScrollLink>
+        <a href="#pricing">
           <AnimatedGradientText>
             🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-            <span className="gradiant-text">Private Beta</span>
+            <span className="gradiant-text">Now in Early Access</span>
             <ChevronRight className="mx-2 h-4 w-4 shrink-0 text-fuchsia-400" />
-            {/* <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-          <span className="gradiant-text">2026</span> */}
           </AnimatedGradientText>
-        </ScrollLink>
+        </a>
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
             Group{' '}
@@ -52,25 +47,23 @@ export function Hero() {
           Eliminate complexity and streamline the process of organizing community events with{' '}
           <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>.
         </p>
-        {/* <p className="block-p md:text-xl">
-          Other group sign-up apps are overcomplicated.{' '}
-          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>{' '}
-          eliminates complexity and streamlines the process of organizing community events.
-        </p> */}
       </div>
+
       {/* CTAs */}
-      {/* <div className="flex items-center justify-center gap-4">
-        <Button variant="success" size="lg" className="group">
-          <a href="https://app.usevillage.app/signup" className="flex items-center">
+      <div className="flex items-center justify-center gap-4">
+        <Button variant="success" size="lg" className="group" asChild>
+          <a href="https://app.usevillage.app/register/beta" className="flex items-center">
             <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
             <span>Get Started</span>
           </a>
         </Button>
-        <Button variant="ghost" size="lg" className="group">
-          <a href="https://docs.usevillage.app">Learn More</a>
-          <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+        <Button variant="ghost" size="lg" className="group" asChild>
+          <a href="#pricing">
+            Learn More
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </Button>
-      </div> */}
+      </div>
     </MotionWrapper>
   );
 }

@@ -153,8 +153,11 @@ export const communities = [
 export const plans = [
   {
     title: 'Free',
-    outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=xmeJOPQV#o-anonymous',
-    price: 0,
+    slug: 'free',
+    signupUrl: 'https://app.usevillage.app/register/beta',
+    monthlyPrice: 0,
+    annualPrice: 0,
+    annualPriceMonthly: 0,
     subheader: 'Best for casual event organizers',
     features: [
       '1 Admin',
@@ -166,8 +169,11 @@ export const plans = [
   },
   {
     title: 'Individual',
-    outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=jW74MZmq#o-anonymous',
-    price: 7,
+    slug: 'individual',
+    signupUrl: 'https://app.usevillage.app/register/beta?plan=individual',
+    monthlyPrice: 7,
+    annualPrice: 72,
+    annualPriceMonthly: 6,
     subheader: 'Best for small teams & clubs',
     features: [
       '1 Admin',
@@ -184,8 +190,11 @@ export const plans = [
   },
   {
     title: 'Organization',
-    outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=EWB46bQr#o-anonymous',
-    price: 15,
+    slug: 'organization',
+    signupUrl: 'https://app.usevillage.app/register/beta?plan=organization',
+    monthlyPrice: 15,
+    annualPrice: 150,
+    annualPriceMonthly: 12.5,
     subheader: 'Best for schools, nonprofits, & orgs',
     features: [
       '1 Admin',

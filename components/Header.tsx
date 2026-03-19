@@ -1,12 +1,15 @@
+'use client';
+
 import Link from 'next/link';
+import { useUser, UserButton } from '@clerk/nextjs';
 
 import { cn } from '@/lib/utils';
-
-// import { Button } from '@/components/ui/button';
-// import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { ClipboardList } from 'lucide-react';
 
 export function Header({ className }: { className?: string }) {
+  const { isSignedIn, isLoaded } = useUser();
+
   return (
     <header
       className={cn(
@@ -27,15 +30,29 @@ export function Header({ className }: { className?: string }) {
             <Link href="/">Village</Link>
           </h1>
         </div>
+
         {/* CTAs */}
         <div className="flex items-center justify-center gap-4">
-          {/* <a href="http://docs.usevillage.app">Docs</a> */}
-          {/* <Button variant="link" className="hover:no-underline">
-            <a href="http://app.usevillage.app/login">Login</a>
-          </Button>
-          <Button variant="success">
-            <a href="#pricing">Sign Up</a>
-          </Button> */}
+          <a
+            href="https://docs.usevillage.app"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Docs
+          </a>
+          {isLoaded && (
+            isSignedIn ? (
+              <UserButton />
+            ) : (
+              <>
+                <Button variant="link" className="hover:no-underline" asChild>
+                  <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}>Login</a>
+                </Button>
+                <Button variant="success" asChild>
+                  <a href="https://app.usevillage.app/register/beta">Sign Up</a>
+                </Button>
+              </>
+            )
+          )}
         </div>
       </div>
     </header>

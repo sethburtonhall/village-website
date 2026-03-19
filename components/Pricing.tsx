@@ -1,8 +1,11 @@
+'use client';
+
+import { useState } from 'react';
+import { useUser } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
 
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-// import { Button } from '@/components/ui/button';
-
+import { Button } from '@/components/ui/button';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ShineBorder } from '@/components/ui/shine-border';
 
@@ -10,7 +13,23 @@ import { CircleCheck, Sparkles } from 'lucide-react';
 
 import { plans } from '@/lib/data';
 
+type Billing = 'monthly' | 'annual';
+
 export function Pricing() {
+  const [billing, setBilling] = useState<Billing>('monthly');
+  const { isSignedIn, isLoaded } = useUser();
+
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.usevillage.app';
+
+  const getCtaProps = (plan: (typeof plans)[number]) => {
+    if (isLoaded && isSignedIn) {
+      if (plan.slug === 'free')
+        return { label: 'Go to Dashboard', href: appUrl };
+      return { label: 'Upgrade', href: `${appUrl}/account` };
+    }
+    return { label: 'Get Started', href: plan.signupUrl };
+  };
+
   return (
     <section id="pricing" className="pb-28">
       <div className="mx-auto space-y-12 text-center">
@@ -18,12 +37,47 @@ export function Pricing() {
           <p className="font-bold text-primary-600">Pricing</p>
           <h1>Affordable Plans, No Surprises</h1>
           <p className="block-p">Start for free. Upgrade anytime as you grow.</p>
+
+          {/* Monthly / Annual toggle */}
+          <div className="mx-auto mt-4 flex w-fit items-center justify-center gap-1 rounded-full border border-stone-200 bg-stone-100 p-1">
+            <button
+              onClick={() => setBilling('monthly')}
+              className={cn(
+                'rounded-full px-4 py-1.5 text-sm font-medium transition-all',
+                billing === 'monthly'
+                  ? 'bg-white text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setBilling('annual')}
+              className={cn(
+                'rounded-full px-4 py-1.5 text-sm font-medium transition-all',
+                billing === 'annual'
+                  ? 'bg-white text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
+            >
+              Annual
+              <span className="ml-1.5 rounded-full bg-primary-600 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                Save up to 17%
+              </span>
+            </button>
+          </div>
         </div>
 
         <div className="container mx-auto px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-0">
             {plans.map((plan, index) => {
-              const isFeatured = index == 1;
+              const isFeatured = index === 1;
+              const cta = getCtaProps(plan);
+              const displayPrice =
+                billing === 'annual' && plan.annualPriceMonthly > 0
+                  ? plan.annualPriceMonthly
+                  : plan.monthlyPrice;
+
               return (
                 <MotionWrapper
                   key={plan.title}
@@ -56,9 +110,19 @@ export function Pricing() {
                             {plan.title}
                           </CardTitle>
                           <CardTitle className="flex items-end gap-2 text-5xl">
-                            ${plan.price}
-                            <span className="text-base">/ month</span>{' '}
+                            ${displayPrice.toFixed(displayPrice % 1 === 0 ? 0 : 2)}
+                            <span className="text-base">/ month</span>
                           </CardTitle>
+                          {billing === 'annual' && plan.annualPrice > 0 && (
+                            <p
+                              className={cn(
+                                'text-xs',
+                                isFeatured ? 'text-slate-300' : 'text-muted-foreground'
+                              )}
+                            >
+                              ${plan.annualPrice} billed annually
+                            </p>
+                          )}
                         </div>
                         <p
                           className={cn(
@@ -96,16 +160,17 @@ export function Pricing() {
                           )}
                         </ul>
                         <div className="mt-auto">
-                          {/* <Button
+                          <Button
                             variant={isFeatured ? 'secondary' : 'success'}
                             size="lg"
                             className="group w-full rounded-md"
+                            asChild
                           >
-                            <a href={plan.outsetaUrl} className="o-auth-popup flex items-center">
+                            <a href={cta.href} className="flex items-center">
                               <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
-                              <span>Get Started</span>
+                              <span>{cta.label}</span>
                             </a>
-                          </Button> */}
+                          </Button>
                         </div>
                       </CardContent>
                     </div>
