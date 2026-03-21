@@ -6,6 +6,7 @@ import { useUser, UserButton } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 import { ClipboardList } from 'lucide-react';
 
 export function Header({ className }: { className?: string }) {
@@ -47,8 +48,8 @@ export function Header({ className }: { className?: string }) {
             </Button>
           </div>
           <Separator orientation="vertical" className="h-6" />
-          {isLoaded &&
-            (isSignedIn ? (
+          {isLoaded ? (
+            isSignedIn ? (
               <div className="ml-3">
                 <UserButton />
               </div>
@@ -61,7 +62,13 @@ export function Header({ className }: { className?: string }) {
                   <a href="https://app.usevillage.app/register/beta">Sign Up</a>
                 </Button>
               </>
-            ))}
+            )
+          ) : (
+            <div className="flex items-center gap-4">
+              <Skeleton className="h-9 w-[74px] rounded-md" />
+              <Skeleton className="h-9 w-[91px] rounded-md" />
+            </div>
+          )}
         </div>
       </div>
     </header>
