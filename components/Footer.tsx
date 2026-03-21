@@ -91,7 +91,14 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-12 border-t border-stone-200 pt-8 text-center md:text-right">
           <p className="text-sm text-stone-500">
-            &copy; {new Date().getFullYear()} Roadshow Creative LLC. All rights reserved.
+            &copy; {new Date().getFullYear()}{' '}
+            <a
+              href="https://www.roadshowcreative.dev/"
+              className="text-primary-600 transition-colors hover:underline"
+            >
+              Roadshow Creative LLC
+            </a>
+            . All rights reserved.
           </p>
         </div>
       </div>
