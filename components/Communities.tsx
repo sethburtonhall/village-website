@@ -19,8 +19,8 @@ export function Communities() {
       <div className="mx-auto space-y-16 text-center">
         <div className="stack">
           <p className="font-bold text-primary-600">Communities</p>
-          <h1>From Nonprofits To Pot Lucks, We&apos;ve Got You Covered</h1>
-          <p className="block-p">It takes a village. We&apos;re here to help you grow yours.</p>
+          <h1>Churches, schools, sports teams — and everyone in between.</h1>
+          <p className="block-p">It takes a village. We&apos;re here to help you run yours.</p>
         </div>
         <MotionWrapper>
           <div className="relative flex flex-col gap-8">

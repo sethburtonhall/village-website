@@ -7,9 +7,9 @@ import { ArrowRight, ArrowDown } from 'lucide-react';
 
 import { steps } from '@/lib/data';
 
-export function HowItWorks() {
+export function HowItWorks({ id }: { id?: string }) {
   return (
-    <section>
+    <section id={id} className="pt-8">
       <MotionWrapper className="pt-8">
         <div className="mx-auto max-w-6xl space-y-8 text-center">
           <h1>How It Works</h1>

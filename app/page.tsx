@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { SoundFamiliar } from '@/components/SoundFamiliar';
 import { HowItWorks } from '@/components/HowItWorks';
 import { Waitlist } from '@/components/Waitlist';
 import { Features } from '@/components/Features';
@@ -19,7 +20,8 @@ export default function Home() {
 
       <div className="relative">
         <Hero />
-        <HowItWorks />
+        <SoundFamiliar />
+        <HowItWorks id="how-it-works" />
         <DotPattern
           width={20}
           height={20}
