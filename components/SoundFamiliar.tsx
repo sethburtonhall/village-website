@@ -52,7 +52,7 @@ export function SoundFamiliar() {
         </div>
 
         <MotionWrapper>
-          <p className="text-lg font-medium text-stone-600">
+          <p className="text-xl font-medium text-stone-600">
             <span className="font-bold text-primary-600">Village</span> fixes all of this.
           </p>
         </MotionWrapper>
