@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-// import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
 import { JiggleText } from '@/components/ui/jiggle-text';
@@ -9,7 +9,7 @@ import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { ScrollLink } from '@/components/ScrollLink';
 import { ChevronRight } from 'lucide-react';
 
-// import { ArrowRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -54,37 +54,21 @@ export function Hero() {
           your community a clean, simple experience — no ads, no accounts required, just a link
           worth sharing.
         </p>
-        {/* <p className="block-p md:text-xl">
-          Other group sign-up apps are overcomplicated.{' '}
-          <span className="font-logo text-xl font-extrabold text-primary-600">Village</span>{' '}
-          eliminates complexity and streamlines the process of organizing community events.
-        </p> */}
       </div>
       {/* CTAs */}
-      {/* <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+      <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
         <Button
           variant="success"
           size="lg"
           className="group h-10 px-4 text-sm sm:h-11 sm:px-8 sm:text-base"
           asChild
         >
-          <a href="https://app.usevillage.app/register/beta" className="flex items-center">
+          <a href="#waitlist" className="flex items-center">
             <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
-            <span>Get Started</span>
+            <span>Join the Beta</span>
           </a>
         </Button>
-        <Button
-          variant="ghost"
-          size="lg"
-          className="group h-10 px-4 text-sm sm:h-11 sm:px-8 sm:text-base"
-          asChild
-        >
-          <a href="#pricing">
-            Learn More
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-          </a>
-        </Button>
-      </div> */}
+      </div>
     </MotionWrapper>
   );
 }
