@@ -74,7 +74,7 @@ export function WaitlistForm() {
     >
       <div className="stack mb-8">
         <h2 id="waitlist-title">Join the Waitlist!</h2>
-        <p className="block-p">It takes a village. Be among the first to bring yours together.</p>
+        <p className="block-p">It takes a village. Be first in line for clean, ad-free sign-ups your community will actually use.</p>
       </div>
 
       <MotionWrapper className="space-y-4">

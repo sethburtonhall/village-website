@@ -9,7 +9,7 @@ import { steps } from '@/lib/data';
 
 export function HowItWorks() {
   return (
-    <section>
+    <section className="pt-8">
       <MotionWrapper className="pt-8">
         <div className="mx-auto max-w-6xl space-y-8 text-center">
           <h1>How It Works</h1>
