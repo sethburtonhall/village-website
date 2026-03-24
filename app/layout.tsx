@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-white.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
     description:
       'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
-    images: ['/og-image-white.jpg'],
+    images: ['/og-image.png'],
     creator: '@usevillage',
   },
   robots: {
