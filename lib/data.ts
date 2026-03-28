@@ -193,7 +193,7 @@ export const plans = [
       'Group messaging',
       'Priority support',
     ],
-    comingSoon: 'Team Members, SMS Notifications',
+    comingSoon: 'Team Management + many more features coming soon',
   },
   {
     title: 'Organization',
@@ -212,6 +212,5 @@ export const plans = [
       'White-label branding',
       'Priority support',
     ],
-    comingSoon: 'Team Management, SMS Notifications',
   },
 ];
