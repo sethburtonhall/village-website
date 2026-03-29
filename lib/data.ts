@@ -184,6 +184,7 @@ export const plans = [
     subheader: 'Best for small teams & clubs',
     features: [
       '1 Admin',
+      '1 Member',
       'Unlimited events',
       '50 slots per event',
       'All Free features +',
@@ -191,9 +192,9 @@ export const plans = [
       'Real-time dashboard',
       'Basic analytics',
       'Group messaging',
+      'White-label branding',
       'Priority support',
     ],
-    comingSoon: 'Team Management + many more features coming soon',
   },
   {
     title: 'Organization',
@@ -202,6 +203,7 @@ export const plans = [
     subheader: 'Best for schools, nonprofits, & orgs',
     features: [
       '1 Admin',
+      '10 Members',
       'Unlimited events',
       'Unlimited slots',
       'All Individual features +',
@@ -209,7 +211,6 @@ export const plans = [
       'Event duplication',
       'Check-in mode',
       'Export sign-ups as CSV',
-      'White-label branding',
       'Priority support',
     ],
   },
