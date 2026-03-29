@@ -6,7 +6,7 @@ import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ShineBorder } from '@/components/ui/shine-border';
 
-import { CircleCheck, Sparkles } from 'lucide-react';
+import { CircleCheck } from 'lucide-react';
 
 import { plans } from '@/lib/data';
 
@@ -84,16 +84,6 @@ export function Pricing() {
                               </span>
                             </li>
                           ))}
-                          {plan.comingSoon && (
-                            <>
-                              <li className="pt-4 text-sm font-medium">
-                                <Sparkles className="inline size-3" /> Coming Soon
-                              </li>
-                              <li className="!mt-2 ml-2 max-w-xs text-xs italic">
-                                {plan.comingSoon}
-                              </li>
-                            </>
-                          )}
                         </ul>
                         <div className="mt-auto">
                           {/* <Button
