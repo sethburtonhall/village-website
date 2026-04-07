@@ -214,7 +214,7 @@ function BroadcastDemo() {
             <div>
               <p className="text-xs font-semibold text-white">Organizer Message</p>
               <p className="text-xs text-white/80">
-                Please make your way to the main hall — we're starting in 5 minutes!
+                Please make your way to the main hall — we&apos;re starting in 5 minutes!
               </p>
             </div>
           </div>
