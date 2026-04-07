@@ -17,11 +17,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Village Live — Real-time Event Experiences',
     description:
-      'Village Live turns any Village event into a real-time interactive experience — reactions, polls, Q&A, broadcasts, and more.',
+      'Village handles the sign-up. Village Live runs the day. Real-time reactions, polls, Q&A, broadcasts, and more.',
     url: 'https://www.usevillage.app/live',
     siteName: 'Village',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Village Live — Real-time Event Experiences',
+    description:
+      'Village handles the sign-up. Village Live runs the day. Real-time reactions, polls, Q&A, broadcasts, and more.',
+    creator: '@usevillage',
   },
 };
 
