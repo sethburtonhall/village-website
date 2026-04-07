@@ -8,6 +8,7 @@ import { Waitlist } from '@/components/Waitlist';
 import { Features } from '@/components/Features';
 import { Communities } from '@/components/Communities';
 import { Pricing } from '@/components/Pricing';
+import { VillageLiveAddon } from '@/components/VillageLiveAddon';
 import { Footer } from '@/components/Footer';
 import { DotPattern } from '@/components/ui/dot-pattern';
 import { WelcomeToast } from '@/components/WelcomeToast';
@@ -62,6 +63,7 @@ export default function Home() {
         />
         <Pricing />
       </div>
+      <VillageLiveAddon />
       <Waitlist />
       <Footer />
     </div>

@@ -14,7 +14,7 @@ export function Header({ className }: { className?: string }) {
         className
       )}
     >
-      <div className="container mx-auto flex justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="group flex items-center gap-1">
           <ClipboardList
             className="size-8 -rotate-3 text-primary-600 group-hover:rotate-0"
