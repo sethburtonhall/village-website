@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
-import { ClipboardList, Radio } from 'lucide-react';
+import { ClipboardList, Radio, RotateCcw } from 'lucide-react';
 import * as motion from 'motion/react-client';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -177,7 +177,23 @@ function CrowdMeterDemo() {
 function BroadcastDemo() {
   const [showing, setShowing] = useState(false);
   const [animatingOut, setAnimatingOut] = useState(false);
+  const [messageIndex, setMessageIndex] = useState(0);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const messages = [
+    {
+      title: 'Organizer Message',
+      content: "Please make your way to the main hall - we're starting in 5 minutes!",
+    },
+    {
+      title: 'Schedule Update',
+      content: 'The keynote speaker is running late. Coffee break extended!',
+    },
+    {
+      title: 'Last Call',
+      content: "Networking session ends in 15 minutes. Don't forget to grab your swag!",
+    },
+  ];
 
   const sendBroadcast = () => {
     if (showing) return;
@@ -189,6 +205,7 @@ function BroadcastDemo() {
       setTimeout(() => {
         setShowing(false);
         setAnimatingOut(false);
+        setMessageIndex((prev) => (prev + 1) % messages.length);
       }, 300);
     }, 3000);
   };
@@ -205,17 +222,14 @@ function BroadcastDemo() {
         {/* Broadcast banner */}
         {(showing || animatingOut) && (
           <div
-            className="border-village-live/20 bg-village-live absolute inset-x-0 top-0 flex items-start gap-3 border-b px-4 py-3"
-            style={{
-              animation: animatingOut ? 'slideUp 0.3s ease-out' : 'slideDown 0.3s ease-out',
-            }}
+            className={`border-village-live/20 bg-village-live absolute inset-x-0 top-0 flex items-start gap-3 border-b px-4 py-3 ${
+              animatingOut ? 'slide-out' : 'slide-in'
+            }`}
           >
-            <span className="text-base">📣</span>
+            <span className="text-base">{'\ud83d\udce3'}</span>
             <div>
-              <p className="text-xs font-semibold text-white">Organizer Message</p>
-              <p className="text-xs text-white/80">
-                Please make your way to the main hall — we&apos;re starting in 5 minutes!
-              </p>
+              <p className="text-sm font-semibold text-white">{messages[messageIndex].title}</p>
+              <p className="text-xs text-white/80">{messages[messageIndex].content}</p>
             </div>
           </div>
         )}
@@ -268,11 +282,13 @@ function TimelineDemo() {
               }`}
             />
             <span className="text-xs leading-5 text-white">{activity}</span>
-            {i === current && (
-              <span className="bg-village-live/20 text-village-live ml-auto rounded-full px-1.5 py-0.5 font-mono text-xs font-bold">
-                NOW
-              </span>
-            )}
+            <span
+              className={`bg-village-live/20 text-village-live ml-auto rounded-full px-1.5 py-0.5 font-mono text-xs font-bold transition-all duration-300 ${
+                i === current ? 'scale-100 transform opacity-100' : 'scale-95 transform opacity-0'
+              }`}
+            >
+              NOW
+            </span>
           </div>
         ))}
       </div>
@@ -292,8 +308,32 @@ function TimelineDemo() {
 }
 
 function PollDemo() {
+  const [pollOptions, setPollOptions] = useState(POLL_OPTIONS);
+  const [isSpinning, setIsSpinning] = useState(false);
+
+  const randomizeResults = () => {
+    setIsSpinning(true);
+    const total = 100;
+    const newOptions = [...POLL_OPTIONS];
+
+    // Generate random percentages that sum to 100
+    let remaining = total;
+    newOptions.forEach((opt, i) => {
+      if (i === newOptions.length - 1) {
+        opt.pct = remaining;
+      } else {
+        const max = Math.min(remaining - (newOptions.length - i - 1), 70);
+        const min = Math.max(5, remaining - (newOptions.length - i) * 70);
+        opt.pct = Math.floor(Math.random() * (max - min + 1)) + min;
+        remaining -= opt.pct;
+      }
+    });
+
+    setPollOptions(newOptions);
+    setTimeout(() => setIsSpinning(false), 500);
+  };
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6">
       <p className="mb-1 font-mono text-[10px] uppercase tracking-widest text-white/25">
         Live Demo
       </p>
@@ -303,7 +343,7 @@ function PollDemo() {
       </p>
 
       <div className="flex-1 space-y-3">
-        {POLL_OPTIONS.map((opt, i) => (
+        {pollOptions.map((opt, i) => (
           <div key={opt.label}>
             <div className="mb-1 flex justify-between text-xs">
               <span className="text-white/60">{opt.label}</span>
@@ -321,6 +361,13 @@ function PollDemo() {
           </div>
         ))}
       </div>
+
+      <button
+        onClick={randomizeResults}
+        className="border-village-live/30 bg-village-live/10 text-village-light hover:bg-village-live/20 absolute bottom-4 right-4 flex h-8 w-8 items-center justify-center rounded-lg border transition-all"
+      >
+        <RotateCcw className={`h-4 w-4 ${isSpinning ? 'animate-spin-reverse' : ''}`} />
+      </button>
     </div>
   );
 }
@@ -351,37 +398,37 @@ export default function LivePage() {
               </span>
             </span>
           </div>
-          <GetVillageButton />
+          {/* <GetVillageButton /> */}
         </div>
       </header>
 
       {/* Hero */}
-      <div className="bg-[#0a0a0a] px-6 py-28 text-center">
-        <div className="mx-auto flex max-w-3xl flex-col items-center">
-          <motion.div
+      <div className="bg-[#0a0a0a] px-6 pb-28 pt-12 md:pt-24 md:text-center">
+        <div className="mx-auto flex max-w-3xl flex-col gap-6 md:items-center">
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="border-village-live/25 bg-village-live/10 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl border shadow-[0_0_40px_rgba(161,22,109,0.25)]"
+            className="border-village-live/25 bg-village-live/10 inline-flex h-14 w-14 items-center justify-center rounded-xl border shadow-[0_0_40px_rgba(161,22,109,0.25)]"
           >
             <Radio className="text-village-live h-8 w-8" />
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.08 }}
-            className="border-village-live/30 bg-village-live/10 text-village-live/80 mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium"
+            className="border-village-live/30 bg-village-live/10 text-village-live/80 inline-flex w-max items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium"
           >
             <span className="bg-village-live h-1.5 w-1.5 animate-pulse rounded-full" />
-            Real-time event experience
+            Coming Soon
           </motion.div>
 
-          <motion.h1
+          {/* <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.14 }}
-            className="mb-6 flex items-center justify-center gap-3 text-6xl leading-none tracking-tight sm:text-7xl"
+            className="flex items-center justify-center gap-3 text-3xl leading-none tracking-tight sm:text-5xl"
           >
             <span className="font-logo font-bold text-white">Village</span>
             <span
@@ -390,34 +437,32 @@ export default function LivePage() {
             >
               Live
             </span>
-          </motion.h1>
+          </motion.h1> */}
 
-          <motion.p
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="mx-auto mb-3 max-w-lg text-xl leading-relaxed text-white/70"
+            className="max-w-2xl text-5xl leading-tight text-white/70 md:mx-auto"
           >
-            Village handles the sign-up.
-            <br />
-            Village Live runs the day.
-          </motion.p>
+            Real-time event experience
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.25 }}
-            className="mx-auto mb-10 max-w-md text-sm leading-relaxed text-white/50"
+            className="mb-10 max-w-xl text-2xl leading-normal text-white/50 md:mx-auto"
           >
-            Turn any Village event into a real-time interactive experience — reactions, polls,
-            Q&amp;A, live timelines, and instant broadcasts to every attendee screen.
+            Reactions, polls, Q&amp;A, live timelines, instant broadcasts and more — live to every
+            attendee&apos;s screen.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="flex items-center gap-4 md:flex-row md:justify-center"
           >
             <GetVillageButton />
             <a
@@ -431,20 +476,20 @@ export default function LivePage() {
       </div>
 
       {/* All Event Types */}
-      <div id="features" className="bg-[#0a0a0a] px-6 py-20">
+      <div id="features" className="bg-[#0a0a0a] px-6 py-20 pt-36">
         <div className="mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.3 }}
-            className="mb-10 text-center"
+            className="mb-10 md:text-center"
           >
             <p className="text-village-live mb-3 font-mono text-xs uppercase tracking-widest">
               All event types
             </p>
             <h2 className="text-3xl font-bold text-white">Works with every event</h2>
-            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/50">
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-white/50 md:mx-auto">
               These features are available regardless of your event format — from casual meetups to
               large conferences.
             </p>
@@ -466,18 +511,18 @@ export default function LivePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.3 }}
-            className="mb-10 text-center"
+            className="mb-10 md:text-center"
           >
             <p className="text-village-live mb-3 font-mono text-xs uppercase tracking-widest">
               Interactive
             </p>
             <h2 className="text-3xl font-bold text-white">Try it yourself</h2>
-            <p className="mx-auto mt-3 max-w-md text-sm text-white/50">
+            <p className="mt-3 max-w-md text-sm text-white/50 md:mx-auto">
               These demos show what attendees and organizers experience in real time.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -512,13 +557,13 @@ export default function LivePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.3 }}
-            className="mb-10 text-center"
+            className="mb-10 md:text-center"
           >
             <p className="text-village-live mb-3 font-mono text-xs uppercase tracking-widest">
               Standard events
             </p>
             <h2 className="text-3xl font-bold text-white">Built for organized events</h2>
-            <p className="mx-auto mt-3 max-w-md text-sm text-white/40">
+            <p className="mt-3 max-w-md text-sm text-white/40 md:mx-auto">
               Standard events unlock a deeper set of tools for running structured programs with
               agendas, speakers, and audience participation.
             </p>
@@ -544,7 +589,7 @@ export default function LivePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.3 }}
-            className="mb-10 text-center"
+            className="mb-10 md:text-center"
           >
             <p className="text-village-live mb-3 font-mono text-xs uppercase tracking-widest">
               Interactive
@@ -552,7 +597,7 @@ export default function LivePage() {
             <h2 className="text-3xl font-bold text-white">Keep everyone in sync</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -587,7 +632,7 @@ export default function LivePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.3 }}
-            className="mb-14 text-center"
+            className="mb-14 md:text-center"
           >
             <p className="text-village-live mb-3 font-mono text-xs uppercase tracking-widest">
               Setup
@@ -603,7 +648,7 @@ export default function LivePage() {
               {
                 step: '01',
                 title: 'Get Village',
-                desc: 'Sign up for any paid Village plan. Your community, ad free, — no participant accounts required.',
+                desc: 'Sign up for any paid Village plan. Clean, simple, ad free — no participant accounts required.',
               },
               {
                 step: '02',
@@ -622,9 +667,9 @@ export default function LivePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.3, delay: i * 0.1 }}
-                className="relative flex flex-col gap-4 text-center"
+                className="relative flex flex-col gap-4 md:text-center"
               >
-                <div className="border-village-live/30 relative mx-auto flex h-12 w-12 items-center justify-center rounded-full border bg-[#0a0a0a]">
+                <div className="border-village-live/30 relative flex h-12 w-12 items-center justify-center rounded-full border bg-[#0a0a0a] md:mx-auto">
                   <span
                     className="text-village-live font-mono text-sm font-bold"
                     style={{ fontFamily: 'var(--font-mono-brand), monospace' }}
@@ -677,7 +722,7 @@ export default function LivePage() {
 
       {/* Footer */}
       <footer className="border-t border-white/5 bg-[#0a0a0a] p-12 py-8 text-white/30">
-        <div className="mx-auto flex max-w-6xl justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="text-sm">
             a{' '}
             <a
@@ -694,7 +739,7 @@ export default function LivePage() {
               href="https://www.roadshowcreative.dev/"
               className="text-[#F5A524] transition-colors hover:underline"
             >
-              Roadshow Creative LLC
+              Roadshow Creative
             </a>
             . All rights reserved.
           </p>
@@ -709,6 +754,19 @@ export default function LivePage() {
         @keyframes slideUp {
           from { opacity: 1; transform: translateY(0); }
           to { opacity: 0; transform: translateY(-100%); }
+        }
+        @keyframes spin-reverse {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-spin-reverse {
+          animation: spin-reverse 0.6s linear;
+        }
+        .slide-out {
+          animation: slideUp 0.3s ease-out forwards;
+        }
+        .slide-in {
+          animation: slideDown 0.3s ease-out forwards;
         }
       `}</style>
     </div>

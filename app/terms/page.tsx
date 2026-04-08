@@ -45,7 +45,7 @@ export default function TermsPage() {
               <h2 className="mb-3 text-xl font-semibold text-stone-800">2. Accounts</h2>
               <p>
                 You are responsible for maintaining the security of your account and password.
-                Roadshow Creative LLC cannot and will not be liable for any loss or damage from your
+                Roadshow Creative cannot and will not be liable for any loss or damage from your
                 failure to comply with this security obligation. You must notify us immediately if
                 you suspect unauthorized use of your account.
               </p>
@@ -159,11 +159,11 @@ export default function TermsPage() {
                 8. Limitation of Liability
               </h2>
               <p>
-                To the fullest extent permitted by law, Roadshow Creative LLC shall not be liable
-                for any indirect, incidental, special, consequential, or punitive damages, or any
-                loss of profits or data, arising out of or in connection with your use of Village.
-                Our total liability to you for any claims arising from use of Village shall not
-                exceed the amount you paid us in the 12 months preceding the claim.
+                To the fullest extent permitted by law, Roadshow Creative shall not be liable for
+                any indirect, incidental, special, consequential, or punitive damages, or any loss
+                of profits or data, arising out of or in connection with your use of Village. Our
+                total liability to you for any claims arising from use of Village shall not exceed
+                the amount you paid us in the 12 months preceding the claim.
               </p>
             </section>
 
@@ -198,7 +198,7 @@ export default function TermsPage() {
                 .
               </p>
               <address className="mt-4 text-sm not-italic leading-relaxed text-stone-500">
-                Roadshow Creative LLC
+                Roadshow Creative
                 <br />
                 519 N Nevada St., Apt D<br />
                 Oceanside, CA 92054

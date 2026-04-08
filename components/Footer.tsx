@@ -96,7 +96,7 @@ export function Footer() {
               href="https://www.roadshowcreative.dev/"
               className="text-primary-600 transition-colors hover:underline"
             >
-              Roadshow Creative LLC
+              Roadshow Creative
             </a>
             . All rights reserved.
           </p>
