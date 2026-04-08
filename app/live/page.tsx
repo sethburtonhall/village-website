@@ -518,7 +518,7 @@ export default function LivePage() {
             </p>
             <h2 className="text-3xl font-bold text-white">Try it yourself</h2>
             <p className="mt-3 max-w-md text-sm text-white/50 md:mx-auto">
-              These demos show what attendees and organizers experience in real time.
+              Crowd reactions and organizer messages in real time.
             </p>
           </motion.div>
 
@@ -564,7 +564,7 @@ export default function LivePage() {
             </p>
             <h2 className="text-3xl font-bold text-white">Built for organized events</h2>
             <p className="mt-3 max-w-md text-sm text-white/40 md:mx-auto">
-              Standard events unlock a deeper set of tools for running structured programs with
+              Standard events include a deeper set of tools for running structured programs with
               agendas, speakers, and audience participation.
             </p>
           </motion.div>
@@ -595,6 +595,9 @@ export default function LivePage() {
               Interactive
             </p>
             <h2 className="text-3xl font-bold text-white">Keep everyone in sync</h2>
+            <p className="mt-3 max-w-md text-sm text-white/40 md:mx-auto">
+              Timeline and polls keep attendees engaged and on the same page.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6">
