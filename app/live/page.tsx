@@ -576,7 +576,7 @@ export default function LivePage() {
           </div>
 
           <p className="mt-3 text-center text-xs text-white/30">
-            Village currently has four event types. More event specific features are coming soon!
+            Village currently has four event types. More specific event type features coming soon!
           </p>
         </div>
       </div>
@@ -709,8 +709,7 @@ export default function LivePage() {
             </div>
             <p className="text-sm text-white/50">Add-on for any paid Village plan.</p>
             <p className="text-xs text-white/50">
-              Village is currently in private beta. Join the waitlist and we will let you know when
-              Village Live is ready.
+              Join Village private beta and we will let you know when Village Live is ready.
             </p>
 
             <a
