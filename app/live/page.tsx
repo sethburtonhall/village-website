@@ -454,8 +454,8 @@ export default function LivePage() {
             transition={{ duration: 0.4, delay: 0.25 }}
             className="mb-10 max-w-xl text-2xl leading-normal text-white/50 md:mx-auto"
           >
-            Reactions, polls, Q&amp;A, live timelines, instant broadcasts and more — live to every
-            attendee&apos;s screen.
+            Turn any Village event into a live, interactive experience — with reactions, polls,
+            Q&amp;A, live timelines, instant broadcasts and more.
           </motion.p>
 
           <motion.div
