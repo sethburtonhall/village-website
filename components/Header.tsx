@@ -29,18 +29,18 @@ export function Header({ className }: { className?: string }) {
         {/* Nav */}
         <nav className="flex items-center gap-5 text-base font-semibold">
           <div className="flex items-center gap-2">
-            <RadioTower className="size-4 text-village-live" />
-            <Link href="/live" className="text-village-live transition-opacity hover:opacity-70">
-              Live
-            </Link>
-          </div>
-          <div className="flex items-center gap-2">
             <Building2 className="size-4 text-village-venues" />
             <Link
               href="/venues"
               className="text-village-venues transition-opacity hover:opacity-70"
             >
               Venues
+            </Link>
+          </div>
+          <div className="flex items-center gap-2">
+            <RadioTower className="size-4 text-village-live" />
+            <Link href="/live" className="text-village-live transition-opacity hover:opacity-70">
+              Live
             </Link>
           </div>
         </nav>
