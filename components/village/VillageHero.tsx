@@ -7,7 +7,7 @@ import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { ScrollLink } from '@/components/ScrollLink';
-import { ChevronRight, Sparkles } from 'lucide-react';
+import { ChevronRight, MoveDown } from 'lucide-react';
 
 export function VillageHero() {
   return (
@@ -60,8 +60,9 @@ export function VillageHero() {
           asChild
         >
           <a href="#waitlist" className="flex items-center">
-            <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
+            {/* <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" /> */}
             <span>Join the Beta</span>
+            <MoveDown className="h-4 w-4" />
           </a>
         </Button>
       </div>

@@ -21,7 +21,7 @@ export function VenueCard({ venue }: { venue: Venue }) {
       rel="noopener noreferrer"
       className="group block"
     >
-      <div className="overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg dark:bg-stone-900">
+      <div className="overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
         {/* Photo */}
         <div className="aspect-video overflow-hidden bg-village-venues/10">
           {venue.photos?.[0] ? (

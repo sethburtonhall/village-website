@@ -24,7 +24,7 @@ const STEPS = [
 
 export function VenueHowItWorks() {
   return (
-    <section className="bg-white dark:bg-stone-950">
+    <section className="bg-white">
       <div className="container mx-auto max-w-6xl space-y-12 text-center">
         <div className="stack">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">

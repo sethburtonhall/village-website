@@ -1,4 +1,5 @@
 import * as motion from 'motion/react-client';
+import { MoveDown, MoveRight } from 'lucide-react';
 
 function GetVillageButton() {
   return (
@@ -6,14 +7,15 @@ function GetVillageButton() {
       href="https://www.usevillage.app"
       className="inline-flex items-center gap-2 rounded-md bg-village-live px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-village-live/90"
     >
-      Get Village →
+      Get Village
+      <MoveRight className="h-4 w-4" />
     </a>
   );
 }
 
 export function LiveHero() {
   return (
-    <div className="bg-[#0a0a0a] px-6 pb-28 pt-12 md:pt-24 md:text-center">
+    <div className="bg-[#0a0a0a] px-6 pb-28 pt-12 md:pt-32 md:text-center">
       <div className="mx-auto flex max-w-3xl flex-col gap-6 md:items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,9 +55,10 @@ export function LiveHero() {
           <GetVillageButton />
           <a
             href="#features"
-            className="text-sm text-white/50 transition-colors hover:text-white/60"
+            className="flex items-center gap-1 text-sm text-white/50 transition-colors hover:text-white/60"
           >
-            See all features ↓
+            See all features
+            <MoveDown className="h-4 w-4" />
           </a>
         </motion.div>
       </div>

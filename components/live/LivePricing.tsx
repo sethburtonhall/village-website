@@ -1,4 +1,5 @@
 import * as motion from 'motion/react-client';
+import { MoveRight } from 'lucide-react';
 
 export function LivePricing() {
   return (
@@ -29,7 +30,8 @@ export function LivePricing() {
             href="https://www.usevillage.app/#waitlist"
             className="inline-flex items-center gap-2 rounded-xl bg-village-live px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-village-live/90"
           >
-            Join the Village Waitlist →
+            Join the Village Waitlist
+            <MoveRight className="h-4 w-4" />
           </a>
         </motion.div>
       </div>

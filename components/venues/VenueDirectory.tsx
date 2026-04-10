@@ -4,7 +4,7 @@ import { VenueEmptyState } from '@/components/venues/VenueEmptyState';
 
 export function VenueDirectory({ venues }: { venues: Venue[] }) {
   return (
-    <section className="bg-stone-100 dark:bg-stone-900" id="venue-directory">
+    <section className="bg-stone-100" id="venue-directory">
       <div className="container mx-auto max-w-6xl space-y-10">
         <div className="stack text-center">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">

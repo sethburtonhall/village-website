@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { DM_Serif_Display } from 'next/font/google';
+import { Lora } from 'next/font/google';
 
-const dmSerifDisplay = DM_Serif_Display({
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-venues-brand',
-  weight: ['400'],
+  variable: '--font-venues-lora',
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
 });
 
@@ -34,5 +34,5 @@ export const metadata: Metadata = {
 };
 
 export default function VenuesLayout({ children }: { children: React.ReactNode }) {
-  return <div className={dmSerifDisplay.variable}>{children}</div>;
+  return <div className={`${lora.variable}`}>{children}</div>;
 }

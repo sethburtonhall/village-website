@@ -1,22 +1,21 @@
 import { MotionWrapper } from '@/components/MotionWrapper';
+import { MoveRight } from 'lucide-react';
 
 export function VenueCTA() {
   return (
-    <MotionWrapper
-      type="section"
-      className="bg-village-venues text-white"
-    >
+    <MotionWrapper type="section" className="bg-village-venues text-white">
       <div className="container mx-auto max-w-3xl space-y-6 text-center">
-        <h2 className="text-white">Ready to list your venue?</h2>
+        <h2 className="text-white">Ready to serve your community better?</h2>
         <p className="mx-auto max-w-xl text-white/80">
-          Join Village Venues and connect your space with thousands of event organizers looking
-          for the perfect place.
+          Join Village Venues and turn your underutilized space into a hub for community connection
+          and growth.
         </p>
         <a
           href="https://venues.usevillage.app/sign-up"
-          className="inline-flex items-center rounded-md bg-white px-7 py-3 text-sm font-semibold text-village-venues transition-colors hover:bg-white/90"
+          className="inline-flex items-center gap-2 rounded-md bg-white px-7 py-3 text-sm font-semibold text-village-venues transition-colors hover:bg-white/90"
         >
-          List Your Venue →
+          List Your Venue
+          <MoveRight className="h-4 w-4" />
         </a>
       </div>
     </MotionWrapper>

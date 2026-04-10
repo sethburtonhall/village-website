@@ -6,32 +6,32 @@ import { MotionWrapper } from '@/components/MotionWrapper';
 const PERKS = [
   {
     icon: MapPinned,
-    title: 'Get Discovered',
-    desc: 'Put your space in front of event organizers actively searching for the perfect venue.',
+    title: 'Serve Your Community',
+    desc: 'Connect with local organizers who need your space for meaningful community events and programs.',
   },
   {
     icon: CalendarCheck,
-    title: 'Streamline Bookings',
-    desc: 'Manage inquiries, confirm details, and track your bookings in one simple dashboard.',
+    title: 'Simplify Administration',
+    desc: 'Manage bookings, track availability, and handle inquiries with tools designed for busy administrators.',
   },
   {
     icon: TrendingUp,
-    title: 'Fill Your Calendar',
-    desc: 'Turn empty time slots into booked events and grow your venue revenue.',
+    title: 'Maximize Your Impact',
+    desc: "Transform underutilized rooms into vibrant community hubs while supporting your organization's mission.",
   },
 ];
 
 export function VenuePerks() {
   return (
-    <section className="bg-stone-100 dark:bg-stone-900">
+    <section className="bg-stone-100">
       <div className="container mx-auto max-w-6xl space-y-12 text-center">
         <div className="stack">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
-            For Venue Owners
+            For Community Spaces
           </p>
           <h2>Why list on Village Venues?</h2>
           <p className="block-p text-muted-foreground">
-            Everything you need to grow your event space business.
+            Tools designed to help you serve your community better.
           </p>
         </div>
 

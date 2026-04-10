@@ -96,6 +96,7 @@ export default {
         'color-3': 'hsl(var(--color-3))',
         'color-4': 'hsl(var(--color-4))',
         'color-5': 'hsl(var(--color-5))',
+        'village-brand': 'hsl(var(--village-brand))',
         'village-live': 'hsl(var(--village-live))',
         'village-venues': 'hsl(var(--village-venues))',
       },

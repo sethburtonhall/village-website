@@ -76,7 +76,7 @@ export function BroadcastDemo() {
         disabled={showing}
         className="mt-auto w-full rounded-xl border border-village-live/30 bg-village-live/10 py-2.5 text-sm font-semibold text-white transition-all hover:bg-village-live/20 disabled:cursor-not-allowed disabled:opacity-40"
       >
-        {showing ? 'Sent to all screens ✓' : 'Send Broadcast →'}
+        {showing ? 'Sent to all screens ✓' : 'Send Broadcast'}
       </button>
     </div>
   );

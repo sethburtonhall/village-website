@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { RadioTower } from 'lucide-react';
+import { BackToVillage } from '../BackToVillage';
 
 export function LiveHeader() {
   return (
@@ -9,7 +10,7 @@ export function LiveHeader() {
 
       {/* Note: using sticky here so it anchors below the brand bar */}
       <header className="sticky top-0 z-50 border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 pt-[18px]">
           <div className="flex items-center gap-2.5">
             <div className="flex items-center justify-center">
               <RadioTower className="size-7 text-village-live" />
@@ -18,7 +19,7 @@ export function LiveHeader() {
               <span className="flex items-center gap-1.5 text-3xl leading-none">
                 <span className="font-logo font-extrabold text-white">Village</span>
                 <span
-                  className="font-bold uppercase tracking-widest text-village-live/80"
+                  className="font-bold uppercase text-village-live/80"
                   style={{ fontFamily: 'var(--font-mono-brand), monospace' }}
                 >
                   Live
@@ -27,13 +28,7 @@ export function LiveHeader() {
             </Link>
           </div>
 
-          {/* Back to Village */}
-          <Link
-            href="/"
-            className="text-sm text-muted-foreground transition-colors hover:text-background"
-          >
-            ← Village
-          </Link>
+          <BackToVillage />
         </div>
       </header>
     </>
