@@ -19,16 +19,16 @@ export interface VenueApiParams {
 
 export async function fetchVenues(params: VenueApiParams = {}): Promise<VenueApiResponse> {
   const { page = 1, limit = 50, state, city } = params;
-  
+
   // Build query string
   const queryParams = new URLSearchParams({
     page: page.toString(),
     limit: limit.toString(),
   });
-  
+
   if (state) queryParams.append('state', state);
   if (city) queryParams.append('city', city);
-  
+
   try {
     const res = await fetch(`https://venues.usevillage.app/api/venues?${queryParams}`, {
       next: { revalidate: 60 }, // Cache for 60 seconds
@@ -36,13 +36,13 @@ export async function fetchVenues(params: VenueApiParams = {}): Promise<VenueApi
         'User-Agent': 'Village Venues Website',
       },
     });
-    
+
     if (!res.ok) {
       throw new Error(`API request failed: ${res.status} ${res.statusText}`);
     }
-    
+
     const json = await res.json();
-    
+
     // Ensure the response has the expected structure
     return {
       data: json.data || [],
@@ -75,23 +75,23 @@ export async function fetchVenuesWithFallback(params: VenueApiParams = {}): Prom
     return response.data;
   } catch (error) {
     console.warn('API failed, falling back to seed data:', error);
-    
+
     // Fallback to seed data for development
     const { venueSeedData, getVenuesByLocation } = await import('./venue-seed');
     let venues = venueSeedData;
-    
+
     // Apply location filtering if specified
     if (params.state || params.city) {
       venues = getVenuesByLocation(params.state, params.city);
     }
-    
+
     // Apply pagination if specified
     if (params.page && params.limit) {
       const start = (params.page - 1) * params.limit;
       const end = start + params.limit;
       venues = venues.slice(start, end);
     }
-    
+
     return venues;
   }
 }
@@ -101,11 +101,19 @@ export async function getAvailableStates(): Promise<string[]> {
   try {
     // Fetch a large batch to get all states
     const response = await fetchVenues({ limit: 500 });
-    const states = Array.from(new Set(response.data.map(venue => venue.state)));
+    const states = Array.from(new Set(response.data.map((venue) => venue.state)));
+
+    // If API returns very few states, fall back to seed data for better testing
+    if (states.length < 5) {
+      console.warn('API returned limited states, falling back to seed data');
+      const { getStates } = await import('./venue-seed');
+      return getStates();
+    }
+
     return states.sort();
   } catch (error) {
     console.warn('Failed to fetch states from API:', error);
-    
+
     // Fallback to seed data
     const { getStates } = await import('./venue-seed');
     return getStates();
@@ -117,11 +125,19 @@ export async function getAvailableCities(state: string): Promise<string[]> {
   try {
     // Fetch venues for this state
     const response = await fetchVenues({ limit: 500, state });
-    const cities = Array.from(new Set(response.data.map(venue => venue.city)));
+    const cities = Array.from(new Set(response.data.map((venue) => venue.city)));
+
+    // If API returns very few cities, fall back to seed data for better testing
+    if (cities.length < 2) {
+      console.warn('API returned limited cities, falling back to seed data');
+      const { getCitiesByState } = await import('./venue-seed');
+      return getCitiesByState(state);
+    }
+
     return cities.sort();
   } catch (error) {
     console.warn('Failed to fetch cities from API:', error);
-    
+
     // Fallback to seed data
     const { getCitiesByState } = await import('./venue-seed');
     return getCitiesByState(state);
@@ -130,7 +146,7 @@ export async function getAvailableCities(state: string): Promise<string[]> {
 
 // Client-side filtering utility (for when we have all data locally)
 export function filterVenuesLocally(venues: Venue[], state?: string, city?: string): Venue[] {
-  return venues.filter(venue => {
+  return venues.filter((venue) => {
     if (state && venue.state !== state) return false;
     if (city && venue.city !== city) return false;
     return true;
