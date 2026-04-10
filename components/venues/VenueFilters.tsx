@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { MapPin, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { NativeSelect, NativeSelectOption } from '@/components/ui/native-select';
 import { getAvailableStates, getAvailableCities } from '@/lib/venue-api';
 
 interface VenueFiltersProps {
@@ -116,19 +117,18 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
               >
                 State
               </label>
-              <select
+              <NativeSelect
                 id="state-filter"
                 value={selectedState}
                 onChange={(e) => handleStateChange(e.target.value)}
-                className="w-full rounded-md border border-stone-300 bg-white px-3 py-2 text-foreground focus:border-transparent focus:outline-none focus:ring-2 focus:ring-village-venues"
               >
-                <option value="">All States</option>
+                <NativeSelectOption value="">All States</NativeSelectOption>
                 {states.map((state) => (
-                  <option key={state} value={state}>
+                  <NativeSelectOption key={state} value={state}>
                     {state}
-                  </option>
+                  </NativeSelectOption>
                 ))}
-              </select>
+              </NativeSelect>
             </div>
 
             {/* City Filter */}
@@ -139,20 +139,19 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
               >
                 City
               </label>
-              <select
+              <NativeSelect
                 id="city-filter"
                 value={selectedCity}
                 onChange={(e) => handleCityChange(e.target.value)}
                 disabled={!selectedState}
-                className="w-full rounded-md border border-stone-300 bg-white px-3 py-2 text-foreground focus:border-transparent focus:outline-none focus:ring-2 focus:ring-village-venues disabled:bg-stone-50 disabled:text-stone-500"
               >
-                <option value="">All Cities</option>
+                <NativeSelectOption value="">All Cities</NativeSelectOption>
                 {availableCities.map((city) => (
-                  <option key={city} value={city}>
+                  <NativeSelectOption key={city} value={city}>
                     {city}
-                  </option>
+                  </NativeSelectOption>
                 ))}
-              </select>
+              </NativeSelect>
             </div>
           </div>
 
