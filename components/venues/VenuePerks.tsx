@@ -1,11 +1,11 @@
-import { MapPinned, CalendarCheck, TrendingUp } from 'lucide-react';
+import { Building2, CalendarCheck, TrendingUp } from 'lucide-react';
 import { CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { MagicCard } from '@/components/ui/magic-card';
 import { MotionWrapper } from '@/components/MotionWrapper';
 
 const PERKS = [
   {
-    icon: MapPinned,
+    icon: Building2,
     title: 'Serve Your Community',
     desc: 'Connect with local organizers who need your space for meaningful community events and programs.',
   },

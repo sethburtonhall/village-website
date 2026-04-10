@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPinned } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 import { BackToVillage } from '../BackToVillage';
 
 export function VenuesHeader() {
@@ -13,7 +13,7 @@ export function VenuesHeader() {
           {/* Brand lockup */}
           <div className="flex items-center gap-1.5">
             <div className="flex items-center justify-center">
-              <MapPinned className="size-8 text-village-venues" />
+              <Building2 className="size-8 text-village-venues" />
             </div>
             <Link href="/venues">
               <span className="flex items-center gap-1 text-3xl leading-none">

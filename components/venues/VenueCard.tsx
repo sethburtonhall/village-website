@@ -1,5 +1,5 @@
 import { MapPin, Users } from 'lucide-react';
-import { MapPinned } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 export interface Venue {
   id: string;
@@ -33,7 +33,7 @@ export function VenueCard({ venue }: { venue: Venue }) {
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center">
-              <MapPinned className="size-10 text-village-venues/40" />
+              <Building2 className="size-10 text-village-venues/40" />
             </div>
           )}
         </div>
