@@ -28,7 +28,7 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
         setError(null);
       } catch (error) {
         console.error('Failed to load states:', error);
-        setError(error instanceof Error ? error.message : 'Failed to load states');
+        setError('Unable to load states. Please try again later.');
       } finally {
         setIsLoading(false);
       }
@@ -57,7 +57,6 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
         }
       } else {
         setAvailableCities([]);
-        setSelectedCity('');
       }
     };
 

@@ -69,6 +69,28 @@ export async function fetchVenues(params: VenueApiParams = {}): Promise<VenueApi
 }
 
 export async function fetchVenuesWithFallback(params: VenueApiParams = {}): Promise<Venue[]> {
+  // Check if seed data is explicitly enabled via environment variable
+  const useSeedData = process.env.USE_SEED_DATA === 'true';
+
+  if (useSeedData) {
+    const { venueSeedData, getVenuesByLocation } = await import('./venue-seed');
+    let venues = venueSeedData;
+
+    // Apply location filtering if specified
+    if (params.state || params.city) {
+      venues = getVenuesByLocation(params.state, params.city);
+    }
+
+    // Apply pagination if specified
+    if (params.page && params.limit) {
+      const start = (params.page - 1) * params.limit;
+      const end = start + params.limit;
+      venues = venues.slice(start, end);
+    }
+
+    return venues;
+  }
+
   try {
     const response = await fetchVenues(params);
     return response.data;
@@ -80,6 +102,14 @@ export async function fetchVenuesWithFallback(params: VenueApiParams = {}): Prom
 
 // Utility function to get all unique states from API
 export async function getAvailableStates(): Promise<string[]> {
+  const useSeedData = process.env.USE_SEED_DATA === 'true';
+
+  if (useSeedData) {
+    const { venueSeedData } = await import('./venue-seed');
+    const states = Array.from(new Set(venueSeedData.map((venue) => venue.state)));
+    return states.sort();
+  }
+
   try {
     // Fetch a large batch to get all states
     const response = await fetchVenues({ limit: 500 });
@@ -93,6 +123,15 @@ export async function getAvailableStates(): Promise<string[]> {
 
 // Utility function to get cities for a specific state
 export async function getAvailableCities(state: string): Promise<string[]> {
+  const useSeedData = process.env.USE_SEED_DATA === 'true';
+
+  if (useSeedData) {
+    const { getVenuesByLocation } = await import('./venue-seed');
+    const venues = getVenuesByLocation(state);
+    const cities = Array.from(new Set(venues.map((venue) => venue.city)));
+    return cities.sort();
+  }
+
   try {
     // Fetch venues for this state
     const response = await fetchVenues({ limit: 500, state });

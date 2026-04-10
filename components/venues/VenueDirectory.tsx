@@ -22,9 +22,6 @@ export function VenueDirectory({ venues, error: initialError }: VenueDirectoryPr
   const [error, setError] = useState<string | null>(initialError || null);
   const [isRetrying, setIsRetrying] = useState(false);
 
-  // Debug logging
-  console.log('VenueDirectory props:', { venues: venues.length, error: initialError });
-
   // Try to get user's location on mount
   useEffect(() => {
     const initializeLocation = async () => {

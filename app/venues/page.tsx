@@ -10,18 +10,14 @@ import type { Venue } from '@/components/venues/VenueCard';
 
 async function getVenues(): Promise<{ venues: Venue[]; error: string | null }> {
   try {
-    // In production, this will fetch from the API
     const venues = await fetchVenuesWithFallback();
-    console.log('API call successful, venues:', venues.length);
     return { venues, error: null };
   } catch (error) {
     console.error('Failed to fetch venues:', error);
-    const errorMessage =
-      error instanceof Error ? error.message : 'Failed to load venues. Please try again later.';
-    console.log('Returning error:', errorMessage);
     return {
       venues: [],
-      error: errorMessage,
+      error:
+        error instanceof Error ? error.message : 'Failed to load venues. Please try again later.',
     };
   }
 }
