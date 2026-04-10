@@ -13,15 +13,15 @@ export function VenueHero() {
       <div className="relative mx-auto max-w-3xl space-y-8 px-4">
         {/* Headline */}
         <h1 className="text-4xl leading-tight md:text-5xl lg:text-6xl">
-          Your community space,
+          Your space,
           <br />
-          fully booked.
+          serving your community.
         </h1>
 
         {/* Sub */}
         <p className="block-p text-muted-foreground">
-          Turn your underutilized rooms into thriving community gatherings. List your venue and
-          connect with local organizers who need your space.
+          Transform your venue into a hub for local events. Connect with organizers, fill your
+          calendar, and become a cornerstone of community life.
         </p>
 
         {/* CTAs */}

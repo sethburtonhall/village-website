@@ -49,7 +49,7 @@ export function VenueCard({ venue }: { venue: Venue }) {
           </div>
           <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
             <Users className="size-3.5 shrink-0" />
-            <span>Up to {venue.capacity.toLocaleString()} guests</span>
+            <span>Hosts up to {venue.capacity.toLocaleString()} guests</span>
           </div>
         </div>
       </div>

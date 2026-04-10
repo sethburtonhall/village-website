@@ -5,10 +5,10 @@ export function VenueCTA() {
   return (
     <MotionWrapper type="section" className="bg-village-venues text-white">
       <div className="container mx-auto max-w-3xl space-y-6 text-center">
-        <h2 className="text-white">Ready to serve your community better?</h2>
+        <h2 className="text-white">Become a community hub today.</h2>
         <p className="mx-auto max-w-xl text-white/80">
-          Join Village Venues and turn your underutilized space into a hub for community connection
-          and growth.
+          List your venue on Village Venues and connect with local organizers seeking spaces like
+          yours. Fill your calendar while strengthening your community.
         </p>
         <a
           href="https://venues.usevillage.app/sign-up"

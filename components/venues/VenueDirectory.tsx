@@ -10,9 +10,10 @@ export function VenueDirectory({ venues }: { venues: Venue[] }) {
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
             Venue Directory
           </p>
-          <h2>Find a venue</h2>
+          <h2>Discover your perfect venue</h2>
           <p className="block-p text-muted-foreground">
-            Browse spaces available for your next event.
+            Browse unique community spaces vetted for quality and character. Find the ideal setting
+            for your next gathering.
           </p>
         </div>
 
