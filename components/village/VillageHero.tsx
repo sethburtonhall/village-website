@@ -7,11 +7,9 @@ import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { ScrollLink } from '@/components/ScrollLink';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Sparkles } from 'lucide-react';
 
-import { Sparkles } from 'lucide-react';
-
-export function Hero() {
+export function VillageHero() {
   return (
     <MotionWrapper type="section" className="space-y-12 pb-16">
       <div className="space-y-4 p-8 pb-0 pt-4 md:pt-12 lg:px-16 lg:pt-12">
@@ -20,8 +18,6 @@ export function Hero() {
             🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
             <span className="gradiant-text">Private Beta</span>
             <ChevronRight className="mx-2 h-4 w-4 shrink-0 text-fuchsia-400" />
-            {/* <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-          <span className="gradiant-text">2026</span> */}
           </AnimatedGradientText>
         </ScrollLink>
         <div className="mx-auto max-w-3xl text-center">

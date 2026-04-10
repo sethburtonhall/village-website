@@ -97,6 +97,7 @@ export default {
         'color-4': 'hsl(var(--color-4))',
         'color-5': 'hsl(var(--color-5))',
         'village-live': 'hsl(var(--village-live))',
+        'village-venues': 'hsl(var(--village-venues))',
       },
       borderRadius: {
         lg: 'var(--radius)',

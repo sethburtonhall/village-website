@@ -18,7 +18,7 @@ import { TriangleAlert, CheckIcon, ClipboardList } from 'lucide-react';
 
 type FormData = z.infer<typeof waitlistSchema>;
 
-export function WaitlistForm() {
+export function VillageWaitlistForm() {
   const [isPending, setIsPending] = useState(false);
   const [formRenderedAt] = useState(() => Date.now());
   const [state, formAction] = useActionState(async (prevState: unknown, formData: FormData) => {
@@ -74,7 +74,10 @@ export function WaitlistForm() {
     >
       <div className="stack mb-8">
         <h2 id="waitlist-title">Join the Waitlist!</h2>
-        <p className="block-p">It takes a village. Be first in line for clean, ad-free sign-ups your community will actually use.</p>
+        <p className="block-p">
+          It takes a village. Be first in line for clean, ad-free sign-ups your community will
+          actually use.
+        </p>
       </div>
 
       <MotionWrapper className="space-y-4">
@@ -87,7 +90,7 @@ export function WaitlistForm() {
           noValidate
         >
           <input type="hidden" name="mailingLists" value={mailingListIds} />
-          {/* Honeypot fields - hidden from users but visible to bots */}
+          {/* Honeypot fields */}
           <input
             {...register('website')}
             type="text"
@@ -105,7 +108,6 @@ export function WaitlistForm() {
             }}
             aria-hidden="true"
           />
-          {/* Additional honeypot with common field name */}
           <input
             type="text"
             name="phone"

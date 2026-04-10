@@ -1,13 +1,10 @@
 import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { MagicCard } from '@/components/ui/magic-card';
-
 import { ArrowRight, ArrowDown } from 'lucide-react';
-
 import { steps } from '@/lib/data';
 
-export function HowItWorks({ id }: { id?: string }) {
+export function VillageHowItWorks({ id }: { id?: string }) {
   return (
     <section id={id} className="pt-8">
       <MotionWrapper className="pt-8">

@@ -1,10 +1,10 @@
-import { VillageLiveOGImage } from '@/components/VillageLiveOGImage';
+import { LiveOGImage } from '@/components/live/LiveOGImage';
 
-export default function VillageLiveOGPreviewPage() {
+export default function LiveOGPreviewPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-stone-700 p-8">
       <div style={{ transform: 'scale(0.7)', transformOrigin: 'center' }}>
-        <VillageLiveOGImage />
+        <LiveOGImage />
       </div>
     </div>
   );

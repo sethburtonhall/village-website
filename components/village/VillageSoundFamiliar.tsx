@@ -24,7 +24,7 @@ const painPoints = [
   },
 ];
 
-export function SoundFamiliar() {
+export function VillageSoundFamiliar() {
   return (
     <section className="bg-stone-50 py-16">
       <div className="container mx-auto max-w-6xl space-y-12 px-8 text-center">

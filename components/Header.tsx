@@ -1,19 +1,18 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-
-// import { Button } from '@/components/ui/button';
-// import { ArrowRight } from 'lucide-react';
 import { ClipboardList } from 'lucide-react';
 
 export function Header({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        'fixed top-0 z-50 w-full border-b border-stone-200 bg-white/80 backdrop-blur-sm',
+        'sticky top-0 z-50 w-full border-b border-stone-200 bg-white/80 backdrop-blur-sm',
         className
       )}
     >
+      {/* Green accent bar */}
+      <div className="h-1 bg-primary-600" />
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="group flex items-center gap-1">
           <ClipboardList
@@ -27,16 +26,15 @@ export function Header({ className }: { className?: string }) {
             <Link href="/">Village</Link>
           </h1>
         </div>
-        {/* CTAs */}
-        <div className="flex items-center justify-center gap-4">
-          {/* <a href="http://docs.usevillage.app">Docs</a> */}
-          {/* <Button variant="link" className="hover:no-underline">
-            <a href="http://app.usevillage.app/login">Login</a>
-          </Button>
-          <Button variant="success">
-            <a href="#pricing">Sign Up</a>
-          </Button> */}
-        </div>
+        {/* Nav */}
+        <nav className="flex items-center gap-5 text-base font-semibold">
+          <Link href="/live" className="text-village-live transition-opacity hover:opacity-70">
+            Live
+          </Link>
+          <Link href="/venues" className="text-village-venues transition-opacity hover:opacity-70">
+            Venues
+          </Link>
+        </nav>
       </div>
     </header>
   );

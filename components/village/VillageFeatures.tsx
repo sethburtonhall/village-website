@@ -3,10 +3,9 @@ import { MagicCard } from '@/components/ui/magic-card';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { SparklesText } from '@/components/ui/sparkles-text';
 import { AnimatedGradientTextAlt } from '@/components/ui/animated-gradient-text-alt';
-
 import { coreFeatures, premiumFeatures } from '@/lib/data';
 
-export function Features() {
+export function VillageFeatures() {
   return (
     <section className="relative">
       <div className="container mx-auto max-w-6xl space-y-8 text-center">
@@ -46,19 +45,6 @@ export function Features() {
             </AnimatedGradientTextAlt>
           </SparklesText>
         </MotionWrapper>
-        {/* <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {premiumFeatures.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div key={index}>
-                <div className="mb-2 flex items-center justify-center">
-                  <Icon className="size-6 text-primary-600" />
-                </div>
-                <p>{feature.feature}</p>
-              </div>
-            );
-          })}
-        </div> */}
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {premiumFeatures.map((feature, index) => {

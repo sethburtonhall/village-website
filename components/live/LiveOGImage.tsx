@@ -3,7 +3,7 @@
  * Used by /live/og-preview for visual inspection.
  * The actual generated image lives at app/live/opengraph-image.tsx.
  */
-export function VillageLiveOGImage() {
+export function LiveOGImage() {
   return (
     <div
       style={{
@@ -130,7 +130,6 @@ export function VillageLiveOGImage() {
           paddingTop: 20,
         }}
       >
-        {/* Label */}
         <p
           style={{
             fontSize: 15,
@@ -145,10 +144,8 @@ export function VillageLiveOGImage() {
           Add-on to any paid Village plan
         </p>
 
-        {/* Headline line 1 */}
         <div
           style={{
-            // fontFamily: 'var(--font-nunito), system-ui, sans-serif',
             fontWeight: 800,
             fontSize: 80,
             lineHeight: 1.08,
@@ -159,10 +156,8 @@ export function VillageLiveOGImage() {
           Village handles the sign-up.
         </div>
 
-        {/* Headline line 2 — magenta gradient */}
         <div
           style={{
-            // fontFamily: 'var(--font-nunito), system-ui, sans-serif',
             fontWeight: 800,
             fontSize: 82,
             lineHeight: 1.08,

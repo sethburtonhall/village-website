@@ -1,0 +1,33 @@
+import { MotionWrapper } from '@/components/MotionWrapper';
+import { VenueCard, type Venue } from '@/components/venues/VenueCard';
+import { VenueEmptyState } from '@/components/venues/VenueEmptyState';
+
+export function VenueDirectory({ venues }: { venues: Venue[] }) {
+  return (
+    <section className="bg-stone-100 dark:bg-stone-900" id="venue-directory">
+      <div className="container mx-auto max-w-6xl space-y-10">
+        <div className="stack text-center">
+          <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
+            Venue Directory
+          </p>
+          <h2>Find a venue</h2>
+          <p className="block-p text-muted-foreground">
+            Browse spaces available for your next event.
+          </p>
+        </div>
+
+        {venues.length === 0 ? (
+          <VenueEmptyState />
+        ) : (
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {venues.map((venue, index) => (
+              <MotionWrapper key={venue.id} index={index}>
+                <VenueCard venue={venue} />
+              </MotionWrapper>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

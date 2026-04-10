@@ -36,6 +36,22 @@ export function Footer() {
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/live"
+                  className="text-sm text-stone-500 transition-colors hover:text-village-live"
+                >
+                  Village Live
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/venues"
+                  className="text-sm text-stone-500 transition-colors hover:text-village-venues"
+                >
+                  Village Venues
+                </Link>
+              </li>
             </ul>
           </div>
 

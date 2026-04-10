@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { ToastAction } from '@/components/ui/toast';
 
-export const WelcomeToast = () => {
+export function VillageWelcomeToast() {
   const { toast } = useToast();
 
   const scrollToWaitlist = () => {
@@ -17,7 +17,6 @@ export const WelcomeToast = () => {
   useEffect(() => {
     if (sessionStorage.getItem('isSubscribed')) return;
 
-    // Add a small delay to ensure components are mounted
     const timer = setTimeout(() => {
       toast({
         title: 'Status: Private Beta',
@@ -36,4 +35,4 @@ export const WelcomeToast = () => {
   }, [toast]);
 
   return null;
-};
+}

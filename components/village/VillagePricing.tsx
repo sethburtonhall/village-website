@@ -1,16 +1,11 @@
 import { cn } from '@/lib/utils';
-
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-// import { Button } from '@/components/ui/button';
-
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ShineBorder } from '@/components/ui/shine-border';
-
 import { CircleCheck } from 'lucide-react';
-
 import { plans } from '@/lib/data';
 
-export function Pricing() {
+export function VillagePricing() {
   return (
     <section id="pricing" className="pb-28">
       <div className="mx-auto space-y-12 text-center">
@@ -57,7 +52,7 @@ export function Pricing() {
                           </CardTitle>
                           <CardTitle className="flex items-end gap-2 text-5xl">
                             ${plan.price}
-                            <span className="text-base">/ month</span>{' '}
+                            <span className="text-base">/ month</span>
                           </CardTitle>
                         </div>
                         <p
@@ -85,18 +80,7 @@ export function Pricing() {
                             </li>
                           ))}
                         </ul>
-                        <div className="mt-auto">
-                          {/* <Button
-                            variant={isFeatured ? 'secondary' : 'success'}
-                            size="lg"
-                            className="group w-full rounded-md"
-                          >
-                            <a href={plan.outsetaUrl} className="o-auth-popup flex items-center">
-                              <Sparkles className="mr-2 size-4 transition-transform ease-linear group-hover:rotate-90" />
-                              <span>Get Started</span>
-                            </a>
-                          </Button> */}
-                        </div>
+                        <div className="mt-auto" />
                       </CardContent>
                     </div>
                   </ShineBorder>

@@ -1,11 +1,10 @@
 import { cn } from '@/lib/utils';
+import { VillageWaitlistForm } from '@/components/village/VillageWaitlistForm';
 
-import { WaitlistForm } from '@/components/WaitlistForm';
-
-export function Waitlist() {
+export function VillageWaitlist() {
   return (
     <section id="waitlist" className={cn('scroll-mt-[4.3rem] bg-primary-600 text-white')}>
-      <WaitlistForm />
+      <VillageWaitlistForm />
     </section>
   );
 }
