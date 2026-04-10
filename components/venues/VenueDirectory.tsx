@@ -5,18 +5,25 @@ import { type Venue } from '@/components/venues/VenueCard';
 import { VenueEmptyState } from '@/components/venues/VenueEmptyState';
 import { VenueCarousel } from '@/components/venues/VenueCarousel';
 import { VenueFilters } from '@/components/venues/VenueFilters';
+import { VenueError } from '@/components/venues/VenueError';
 import { getUserLocationWithCache } from '@/lib/geolocation';
-import { getVenuesByLocation } from '@/lib/venue-seed';
+import { filterVenuesLocally } from '@/lib/venue-api';
 
 interface VenueDirectoryProps {
   venues: Venue[];
+  error?: string | null;
 }
 
-export function VenueDirectory({ venues }: VenueDirectoryProps) {
+export function VenueDirectory({ venues, error: initialError }: VenueDirectoryProps) {
   const [filteredVenues, setFilteredVenues] = useState<Venue[]>(venues);
   const [selectedState, setSelectedState] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
   const [isLocationLoading, setIsLocationLoading] = useState(true);
+  const [error, setError] = useState<string | null>(initialError || null);
+  const [isRetrying, setIsRetrying] = useState(false);
+
+  // Debug logging
+  console.log('VenueDirectory props:', { venues: venues.length, error: initialError });
 
   // Try to get user's location on mount
   useEffect(() => {
@@ -39,13 +46,28 @@ export function VenueDirectory({ venues }: VenueDirectoryProps) {
 
   // Filter venues based on selected location
   useEffect(() => {
-    const filtered = getVenuesByLocation(selectedState, selectedCity);
+    const filtered = filterVenuesLocally(venues, selectedState, selectedCity);
     setFilteredVenues(filtered);
   }, [selectedState, selectedCity, venues]);
 
   const handleFiltersChange = (state: string, city: string) => {
     setSelectedState(state);
     setSelectedCity(city);
+    setError(null); // Clear error when filters change
+  };
+
+  const handleRetry = async () => {
+    setIsRetrying(true);
+    setError(null);
+
+    try {
+      // Reload the page to re-fetch venues from API
+      window.location.reload();
+    } catch (error) {
+      setError('Failed to retry. Please try again.');
+    } finally {
+      setIsRetrying(false);
+    }
   };
 
   return (
@@ -68,8 +90,10 @@ export function VenueDirectory({ venues }: VenueDirectoryProps) {
           initialFilters={{ state: selectedState, city: selectedCity }}
         />
 
-        {/* Venue Carousel */}
-        {filteredVenues.length === 0 ? (
+        {/* Venue Carousel or Error */}
+        {error ? (
+          <VenueError message={error} onRetry={handleRetry} isRetrying={isRetrying} />
+        ) : filteredVenues.length === 0 && !error ? (
           <VenueEmptyState />
         ) : (
           <VenueCarousel venues={filteredVenues} />

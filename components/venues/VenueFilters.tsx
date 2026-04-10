@@ -17,6 +17,7 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
   const [availableCities, setAvailableCities] = useState<string[]>([]);
   const [states, setStates] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   // Load states on mount
   useEffect(() => {
@@ -24,8 +25,10 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
       try {
         const availableStates = await getAvailableStates();
         setStates(availableStates);
+        setError(null);
       } catch (error) {
-        console.warn('Failed to load states:', error);
+        console.error('Failed to load states:', error);
+        setError(error instanceof Error ? error.message : 'Failed to load states');
       } finally {
         setIsLoading(false);
       }
@@ -41,13 +44,15 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
         try {
           const cities = await getAvailableCities(selectedState);
           setAvailableCities(cities);
+          setError(null);
 
           // Reset city if it's not in the new state's cities
           if (selectedCity && !cities.includes(selectedCity)) {
             setSelectedCity('');
           }
         } catch (error) {
-          console.warn('Failed to load cities:', error);
+          console.error('Failed to load cities:', error);
+          setError(error instanceof Error ? error.message : 'Failed to load cities');
           setAvailableCities([]);
         }
       } else {
@@ -100,8 +105,20 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
         )}
       </div>
 
-      {/* Loading State */}
-      {isLoading ? (
+      {/* Error State */}
+      {error ? (
+        <div className="flex items-center justify-center py-8">
+          <div className="text-center">
+            <div className="mb-2 text-sm text-red-600">{error}</div>
+            <button
+              onClick={() => window.location.reload()}
+              className="text-sm text-village-venues hover:underline"
+            >
+              Try again
+            </button>
+          </div>
+        </div>
+      ) : isLoading ? (
         <div className="flex items-center justify-center py-8">
           <div className="text-sm text-muted-foreground">Loading locations...</div>
         </div>

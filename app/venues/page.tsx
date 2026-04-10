@@ -8,14 +8,26 @@ import { VenueCTA } from '@/components/venues/VenueCTA';
 import { fetchVenuesWithFallback } from '@/lib/venue-api';
 import type { Venue } from '@/components/venues/VenueCard';
 
-async function getVenues(): Promise<Venue[]> {
-  // In production, this will fetch from the API
-  // In development, it will fall back to seed data if the API is unavailable
-  return await fetchVenuesWithFallback();
+async function getVenues(): Promise<{ venues: Venue[]; error: string | null }> {
+  try {
+    // In production, this will fetch from the API
+    const venues = await fetchVenuesWithFallback();
+    console.log('API call successful, venues:', venues.length);
+    return { venues, error: null };
+  } catch (error) {
+    console.error('Failed to fetch venues:', error);
+    const errorMessage =
+      error instanceof Error ? error.message : 'Failed to load venues. Please try again later.';
+    console.log('Returning error:', errorMessage);
+    return {
+      venues: [],
+      error: errorMessage,
+    };
+  }
 }
 
 export default async function VenuesPage() {
-  const venues = await getVenues();
+  const { venues, error } = await getVenues();
 
   return (
     <div className="min-h-screen bg-white dark:bg-stone-950">
@@ -23,7 +35,7 @@ export default async function VenuesPage() {
       <VenueHero />
       <VenuePerks />
       <VenueHowItWorks />
-      <VenueDirectory venues={venues} />
+      <VenueDirectory venues={venues} error={error} />
       <VenueCTA />
       <VenuesFooter />
     </div>
