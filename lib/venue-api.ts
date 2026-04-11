@@ -54,17 +54,8 @@ export async function fetchVenues(params: VenueApiParams = {}): Promise<VenueApi
       },
     };
   } catch (error) {
-    console.warn('Failed to fetch venues from API:', error);
-    // Return empty result on error
-    return {
-      data: [],
-      meta: {
-        total: 0,
-        page,
-        limit,
-        totalPages: 0,
-      },
-    };
+    console.error('API failed:', error);
+    throw new Error('Unable to load venues. Please try again later.');
   }
 }
 

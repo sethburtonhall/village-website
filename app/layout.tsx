@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { Noto_Sans, Nunito, Caveat } from 'next/font/google';
 import { JsonLd } from '@/components/JsonLd';
 import { Toaster } from '@/components/ui/toaster';
@@ -95,22 +94,6 @@ export const metadata: Metadata = {
   },
 };
 
-const outsetaOptionsAsJSString = JSON.stringify({
-  domain: 'village.outseta.com',
-  /* Do not load nocode module, handled by session */
-  load: 'auth',
-  /* Vital setting for a single page application */
-  monitorDom: true,
-  auth: {
-    mode: 'popup',
-    // selector: '.o-auth-popup',
-    // // Overrides the Post Login URL
-    // authenticationCallbackUrl: 'http://localhost:3000/events',
-    // // Overrides the Sign Up Confirmation URL
-    // // registrationConfirmationUrl: '[custom url]',
-  },
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -122,17 +105,6 @@ export default function RootLayout({
         <JsonLd />
         <main>{children}</main>
         <Toaster />
-
-        <Script id="outseta-options" strategy="beforeInteractive">
-          {`var o_options = ${outsetaOptionsAsJSString};`}
-        </Script>
-
-        <Script
-          id="outseta-script"
-          src="https://cdn.outseta.com/outseta.min.js"
-          strategy="beforeInteractive"
-          data-options="o_options"
-        />
       </body>
     </html>
   );

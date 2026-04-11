@@ -166,7 +166,6 @@ export const communities = [
 export const plans = [
   {
     title: 'Free',
-    outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=xmeJOPQV#o-anonymous',
     price: 0,
     subheader: 'Best for casual event organizers',
     features: [
@@ -179,7 +178,6 @@ export const plans = [
   },
   {
     title: 'Individual',
-    outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=jW74MZmq#o-anonymous',
     price: 7,
     subheader: 'Best for small teams & clubs',
     features: [
@@ -198,7 +196,6 @@ export const plans = [
   },
   {
     title: 'Organization',
-    outsetaUrl: 'https://village.outseta.com/auth?widgetMode=register&planUid=EWB46bQr#o-anonymous',
     price: 15,
     subheader: 'Best for schools, nonprofits, & orgs',
     features: [

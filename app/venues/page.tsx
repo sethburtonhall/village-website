@@ -5,6 +5,7 @@ import { VenuePerks } from '@/components/venues/VenuePerks';
 import { VenueHowItWorks } from '@/components/venues/VenueHowItWorks';
 import { VenueDirectory } from '@/components/venues/VenueDirectory';
 import { VenueCTA } from '@/components/venues/VenueCTA';
+import { VenueDirectoryBoundary } from '@/components/venues/VenueDirectoryBoundary';
 import { fetchVenuesWithFallback } from '@/lib/venue-api';
 import type { Venue } from '@/components/venues/VenueCard';
 
@@ -31,7 +32,9 @@ export default async function VenuesPage() {
       <VenueHero />
       <VenuePerks />
       <VenueHowItWorks />
-      <VenueDirectory venues={venues} error={error} />
+      <VenueDirectoryBoundary>
+        <VenueDirectory venues={venues} error={error} />
+      </VenueDirectoryBoundary>
       <VenueCTA />
       <VenuesFooter />
     </div>

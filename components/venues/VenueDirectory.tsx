@@ -50,21 +50,11 @@ export function VenueDirectory({ venues, error: initialError }: VenueDirectoryPr
   const handleFiltersChange = (state: string, city: string) => {
     setSelectedState(state);
     setSelectedCity(city);
-    setError(null); // Clear error when filters change
   };
 
-  const handleRetry = async () => {
+  const handleRetry = () => {
     setIsRetrying(true);
-    setError(null);
-
-    try {
-      // Reload the page to re-fetch venues from API
-      window.location.reload();
-    } catch (error) {
-      setError('Failed to retry. Please try again.');
-    } finally {
-      setIsRetrying(false);
-    }
+    window.location.reload();
   };
 
   return (
