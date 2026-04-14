@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Lora } from 'next/font/google';
+import { VenuesThemeProvider } from '@/components/venues/VenuesThemeProvider';
 
 const lora = Lora({
   subsets: ['latin'],
@@ -20,19 +21,32 @@ export const metadata: Metadata = {
     description:
       'Browse unique event spaces or list your venue to connect with thousands of event organizers.',
     url: 'https://www.usevillage.app/venues',
-    siteName: 'Village',
+    siteName: 'Village Venues',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/venues/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Village Venues — Find & List Event Spaces',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village Venues — Find & List Event Spaces',
+    title: 'Village Venues - Find & List Event Spaces',
     description:
       'Browse unique event spaces or list your venue to connect with thousands of event organizers.',
+    images: ['/venues/opengraph-image'],
     creator: '@usevillage',
   },
 };
 
 export default function VenuesLayout({ children }: { children: React.ReactNode }) {
-  return <div className={`${lora.variable}`}>{children}</div>;
+  return (
+    <VenuesThemeProvider>
+      <div className={lora.variable}>{children}</div>
+    </VenuesThemeProvider>
+  );
 }

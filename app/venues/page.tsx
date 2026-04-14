@@ -27,7 +27,7 @@ export default async function VenuesPage() {
   const { venues, error } = await getVenues();
 
   return (
-    <div className="min-h-screen bg-white dark:bg-stone-950">
+    <div className="min-h-screen bg-stone-50 text-foreground dark:bg-gradient-to-b dark:from-[#0a0a0a] dark:via-[#150b1f] dark:to-[#0a0a0a]">
       <VenuesHeader />
       <VenueHero />
       <VenuePerks />

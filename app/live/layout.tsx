@@ -15,27 +15,32 @@ export const metadata: Metadata = {
     canonical: 'https://www.usevillage.app/live',
   },
   openGraph: {
-    title: 'Village Live — Real-time Event Experiences',
+    title: 'Village Live - Real-time Event Experiences',
     description:
       'Village handles the sign-up. Village Live runs the day. Real-time reactions, polls, Q&A, broadcasts, and more.',
     url: 'https://www.usevillage.app/live',
-    siteName: 'Village',
+    siteName: 'Village Live',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/live/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Village Live - Real-time Event Experiences',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village Live — Real-time Event Experiences',
+    title: 'Village Live - Real-time Event Experiences',
     description:
       'Village handles the sign-up. Village Live runs the day. Real-time reactions, polls, Q&A, broadcasts, and more.',
+    images: ['/live/opengraph-image'],
     creator: '@usevillage',
   },
 };
 
 export default function LiveLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className={`${robotoMono.variable} bg-[#0a0a0a] text-white`}>
-      {children}
-    </div>
-  );
+  return <div className={`${robotoMono.variable} bg-[#0a0a0a] text-white`}>{children}</div>;
 }

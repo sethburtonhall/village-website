@@ -26,7 +26,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: {
     default: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
-    template: '%s | Village',
+    template: '%s',
   },
   description:
     'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
@@ -63,10 +63,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+        alt: 'Village - Clean, ad-free group sign-ups for churches, schools & sports teams',
       },
     ],
   },
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
     description:
       'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
-    images: ['/og-image.png'],
+    images: ['/opengraph-image'],
     creator: '@usevillage',
   },
   robots: {

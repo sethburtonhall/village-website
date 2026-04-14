@@ -1,3 +1,5 @@
+import { Radio } from 'lucide-react';
+
 /**
  * Village Live OG Image — preview component (1200×630)
  * Used by /live/og-preview for visual inspection.
@@ -6,162 +8,51 @@
 export function LiveOGImage() {
   return (
     <div
-      style={{
-        width: 1200,
-        height: 630,
-        minWidth: 1200,
-        minHeight: 630,
-        background: '#0a0a0a',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '60px',
-        position: 'relative',
-        overflow: 'hidden',
-        fontFamily: 'system-ui, sans-serif',
-      }}
+      className="relative flex flex-col overflow-hidden bg-[#0a0a0a] p-[60px]"
+      style={{ width: 1200, height: 630, minWidth: 1200, minHeight: 630 }}
     >
       {/* ── Gradient glows ── */}
       <div
+        className="pointer-events-none absolute -left-40 -top-40 h-[560px] w-[560px] rounded-full"
         style={{
-          position: 'absolute',
-          top: -160,
-          left: -160,
-          width: 560,
-          height: 560,
-          borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(161,22,109,0.30) 0%, transparent 70%)',
-          pointerEvents: 'none',
         }}
       />
       <div
+        className="pointer-events-none absolute -bottom-32 -right-32 h-[380px] w-[380px] rounded-full"
         style={{
-          position: 'absolute',
-          bottom: -120,
-          right: -120,
-          width: 380,
-          height: 380,
-          borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(161,22,109,0.12) 0%, transparent 70%)',
-          pointerEvents: 'none',
         }}
       />
-      {/* 1px magenta bar at very top */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 3,
-          background: '#A1166D',
-        }}
-      />
+      {/* accent bar */}
+      <div className="absolute left-0 right-0 top-0 h-[6px] bg-[#A1166D]" />
 
-      {/* ── Header: wordmark ── */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-        {/* Radio icon */}
-        <div
-          style={{
-            width: 52,
-            height: 52,
-            borderRadius: 14,
-            background: 'rgba(161,22,109,0.15)',
-            border: '1.5px solid rgba(161,22,109,0.30)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 0 24px rgba(161,22,109,0.25)',
-          }}
-        >
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#A1166D"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
-            <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
-            <circle cx="12" cy="12" r="2" />
-            <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
-            <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
-          </svg>
+      {/* Header */}
+      <div className="group flex items-center gap-2.5">
+        <div className="flex size-14 items-center justify-center rounded-[14px] border-[1.5px] border-[rgba(161,22,109,0.30)] bg-[rgba(161,22,109,0.15)] shadow-[0_0_24px_rgba(161,22,109,0.25)]">
+          <Radio className="size-10 text-[#A1166D]" />
         </div>
-
-        {/* Village LIVE wordmark */}
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-          <span
-            style={{
-              fontFamily: 'var(--font-nunito), system-ui, sans-serif',
-              fontWeight: 800,
-              fontSize: 36,
-              color: '#ffffff',
-              letterSpacing: '-0.5px',
-            }}
-          >
-            Village
-          </span>
-          <span
-            style={{
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              fontSize: 30,
-              color: '#A1166D',
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-            }}
-          >
+        <span className="flex items-center gap-1 text-5xl leading-none">
+          <span className="font-logo font-extrabold text-white">Village</span>
+          <span className="font-mono text-5xl font-bold uppercase tracking-widest text-[#A1166D]">
             Live
           </span>
-        </div>
+        </span>
       </div>
 
-      {/* ── Main content ── */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-          marginTop: 'auto',
-          marginBottom: 'auto',
-          paddingTop: 20,
-        }}
-      >
-        <p
-          style={{
-            fontSize: 15,
-            fontWeight: 600,
-            letterSpacing: '0.13em',
-            textTransform: 'uppercase',
-            color: 'rgba(161,22,109,0.7)',
-            margin: 0,
-            marginBottom: 6,
-          }}
-        >
+      {/* Main content */}
+      <div className="mb-auto mt-auto flex flex-col gap-2 pt-10">
+        <p className="mb-2 font-sans text-xl font-medium uppercase tracking-[0.14em] text-[rgba(161,22,109,0.7)]">
           Add-on to any paid Village plan
         </p>
 
-        <div
-          style={{
-            fontWeight: 800,
-            fontSize: 80,
-            lineHeight: 1.08,
-            color: '#ffffff',
-            margin: 0,
-          }}
-        >
+        <h1 className="m-0 font-logo text-7xl font-extrabold leading-[1.1] text-white">
           Village handles the sign-up.
-        </div>
+        </h1>
 
-        <div
+        <h1
+          className="m-0 font-logo text-7xl font-extrabold leading-[1.1]"
           style={{
-            fontWeight: 800,
-            fontSize: 82,
-            lineHeight: 1.08,
-            margin: 0,
             background: 'linear-gradient(90deg, #A1166D 0%, #d4448f 50%, #A1166D 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -169,38 +60,17 @@ export function LiveOGImage() {
           }}
         >
           Village Live runs the day.
-        </div>
+        </h1>
       </div>
 
-      {/* ── Footer ── */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'space-between',
-        }}
-      >
-        <p
-          style={{
-            fontSize: 16,
-            color: 'rgba(255,255,255,0.35)',
-            margin: 0,
-            letterSpacing: '0.04em',
-          }}
-        >
-          Reactions · Polls · Q&amp;A · Broadcasts · Live Timeline · & more
-        </p>
-        <span
-          style={{
-            fontFamily: 'var(--font-nunito), system-ui, sans-serif',
-            fontWeight: 700,
-            fontSize: 20,
-            color: '#A1166D',
-            letterSpacing: '0.01em',
-          }}
-        >
-          usevillage.app/live
-        </span>
+      {/* Footer */}
+      <div className="flex items-end justify-between">
+        <div className="flex flex-col gap-1">
+          <span className="font-sans text-lg text-white/35">
+            Reactions · Polls · Q&A · Broadcasts · Live Timeline · & more
+          </span>
+        </div>
+        <span className="font-logo text-2xl font-bold text-[#A1166D]">usevillage.app/live</span>
       </div>
     </div>
   );

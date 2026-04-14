@@ -3,6 +3,11 @@ import { GlobalFooter } from '@/components/GlobalFooter';
 
 export function VenuesFooter() {
   return (
-    <GlobalFooter brandName="Village Venues" icon={Building2} brandColor="text-village-venues" />
+    <GlobalFooter
+      brandName="Village Venues"
+      icon={Building2}
+      brandColor="text-village-venues"
+      textColor="text-muted-foreground"
+    />
   );
 }

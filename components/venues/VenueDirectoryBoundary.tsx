@@ -7,10 +7,7 @@ interface State {
   hasError: boolean;
 }
 
-export class VenueDirectoryBoundary extends React.Component<
-  { children: React.ReactNode },
-  State
-> {
+export class VenueDirectoryBoundary extends React.Component<{ children: React.ReactNode }, State> {
   state: State = { hasError: false };
 
   static getDerivedStateFromError(): State {
@@ -24,7 +21,10 @@ export class VenueDirectoryBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <section className="bg-stone-100" id="venue-directory">
+        <section
+          className="bg-transparent"
+          id="venue-directory"
+        >
           <div className="container mx-auto max-w-6xl">
             <VenueError
               message="Something went wrong loading the venue directory."

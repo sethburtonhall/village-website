@@ -2,7 +2,7 @@ import { Building2, MoveRight } from 'lucide-react';
 
 export function VenueEmptyState() {
   return (
-    <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card py-16 text-center">
+    <div className="flex flex-col items-center gap-4 rounded-xl border border-border bg-background py-16 text-center">
       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-village-venues/10">
         <Building2 className="size-8 text-village-venues/60" />
       </div>

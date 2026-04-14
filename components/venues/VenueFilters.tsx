@@ -84,7 +84,7 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
   const hasActiveFilters = selectedState || selectedCity;
 
   return (
-    <div className="space-y-4 rounded-lg border border-stone-200 bg-white p-4">
+    <div className="space-y-4 rounded-lg border border-border bg-background p-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -108,7 +108,7 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
       {error ? (
         <div className="flex items-center justify-center py-8">
           <div className="text-center">
-            <div className="mb-2 text-sm text-red-600">{error}</div>
+            <div className="mb-2 text-sm text-destructive">{error}</div>
             <button
               onClick={() => window.location.reload()}
               className="text-sm text-village-venues hover:underline"
@@ -173,7 +173,7 @@ export function VenueFilters({ onFiltersChange, initialFilters }: VenueFiltersPr
 
           {/* Active Filters Display */}
           {hasActiveFilters && (
-            <div className="flex flex-wrap gap-2 border-t border-stone-100 pt-2">
+            <div className="flex flex-wrap gap-2 border-t border-border pt-2">
               {selectedState && (
                 <div className="inline-flex items-center gap-1 rounded-md bg-village-venues/10 px-2 py-1 text-sm text-village-venues">
                   <MapPin className="h-3 w-3" />

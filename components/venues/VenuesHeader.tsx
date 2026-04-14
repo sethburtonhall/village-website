@@ -8,7 +8,7 @@ export function VenuesHeader() {
       {/* Orange accent bar */}
       <div className="h-1 bg-village-venues" />
 
-      <header className="border-b border-stone-200/80 bg-white/90 backdrop-blur-md">
+      <header className="border-b border-border bg-background/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           {/* Brand lockup */}
           <div className="flex items-center gap-1.5">

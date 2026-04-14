@@ -23,7 +23,7 @@ const PERKS = [
 
 export function VenuePerks() {
   return (
-    <section className="bg-stone-100">
+    <section className="bg-transparent">
       <div className="container mx-auto max-w-6xl space-y-12 text-center">
         <div className="stack">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
@@ -49,7 +49,7 @@ export function VenuePerks() {
                   <CardHeader className="flex flex-1 flex-col items-center justify-center">
                     <Icon className="mb-4 size-8 text-village-venues" />
                     <CardTitle className="text-xl">{perk.title}</CardTitle>
-                    <CardDescription>{perk.desc}</CardDescription>
+                    <CardDescription className="text-muted-foreground">{perk.desc}</CardDescription>
                   </CardHeader>
                 </MagicCard>
               </MotionWrapper>
