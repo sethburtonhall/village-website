@@ -27,7 +27,7 @@ const painPoints = [
 export function VillageSoundFamiliar() {
   return (
     <section className="bg-stone-50 py-16">
-      <div className="container mx-auto max-w-6xl space-y-12 px-8 text-center">
+      <div className="container mx-auto max-w-6xl space-y-12 md:text-center">
         <MotionWrapper>
           <div className="stack">
             <h2 className="text-3xl font-bold md:text-4xl">
@@ -41,7 +41,7 @@ export function VillageSoundFamiliar() {
             const Icon = point.icon;
             return (
               <MotionWrapper key={index} index={index}>
-                <div className="flex h-full flex-col items-center gap-4 rounded-xl border border-stone-200 bg-white p-6 text-center">
+                <div className="flex h-full flex-col items-start gap-4 rounded-xl border border-stone-200 bg-white p-6 md:items-center md:text-center">
                   <Icon className="size-8 text-red-400" />
                   <h3 className="text-base font-semibold text-stone-800">{point.heading}</h3>
                   <p className="text-sm leading-relaxed text-stone-500">{point.body}</p>
@@ -52,7 +52,7 @@ export function VillageSoundFamiliar() {
         </div>
 
         <MotionWrapper>
-          <p className="text-xl font-medium text-stone-600">
+          <p className="ml-2 text-xl font-medium text-stone-600">
             <span className="font-bold text-primary-600">Village</span> fixes all of this.
           </p>
         </MotionWrapper>

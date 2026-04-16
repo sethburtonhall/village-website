@@ -10,9 +10,9 @@ export function VenueCTA() {
       {/* Soft ambient glow — orange tint, very diffuse */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-[700px] -translate-x-1/2 rounded-full bg-village-venues/8 blur-3xl" />
 
-      <div className="container relative mx-auto max-w-3xl space-y-6 text-center">
+      <div className="container relative mx-auto max-w-3xl space-y-6 md:text-center">
         <h2>Become a community hub today.</h2>
-        <p className="mx-auto max-w-xl text-muted-foreground">
+        <p className="max-w-xl text-muted-foreground md:mx-auto">
           List your venue on Village Venues and connect with local organizers seeking spaces like
           yours. Fill your calendar while strengthening your community.
         </p>

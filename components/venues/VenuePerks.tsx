@@ -24,13 +24,13 @@ const PERKS = [
 export function VenuePerks() {
   return (
     <section className="bg-transparent">
-      <div className="container mx-auto max-w-6xl space-y-12 text-center">
+      <div className="container mx-auto max-w-6xl space-y-12 md:text-center">
         <div className="stack">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
             For Community Spaces
           </p>
           <h2>Why list on Village Venues?</h2>
-          <p className="block-p text-muted-foreground">
+          <p className="text-muted-foreground md:text-center">
             Tools designed to help you serve your community better.
           </p>
         </div>
@@ -46,7 +46,7 @@ export function VenuePerks() {
                   gradientFrom="#FF6B35"
                   gradientTo="#FF9A6C"
                 >
-                  <CardHeader className="flex flex-1 flex-col items-center justify-center">
+                  <CardHeader className="flex flex-1 flex-col items-start md:items-center">
                     <Icon className="mb-4 size-8 text-village-venues" />
                     <CardTitle className="text-xl">{perk.title}</CardTitle>
                     <CardDescription className="text-muted-foreground">{perk.desc}</CardDescription>

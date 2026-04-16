@@ -12,15 +12,15 @@ import { ChevronRight, MoveDown } from 'lucide-react';
 export function VillageHero() {
   return (
     <MotionWrapper type="section" className="space-y-12 pb-16">
-      <div className="space-y-4 p-8 pb-0 pt-4 md:pt-12 lg:px-16 lg:pt-12">
+      <div className="space-y-4 pt-4 md:pt-12 lg:px-16">
         <ScrollLink>
-          <AnimatedGradientText>
+          <AnimatedGradientText className="mx-0 md:mx-auto">
             🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
             <span className="gradiant-text">Private Beta</span>
             <ChevronRight className="mx-2 h-4 w-4 shrink-0 text-fuchsia-400" />
           </AnimatedGradientText>
         </ScrollLink>
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-3xl md:mx-auto md:text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
             Group{' '}
             <span className="font-signature text-5xl text-primary-600 sm:text-5xl md:text-7xl lg:text-8xl">
@@ -52,7 +52,7 @@ export function VillageHero() {
         </p>
       </div>
       {/* CTAs */}
-      <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+      <div className="flex flex-col items-start gap-3 sm:flex-row sm:gap-4 md:items-center md:justify-center">
         <Button
           variant="success"
           size="lg"

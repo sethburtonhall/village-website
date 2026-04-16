@@ -8,7 +8,7 @@ import { coreFeatures, premiumFeatures } from '@/lib/data';
 export function VillageFeatures() {
   return (
     <section className="relative">
-      <div className="container mx-auto max-w-6xl space-y-8 text-center">
+      <div className="container mx-auto max-w-6xl space-y-8 md:text-center">
         <div className="stack mb-16">
           <p className="text-lg font-bold text-primary-600">Features</p>
           <h1>Everything You Need to Organize Your Community</h1>
@@ -26,7 +26,7 @@ export function VillageFeatures() {
                   gradientFrom={'#22c55e'}
                   gradientTo={'#86efac'}
                 >
-                  <CardHeader className="flex flex-1 flex-col items-center justify-center">
+                  <CardHeader className="flex flex-1 flex-col items-start md:items-center">
                     <Icon className="mb-4 size-8 text-primary-600" />
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                     <CardDescription>{feature.description}</CardDescription>
@@ -57,7 +57,7 @@ export function VillageFeatures() {
                   gradientFrom={'#9c40ff'}
                   gradientTo={'#ffaa40'}
                 >
-                  <CardHeader className="flex flex-1 flex-col items-center justify-center">
+                  <CardHeader className="flex flex-1 flex-col items-start md:items-center">
                     <Icon className="mb-4 size-8 text-primary-600" />
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
                     <CardDescription>{feature.description}</CardDescription>

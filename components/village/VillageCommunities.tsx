@@ -9,7 +9,7 @@ export function VillageCommunities() {
 
   return (
     <section className="overflow-hidden bg-white py-16">
-      <div className="mx-auto space-y-16 text-center">
+      <div className="mx-auto space-y-16 md:text-center">
         <div className="stack">
           <p className="font-bold text-primary-600">Communities</p>
           <h1>Churches, schools, sports teams — and everyone in between.</h1>

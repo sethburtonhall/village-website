@@ -6,7 +6,7 @@ export function VenueHero() {
   return (
     <MotionWrapper
       type="section"
-      className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/40 to-stone-100 pb-28 pt-20 text-center dark:from-[#0a0a0a] dark:via-[#1a0f1f] dark:to-[#0f0a1a]"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/40 to-stone-100 pb-28 pt-20 dark:from-[#0a0a0a] dark:via-[#1a0f1f] dark:to-[#0f0a1a] md:text-center"
     >
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-village-venues/5 via-transparent to-transparent dark:from-village-venues/20 dark:via-village-venues/10" />
@@ -46,7 +46,7 @@ export function VenueHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.25 }}
-          className="block-p font- text-muted-foreground"
+          className="text-muted-foreground md:text-center"
         >
           Transform your venue into a hub for local events. Connect with organizers, fill your
           calendar, and become a cornerstone of community life.
@@ -57,7 +57,7 @@ export function VenueHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="flex flex-col items-start gap-3 sm:flex-row md:items-center md:justify-center"
         >
           <a
             href="https://venues.usevillage.app/sign-up"

@@ -8,14 +8,14 @@ import { plans } from '@/lib/data';
 export function VillagePricing() {
   return (
     <section id="pricing" className="pb-28">
-      <div className="mx-auto space-y-12 text-center">
+      <div className="mx-auto space-y-12 md:text-center">
         <div className="stack mb-24">
           <p className="font-bold text-primary-600">Pricing</p>
           <h1>Affordable Plans, No Surprises</h1>
           <p className="block-p">Start for free. Upgrade anytime as you grow.</p>
         </div>
 
-        <div className="container mx-auto px-8">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-0">
             {plans.map((plan, index) => {
               const isFeatured = index == 1;

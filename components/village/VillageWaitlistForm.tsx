@@ -68,7 +68,7 @@ export function VillageWaitlistForm() {
 
   return (
     <div
-      className={cn('mx-auto max-w-lg space-y-2 text-center')}
+      className={cn('mx-auto max-w-lg space-y-2 md:text-center')}
       role="region"
       aria-labelledby="waitlist-title"
     >
@@ -140,7 +140,7 @@ export function VillageWaitlistForm() {
                   id="email"
                   placeholder="Enter your email"
                   className={cn(
-                    'w-full rounded-md border-0 p-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-base placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-primary',
+                    'w-full rounded-md border-0 bg-white p-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-base placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-primary',
                     errors.email && 'ring-red-500 focus:ring-red-500'
                   )}
                   aria-describedby={

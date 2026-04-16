@@ -13,7 +13,7 @@ const PREVIEW_FEATURES = [
 export function VillageLiveAddon() {
   return (
     <section className="pb-28 pt-2">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto">
         <MotionWrapper index={0}>
           <div className="relative overflow-hidden rounded-2xl border border-village-live/35 bg-gradient-to-br from-[#1c0d16] via-[#110c10] to-[#0d0d14] p-8 shadow-[0_0_80px_rgba(161,22,109,0.12)] md:p-10">
             {/* Radial glow at top-left */}
