@@ -20,11 +20,11 @@ export default function Home() {
       <VillageSoundFamiliar />
       <VillageHowItWorks id="how-it-works" />
       <VillageProductPreview />
-      <VillageWaitlist />
       <VillageFeatures />
       <VillageCommunities />
       <VillagePricing />
       <VillageFAQ />
+      <VillageWaitlist />
       <VillageLiveAddon />
       <Footer />
     </div>

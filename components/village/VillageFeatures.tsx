@@ -9,7 +9,7 @@ export function VillageFeatures() {
       <div className="container mx-auto max-w-6xl space-y-8 md:text-center">
         <div className="stack mb-16">
           <p className="text-lg font-bold text-primary-600">Features</p>
-          <h1>Everything You Need to Organize Your Community</h1>
+          <h2>Everything You Need to Organize Your Community</h2>
           <p className="block-p">Start with core features. Upgrade to premium as you grow.</p>
         </div>
 

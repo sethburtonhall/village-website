@@ -8,7 +8,7 @@ import { plans } from '@/lib/data';
 
 export function VillagePricing() {
   return (
-    <section id="pricing" className="scroll-mt-[4.3rem] pt-24 pb-28">
+    <section id="pricing" className="scroll-mt-[4.3rem] pt-24 pb-16">
       <div className="mx-auto max-w-6xl space-y-12 md:text-center">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-0">
@@ -89,9 +89,9 @@ export function VillagePricing() {
           </div>
         </div>
 
-        <div className="space-y-1 pt-4 md:text-center">
-          <p className="text-sm text-stone-500">Start for free. Upgrade anytime as you grow.</p>
-        </div>
+        <p className="text-center text-sm text-stone-500">
+          Start for free. Upgrade anytime as you grow.
+        </p>
       </div>
     </section>
   );

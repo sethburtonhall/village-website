@@ -1,5 +1,6 @@
 import * as motion from 'motion/react-client';
 import { MoveRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function LivePricing() {
   return (
@@ -23,16 +24,15 @@ export function LivePricing() {
           </div>
           <p className="text-sm text-white/50">Add-on for any paid Village plan.</p>
           <p className="text-xs text-white/50">
-            Join Village private beta and we will let you know when Village Live is ready.
+            Join the Village waitlist — we&apos;ll let you know the moment Village Live is ready.
           </p>
 
-          <a
-            href="https://www.usevillage.app/#waitlist"
-            className="inline-flex items-center gap-2 rounded-xl bg-village-live px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-village-live/90"
-          >
-            Join the Village Waitlist
-            <MoveRight className="h-4 w-4" />
-          </a>
+          <Button variant="live" size="lg" asChild>
+            <a href="https://www.usevillage.app/#waitlist">
+              Join the Waitlist
+              <MoveRight className="h-4 w-4" />
+            </a>
+          </Button>
         </motion.div>
       </div>
     </div>

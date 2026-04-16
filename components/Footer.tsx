@@ -21,7 +21,7 @@ export function Footer() {
             </div>
             <p className="mt-4 text-stone-600">
               Group Sign-ups Made Simple and 🎉{' '}
-              <span className="gradiant-text font-medium">Fun!.</span>
+              <span className="gradient-text font-medium">Fun!.</span>
             </p>
           </div>
 

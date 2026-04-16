@@ -1,64 +1,55 @@
-import * as motion from 'motion/react-client';
+import { MotionWrapper } from '@/components/MotionWrapper';
 
 const STEPS = [
   {
-    step: '01',
+    number: '01',
     title: 'Get Village',
-    desc: 'Sign up for any paid Village plan. Clean, simple, ad free — no participant accounts required.',
+    desc: 'Sign up for any paid Village plan. Clean, simple, ad-free — no participant accounts required.',
   },
   {
-    step: '02',
+    number: '02',
     title: 'Enable Village Live',
-    desc: 'Add Village Live to your plan for $5/mo. Available as an add-on (coming soon).',
+    desc: 'Add Village Live to your plan for $5/mo. Available as an add-on — coming soon.',
   },
   {
-    step: '03',
-    title: 'Open Mission Control',
-    desc: 'On event day, open Mission Control from your event dashboard and tap Go Live. Your attendees see it instantly.',
+    number: '03',
+    title: 'Go live on event day',
+    desc: 'Open Mission Control from your event dashboard, tap Go Live, and your attendees see it instantly.',
   },
 ];
 
 export function LiveHowItWorks() {
   return (
     <div className="bg-[#0a0a0a] px-6 py-20">
-      <div className="mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.3 }}
-          className="mb-14 md:text-center"
-        >
-          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-village-live">
-            Setup
-          </p>
-          <h2 className="text-3xl font-bold text-white">How it works</h2>
-        </motion.div>
+      <div className="mx-auto max-w-2xl space-y-16">
+        <MotionWrapper>
+          <div className="space-y-2">
+            <p className="font-mono text-xs uppercase tracking-widest text-village-live">Setup</p>
+            <h2 className="text-3xl font-bold text-white">Three steps to go live</h2>
+          </div>
+        </MotionWrapper>
 
-        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* Connecting line on desktop */}
-          <div className="absolute left-0 right-0 top-6 hidden h-px bg-white/5 md:block" />
+        <div className="relative">
+          {STEPS.map((step, index) => (
+            <MotionWrapper key={index} index={index}>
+              <div className="relative flex gap-8">
+                {/* Number + connecting line */}
+                <div className="flex flex-col items-center">
+                  <span className="font-signature text-5xl font-bold leading-none text-village-live">
+                    {step.number}
+                  </span>
+                  {index < STEPS.length - 1 && (
+                    <div className="mt-3 w-px flex-1 bg-village-live/20" />
+                  )}
+                </div>
 
-          {STEPS.map((s, i) => (
-            <motion.div
-              key={s.step}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.3, delay: i * 0.1 }}
-              className="relative flex flex-col gap-4 md:text-center"
-            >
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-village-live/30 bg-[#0a0a0a] md:mx-auto">
-                <span
-                  className="font-mono text-sm font-bold text-village-live"
-                  style={{ fontFamily: 'var(--font-mono-brand), monospace' }}
-                >
-                  {s.step}
-                </span>
+                {/* Content */}
+                <div className={`space-y-2 pt-1 ${index < STEPS.length - 1 ? 'pb-16' : ''}`}>
+                  <h3 className="text-xl font-bold text-white">{step.title}</h3>
+                  <p className="leading-relaxed text-white/40">{step.desc}</p>
+                </div>
               </div>
-              <h3 className="text-base font-semibold text-white">{s.title}</h3>
-              <p className="text-sm leading-relaxed text-white/40">{s.desc}</p>
-            </motion.div>
+            </MotionWrapper>
           ))}
         </div>
       </div>

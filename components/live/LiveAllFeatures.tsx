@@ -22,11 +22,35 @@ const ALL_FEATURES = [
     title: 'Broadcast',
     desc: "Send an instant message to every attendee's screen, mid-event.",
   },
+  {
+    icon: '⚡',
+    title: 'Live Timeline',
+    desc: 'Advance activities in real time — every screen stays in sync.',
+    standard: true,
+  },
+  {
+    icon: '⏱',
+    title: 'Speaker Timer',
+    desc: 'Track presentation time without leaving Mission Control.',
+    standard: true,
+  },
+  {
+    icon: '❓',
+    title: 'Q&A Queue',
+    desc: 'Attendees submit questions live. You control what gets answered.',
+    standard: true,
+  },
+  {
+    icon: '📊',
+    title: 'Polls',
+    desc: 'Launch a poll, collect votes, and reveal results on every screen.',
+    standard: true,
+  },
 ];
 
 export function LiveAllFeatures() {
   return (
-    <div id="features" className="bg-[#0a0a0a] px-6 py-20 pt-36">
+    <div id="features" className="bg-[#0a0a0a] px-6 py-20">
       <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -36,12 +60,12 @@ export function LiveAllFeatures() {
           className="mb-10 md:text-center"
         >
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-village-live">
-            All event types
+            Features
           </p>
-          <h2 className="text-3xl font-bold text-white">Works with every event</h2>
+          <h2 className="text-3xl font-bold text-white">Everything in Village Live</h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/50 md:mx-auto">
-            These features are available regardless of your event format — from casual meetups to
-            large conferences.
+            Four features work with any event. The rest unlock for standard events with structured
+            agendas, speakers, and audience participation.
           </p>
         </motion.div>
 
@@ -50,6 +74,10 @@ export function LiveAllFeatures() {
             <LiveFeatureCard key={f.title} {...f} index={i} />
           ))}
         </div>
+
+        <p className="mt-6 text-center text-xs text-white/30">
+          Standard event features are marked with a badge. More event types coming soon.
+        </p>
       </div>
     </div>
   );

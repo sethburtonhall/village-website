@@ -1,7 +1,6 @@
 import { VenuesHeader } from '@/components/venues/VenuesHeader';
 import { VenuesFooter } from '@/components/venues/VenuesFooter';
 import { VenueHero } from '@/components/venues/VenueHero';
-import { VenuePerks } from '@/components/venues/VenuePerks';
 import { VenueHowItWorks } from '@/components/venues/VenueHowItWorks';
 import { VenueDirectory } from '@/components/venues/VenueDirectory';
 import { VenueCTA } from '@/components/venues/VenueCTA';
@@ -30,7 +29,6 @@ export default async function VenuesPage() {
     <div className="min-h-screen bg-stone-50 text-foreground dark:bg-gradient-to-b dark:from-[#0a0a0a] dark:via-[#150b1f] dark:to-[#0a0a0a]">
       <VenuesHeader />
       <VenueHero />
-      <VenuePerks />
       <VenueHowItWorks />
       <VenueDirectoryBoundary>
         <VenueDirectory venues={venues} error={error} />

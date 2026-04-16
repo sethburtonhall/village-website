@@ -2,7 +2,6 @@ import { LiveHeader } from '@/components/live/LiveHeader';
 import { LiveHero } from '@/components/live/LiveHero';
 import { LiveAllFeatures } from '@/components/live/LiveAllFeatures';
 import { LiveInteractiveDemos } from '@/components/live/LiveInteractiveDemos';
-import { LiveStandardFeatures } from '@/components/live/LiveStandardFeatures';
 import { LiveSyncDemos } from '@/components/live/LiveSyncDemos';
 import { LiveHowItWorks } from '@/components/live/LiveHowItWorks';
 import { LivePricing } from '@/components/live/LivePricing';
@@ -15,7 +14,6 @@ export default function LivePage() {
       <LiveHero />
       <LiveAllFeatures />
       <LiveInteractiveDemos />
-      <LiveStandardFeatures />
       <LiveSyncDemos />
       <LiveHowItWorks />
       <LivePricing />

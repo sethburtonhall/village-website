@@ -1,4 +1,5 @@
 import { Building2, MoveRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function VenueEmptyState() {
   return (
@@ -7,18 +8,17 @@ export function VenueEmptyState() {
         <Building2 className="size-8 text-village-venues/60" />
       </div>
       <div className="space-y-1 text-left md:text-center">
-        <p className="font-semibold text-foreground">Building our venue directory</p>
+        <p className="font-semibold text-foreground">No venues here yet</p>
         <p className="text-sm text-muted-foreground">
-          Be among the first to showcase your space to local organizers.
+          Be among the first to list your space and get in front of local organizers.
         </p>
       </div>
-      <a
-        href="https://venues.usevillage.app/sign-up"
-        className="inline-flex max-w-max items-center gap-2 rounded-md bg-village-venues px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-village-venues/90"
-      >
-        List Your Venue
-        <MoveRight className="h-4 w-4" />
-      </a>
+      <Button variant="venues" size="sm" asChild>
+        <a href="https://venues.usevillage.app/sign-up">
+          List Your Venue
+          <MoveRight className="h-4 w-4" />
+        </a>
+      </Button>
     </div>
   );
 }

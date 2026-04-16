@@ -1,17 +1,6 @@
 import * as motion from 'motion/react-client';
 import { MoveDown, MoveRight } from 'lucide-react';
-
-function GetVillageButton() {
-  return (
-    <a
-      href="https://www.usevillage.app"
-      className="inline-flex items-center gap-2 rounded-md bg-village-live px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-village-live/90"
-    >
-      Get Village
-      <MoveRight className="h-4 w-4" />
-    </a>
-  );
-}
+import { Button } from '@/components/ui/button';
 
 export function LiveHero() {
   return (
@@ -27,20 +16,20 @@ export function LiveHero() {
           Coming Soon
         </motion.div>
 
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="max-w-2xl text-5xl leading-tight text-white/70 md:mx-auto"
+          className="max-w-2xl text-5xl leading-tight md:mx-auto"
         >
           Real-time event experience
-        </motion.h2>
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.25 }}
-          className="mb-10 max-w-xl text-2xl leading-normal text-white/50 md:mx-auto"
+          className="mb-10 max-w-xl text-2xl leading-normal text-white/70 md:mx-auto"
         >
           Turn any Village event into a live, interactive experience — with reactions, polls,
           Q&amp;A, live timelines, instant broadcasts and more.
@@ -52,7 +41,12 @@ export function LiveHero() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="flex items-center gap-4 md:flex-row md:justify-center"
         >
-          <GetVillageButton />
+          <Button variant="live" asChild>
+            <a href="https://www.usevillage.app">
+              Get Village
+              <MoveRight className="h-4 w-4" />
+            </a>
+          </Button>
           <a
             href="#features"
             className="flex items-center gap-1 text-sm text-white/50 transition-colors hover:text-white/60"

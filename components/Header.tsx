@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { Building2, ClipboardList, RadioTower } from 'lucide-react';
+import { MobileNav } from '@/components/MobileNav';
 
 export function Header({ className }: { className?: string }) {
   return (
@@ -50,8 +51,8 @@ export function Header({ className }: { className?: string }) {
 
           <div className="hidden h-4 w-px bg-stone-200 lg:block" />
 
-          {/* Product links */}
-          <div className="flex items-center gap-2">
+          {/* Product links — desktop only */}
+          <div className="hidden items-center gap-2 lg:flex">
             <Building2 className="size-4 text-village-venues" />
             <Link
               href="/venues"
@@ -60,12 +61,15 @@ export function Header({ className }: { className?: string }) {
               Venues
             </Link>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-2 lg:flex">
             <RadioTower className="size-4 text-village-live" />
             <Link href="/live" className="text-village-live transition-opacity hover:opacity-70">
               Live
             </Link>
           </div>
+
+          {/* Mobile hamburger */}
+          <MobileNav />
         </nav>
       </div>
     </header>

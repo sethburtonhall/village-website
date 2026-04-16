@@ -1,60 +1,45 @@
-import { Building2, CalendarCheck, TrendingUp } from 'lucide-react';
-import { CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { MagicCard } from '@/components/ui/magic-card';
+import { Fragment } from 'react';
 import { MotionWrapper } from '@/components/MotionWrapper';
 
 const PERKS = [
   {
-    icon: Building2,
-    title: 'Serve Your Community',
-    desc: 'Connect with local organizers who need your space for meaningful community events and programs.',
+    label: '01',
+    title: 'Fill your calendar',
+    desc: 'Stop leaving rooms empty. Get in front of organizers actively searching for spaces like yours — no cold outreach, just discoverability.',
   },
   {
-    icon: CalendarCheck,
-    title: 'Simplify Administration',
-    desc: 'Manage bookings, track availability, and handle inquiries with tools designed for busy administrators.',
+    label: '02',
+    title: 'Less back-and-forth',
+    desc: 'Inquiries, availability, confirmations — all through one simple dashboard. No spreadsheets, no phone tag.',
   },
   {
-    icon: TrendingUp,
-    title: 'Maximize Your Impact',
-    desc: "Transform underutilized rooms into vibrant community hubs while supporting your organization's mission.",
+    label: '03',
+    title: 'Built for mission-driven spaces',
+    desc: "Churches, schools, community centers. We're not a corporate booking platform — we're built for spaces that put community first.",
   },
 ];
 
 export function VenuePerks() {
   return (
-    <section className="bg-transparent">
-      <div className="container mx-auto max-w-6xl space-y-12 md:text-center">
-        <div className="stack">
-          <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
-            For Community Spaces
-          </p>
-          <h2>Why list on Village Venues?</h2>
-          <p className="text-muted-foreground md:text-center">
-            Tools designed to help you serve your community better.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {PERKS.map((perk, index) => {
-            const Icon = perk.icon;
-            return (
-              <MotionWrapper key={index} index={index}>
-                <MagicCard
-                  className="cursor-default"
-                  gradientColor="#FF6B3520"
-                  gradientFrom="#FF6B35"
-                  gradientTo="#FF9A6C"
-                >
-                  <CardHeader className="flex flex-1 flex-col items-start md:items-center">
-                    <Icon className="mb-4 size-8 text-village-venues" />
-                    <CardTitle className="text-xl">{perk.title}</CardTitle>
-                    <CardDescription className="text-muted-foreground">{perk.desc}</CardDescription>
-                  </CardHeader>
-                </MagicCard>
+    <section className="py-16">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 gap-0 lg:grid-cols-[1fr_1px_1fr_1px_1fr]">
+          {PERKS.map((perk, index) => (
+            <Fragment key={perk.label}>
+              <MotionWrapper index={index}>
+                <div className="space-y-4 border-t-2 border-village-venues/30 py-8 lg:border-none lg:px-10 lg:py-0">
+                  <span className="font-signature text-4xl font-bold text-village-venues/40">
+                    {perk.label}
+                  </span>
+                  <h3 className="text-xl font-bold">{perk.title}</h3>
+                  <p className="leading-relaxed text-stone-500">{perk.desc}</p>
+                </div>
               </MotionWrapper>
-            );
-          })}
+              {index < PERKS.length - 1 && (
+                <div className="hidden w-px bg-stone-200 lg:block" />
+              )}
+            </Fragment>
+          ))}
         </div>
       </div>
     </section>

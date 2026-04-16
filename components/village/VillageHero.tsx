@@ -5,14 +5,13 @@ import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { ScrollLink } from '@/components/ScrollLink';
 import { ChevronRight, MoveDown } from 'lucide-react';
 
-
 export function VillageHero() {
   return (
     <MotionWrapper type="section" className="space-y-12 pb-16">
       <div className="space-y-4 pt-4 md:pt-12 lg:px-16">
         <ScrollLink>
           <AnimatedGradientText className="mx-0 md:mx-auto">
-            <span className="gradiant-text">Early access</span>
+            <span className="gradient-text">Early access</span>
             <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
             <span className="text-foreground/60">Free to join</span>
             <ChevronRight className="mx-1 h-4 w-4 shrink-0 text-fuchsia-400" />

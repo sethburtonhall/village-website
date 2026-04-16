@@ -21,6 +21,10 @@ type FormData = z.infer<typeof waitlistSchema>;
 export function VillageWaitlistForm() {
   const [isPending, setIsPending] = useState(false);
   const [formRenderedAt] = useState(() => Date.now());
+  const [alreadySubscribed, setAlreadySubscribed] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem('village_waitlist') === 'true';
+  });
   const [state, formAction] = useActionState(async (prevState: unknown, formData: FormData) => {
     try {
       const result = await addToWaitlist(formData.email, formData.website, formRenderedAt);
@@ -46,7 +50,8 @@ export function VillageWaitlistForm() {
 
   useEffect(() => {
     if (state?.success) {
-      sessionStorage.setItem('isSubscribed', 'true');
+      localStorage.setItem('village_waitlist', 'true');
+      setAlreadySubscribed(true);
       reset();
     }
   }, [state?.success, reset]);
@@ -82,7 +87,7 @@ export function VillageWaitlistForm() {
       </div>
 
       <MotionWrapper className="space-y-4">
-        {state?.success ? (
+        {state?.success || alreadySubscribed ? (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,7 +99,7 @@ export function VillageWaitlistForm() {
             </div>
             <p className="font-semibold text-green-800">You&apos;re on the list!</p>
             <p className="text-sm text-green-700">
-              {state.message ?? "We'll let you know the moment early access opens up."}
+              {state?.message ?? "We'll let you know the moment early access opens up."}
             </p>
           </motion.div>
         ) : (

@@ -58,16 +58,15 @@ export function VenueDirectory({ venues, error: initialError }: VenueDirectoryPr
   };
 
   return (
-    <section className="bg-transparent" id="venue-directory">
+    <section className="py-16" id="venue-directory">
       <div className="container mx-auto max-w-6xl space-y-10">
         <div className="stack md:text-center">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
             Venue Directory
           </p>
-          <h2>Discover your perfect venue</h2>
+          <h2>Find a space for your community</h2>
           <p className="text-muted-foreground md:mx-auto md:max-w-lg md:text-center">
-            Browse unique community spaces vetted for quality and character. Find the ideal setting
-            for your next gathering.
+            Community spaces available for events near you. Filter by location to find what fits.
           </p>
         </div>
 

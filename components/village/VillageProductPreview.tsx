@@ -40,7 +40,7 @@ export function VillageProductPreview() {
 
           {/* Right: screenshot */}
           <MotionWrapper index={1}>
-            <div className="relative overflow-hidden rounded-2xl bg-black shadow-2xl ring-1 ring-white/10">
+            <div className="relative overflow-hidden rounded-2xl bg-zinc-900 shadow-2xl ring-1 ring-white/10">
               <div className="max-h-[640px] overflow-hidden">
                 <Image
                   src="/images/signup-preview.png"
@@ -52,7 +52,7 @@ export function VillageProductPreview() {
                 />
               </div>
               {/* Fade suggesting more below */}
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-zinc-900/70 to-transparent" />
             </div>
           </MotionWrapper>
         </div>
