@@ -28,6 +28,29 @@ export function Header({ className }: { className?: string }) {
         </div>
         {/* Nav */}
         <nav className="flex items-center gap-5 text-base font-semibold">
+          {/* Anchor links — hidden on small screens */}
+          <Link
+            href="/#how-it-works"
+            className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
+          >
+            How it works
+          </Link>
+          <Link
+            href="/#features"
+            className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
+          >
+            Features
+          </Link>
+          <Link
+            href="/#pricing"
+            className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
+          >
+            Pricing
+          </Link>
+
+          <div className="hidden h-4 w-px bg-stone-200 lg:block" />
+
+          {/* Product links */}
           <div className="flex items-center gap-2">
             <Building2 className="size-4 text-village-venues" />
             <Link

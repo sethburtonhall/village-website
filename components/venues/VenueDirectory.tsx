@@ -58,17 +58,14 @@ export function VenueDirectory({ venues, error: initialError }: VenueDirectoryPr
   };
 
   return (
-    <section
-      className="bg-transparent"
-      id="venue-directory"
-    >
+    <section className="bg-transparent" id="venue-directory">
       <div className="container mx-auto max-w-6xl space-y-10">
-        <div className="stack text-center">
+        <div className="stack md:text-center">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
             Venue Directory
           </p>
           <h2>Discover your perfect venue</h2>
-          <p className="block-p text-muted-foreground">
+          <p className="text-muted-foreground md:mx-auto md:max-w-lg md:text-center">
             Browse unique community spaces vetted for quality and character. Find the ideal setting
             for your next gathering.
           </p>
@@ -91,7 +88,9 @@ export function VenueDirectory({ venues, error: initialError }: VenueDirectoryPr
 
         {/* Location Loading Indicator */}
         {isLocationLoading && (
-          <div className="text-center text-sm text-muted-foreground">Detecting your location...</div>
+          <div className="text-center text-sm text-muted-foreground">
+            Detecting your location...
+          </div>
         )}
       </div>
     </section>

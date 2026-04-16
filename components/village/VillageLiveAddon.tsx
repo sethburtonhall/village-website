@@ -1,5 +1,6 @@
 import { MoveRight, Radio } from 'lucide-react';
 import { MotionWrapper } from '@/components/MotionWrapper';
+import { Button } from '@/components/ui/button';
 
 const PREVIEW_FEATURES = [
   { icon: '🔴', title: 'Go Live', desc: 'One tap to start' },
@@ -12,8 +13,8 @@ const PREVIEW_FEATURES = [
 
 export function VillageLiveAddon() {
   return (
-    <section className="pb-28 pt-2">
-      <div className="container mx-auto px-8">
+    <section className="pt-16 pb-28">
+      <div className="container mx-auto">
         <MotionWrapper index={0}>
           <div className="relative overflow-hidden rounded-2xl border border-village-live/35 bg-gradient-to-br from-[#1c0d16] via-[#110c10] to-[#0d0d14] p-8 shadow-[0_0_80px_rgba(161,22,109,0.12)] md:p-10">
             {/* Radial glow at top-left */}
@@ -62,13 +63,12 @@ export function VillageLiveAddon() {
 
                 {/* CTA */}
                 <div>
-                  <a
-                    href="/live"
-                    className="inline-flex items-center gap-2 rounded-md bg-village-live px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-village-live/90"
-                  >
-                    Learn More
-                    <MoveRight className="h-4 w-4" />
-                  </a>
+                  <Button variant="live" size="sm" asChild>
+                    <a href="/live">
+                      Learn More
+                      <MoveRight className="h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
               </div>
 

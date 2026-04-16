@@ -41,6 +41,7 @@ export function VillageWaitlistForm() {
     reset,
   } = useForm<FormData>({
     resolver: zodResolver(waitlistSchema),
+    mode: 'onBlur',
   });
 
   useEffect(() => {
@@ -68,7 +69,7 @@ export function VillageWaitlistForm() {
 
   return (
     <div
-      className={cn('mx-auto max-w-lg space-y-2 text-center')}
+      className={cn('mx-auto max-w-lg space-y-2 md:text-center')}
       role="region"
       aria-labelledby="waitlist-title"
     >
@@ -81,118 +82,127 @@ export function VillageWaitlistForm() {
       </div>
 
       <MotionWrapper className="space-y-4">
-        <form
-          ref={formRef}
-          onSubmit={handleFormSubmit}
-          onKeyDown={handleKeyPress}
-          className="stack sm:flex-row sm:gap-4"
-          aria-label="Waitlist signup form"
-          noValidate
-        >
-          <input type="hidden" name="mailingLists" value={mailingListIds} />
-          {/* Honeypot fields */}
-          <input
-            {...register('website')}
-            type="text"
-            name="website"
-            id="website"
-            tabIndex={-1}
-            autoComplete="off"
-            placeholder="Your website"
-            style={{
-              position: 'absolute',
-              left: '-9999px',
-              top: '-9999px',
-              opacity: 0,
-              pointerEvents: 'none',
-            }}
-            aria-hidden="true"
-          />
-          <input
-            type="text"
-            name="phone"
-            id="phone"
-            tabIndex={-1}
-            autoComplete="off"
-            placeholder="Phone number"
-            style={{
-              position: 'absolute',
-              left: '-9999px',
-              top: '-9999px',
-              opacity: 0,
-              pointerEvents: 'none',
-            }}
-            aria-hidden="true"
-          />
-          <div className="flex-1">
-            <label htmlFor="email" className="sr-only">
-              Email address
-            </label>
-            <div className="space-y-2" role="group" aria-labelledby="email-label">
-              <div>
-                <span id="email-label" className="sr-only" content="h-0">
-                  Enter your email address to join the waitlist
-                </span>
-                <input
-                  {...register('email')}
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter your email"
-                  className={cn(
-                    'w-full rounded-md border-0 p-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-base placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-primary',
-                    errors.email && 'ring-red-500 focus:ring-red-500'
-                  )}
-                  aria-describedby={
-                    errors.email || (state?.message && !state.success) ? 'email-error' : undefined
-                  }
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                  aria-required="true"
-                />
-              </div>
-            </div>
-          </div>
-          <AnimatedSubscribeButton
-            className="w-full hover:bg-primary/80 sm:w-[200px]"
-            type="submit"
-            disabled={isPending}
-            pending={isPending}
-            subscribeStatus={state?.success}
-          >
-            <span className="group inline-flex items-center">
-              <ClipboardList className="mr-2 size-4 transition-transform duration-100 ease-linear group-hover:-rotate-12" />
-              Join the Waitlist
-            </span>
-            <span className="group inline-flex items-center">
-              <CheckIcon className="mr-2 size-4" />
-              Subscribed
-            </span>
-          </AnimatedSubscribeButton>
-        </form>
-        {(errors.email || (state?.message && !state.success)) && (
+        {state?.success ? (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex items-center justify-center gap-2 rounded bg-red-100 p-3 font-bold text-destructive"
-            role="alert"
-            id="email-error"
-          >
-            <TriangleAlert className="size-4" aria-hidden="true" />
-            <p className="text-sm">{errors.email?.message || state?.message}</p>
-          </motion.div>
-        )}
-        {state?.success && state.message && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex items-center gap-2 rounded bg-green-100 p-3 font-bold text-green-700"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center gap-3 rounded-xl bg-green-50 px-6 py-8 text-center"
             role="status"
           >
-            <CheckIcon className="size-4" aria-hidden="true" />
-            <p className="text-sm">{state.message}</p>
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+              <CheckIcon className="size-6 text-green-600" aria-hidden="true" />
+            </div>
+            <p className="font-semibold text-green-800">You&apos;re on the list!</p>
+            <p className="text-sm text-green-700">
+              {state.message ?? "We'll let you know the moment early access opens up."}
+            </p>
           </motion.div>
+        ) : (
+          <>
+            <form
+              ref={formRef}
+              onSubmit={handleFormSubmit}
+              onKeyDown={handleKeyPress}
+              className="stack sm:flex-row sm:gap-4"
+              aria-label="Waitlist signup form"
+              noValidate
+            >
+              <input type="hidden" name="mailingLists" value={mailingListIds} />
+              {/* Honeypot fields */}
+              <input
+                {...register('website')}
+                type="text"
+                name="website"
+                id="website"
+                tabIndex={-1}
+                autoComplete="off"
+                placeholder="Your website"
+                style={{
+                  position: 'absolute',
+                  left: '-9999px',
+                  top: '-9999px',
+                  opacity: 0,
+                  pointerEvents: 'none',
+                }}
+                aria-hidden="true"
+              />
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                tabIndex={-1}
+                autoComplete="off"
+                placeholder="Phone number"
+                style={{
+                  position: 'absolute',
+                  left: '-9999px',
+                  top: '-9999px',
+                  opacity: 0,
+                  pointerEvents: 'none',
+                }}
+                aria-hidden="true"
+              />
+              <div className="flex-1">
+                <label htmlFor="email" className="sr-only">
+                  Email address
+                </label>
+                <div className="space-y-2" role="group" aria-labelledby="email-label">
+                  <div>
+                    <span id="email-label" className="sr-only">
+                      Enter your email address to join the waitlist
+                    </span>
+                    <input
+                      {...register('email')}
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Enter your email"
+                      className={cn(
+                        'w-full rounded-md border-0 bg-white p-3 text-stone-900 shadow-sm ring-1 ring-inset ring-stone-300 placeholder:text-base placeholder:text-stone-400 focus:ring-2 focus:ring-inset focus:ring-primary',
+                        errors.email && 'ring-red-500 focus:ring-red-500'
+                      )}
+                      aria-describedby={
+                        errors.email || (state?.message && !state.success)
+                          ? 'email-error'
+                          : undefined
+                      }
+                      aria-invalid={errors.email ? 'true' : 'false'}
+                      aria-required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+              <AnimatedSubscribeButton
+                className="w-full hover:bg-primary/80 sm:w-[200px]"
+                type="submit"
+                disabled={isPending}
+                pending={isPending}
+                subscribeStatus={state?.success}
+              >
+                <span className="group inline-flex items-center">
+                  <ClipboardList className="mr-2 size-4 transition-transform duration-100 ease-linear group-hover:-rotate-12" />
+                  Join the Waitlist
+                </span>
+                <span className="group inline-flex items-center">
+                  <CheckIcon className="mr-2 size-4" />
+                  Subscribed
+                </span>
+              </AnimatedSubscribeButton>
+            </form>
+            {(errors.email || (state?.message && !state.success)) && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center justify-center gap-2 rounded bg-red-100 p-3 font-bold text-destructive"
+                role="alert"
+                id="email-error"
+              >
+                <TriangleAlert className="size-4" aria-hidden="true" />
+                <p className="text-sm">{errors.email?.message || state?.message}</p>
+              </motion.div>
+            )}
+          </>
         )}
       </MotionWrapper>
     </div>

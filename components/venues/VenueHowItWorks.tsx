@@ -25,13 +25,13 @@ const STEPS = [
 export function VenueHowItWorks() {
   return (
     <section className="bg-transparent">
-      <div className="container mx-auto max-w-6xl space-y-12 text-center">
+      <div className="container mx-auto max-w-6xl space-y-12 md:text-center">
         <div className="stack">
           <p className="text-sm font-bold uppercase tracking-wide text-village-venues">
             How It Works
           </p>
           <h2>List your venue in three steps</h2>
-          <p className="block-p text-muted-foreground">
+          <p className="text-muted-foreground md:text-center">
             Getting your space in front of event organizers takes just a few minutes.
           </p>
         </div>
@@ -41,7 +41,7 @@ export function VenueHowItWorks() {
             const Icon = step.icon;
             return (
               <MotionWrapper key={index} index={index}>
-                <div className="flex flex-col items-center gap-4 text-center">
+                <div className="flex flex-col items-start gap-4 md:items-center md:text-center">
                   <div className="relative">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-village-venues/10">
                       <Icon className="size-6 text-village-venues" />

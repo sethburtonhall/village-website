@@ -23,7 +23,7 @@ export function GlobalFooter({
     <footer
       className={`border-t ${borderColor} ${backgroundColor} py-8 dark:border-stone-800 dark:bg-stone-950`}
     >
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 px-4 sm:flex-row md:items-center">
         <div className={`flex items-center gap-1.5 text-sm ${textColor}`}>
           <Icon className={`size-4 ${brandColor}`} />
           <span>{brandName}</span>

@@ -1,12 +1,13 @@
 import * as motion from 'motion/react-client';
 import { MotionWrapper } from '@/components/MotionWrapper';
+import { Button } from '@/components/ui/button';
 import { MoveDown, MoveRight } from 'lucide-react';
 
 export function VenueHero() {
   return (
     <MotionWrapper
       type="section"
-      className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/40 to-stone-100 pb-28 pt-20 text-center dark:from-[#0a0a0a] dark:via-[#1a0f1f] dark:to-[#0f0a1a]"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/40 to-stone-100 pb-28 pt-20 dark:from-[#0a0a0a] dark:via-[#1a0f1f] dark:to-[#0f0a1a] md:text-center"
     >
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-village-venues/5 via-transparent to-transparent dark:from-village-venues/20 dark:via-village-venues/10" />
@@ -46,7 +47,7 @@ export function VenueHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.25 }}
-          className="block-p font- text-muted-foreground"
+          className="text-muted-foreground md:text-center"
         >
           Transform your venue into a hub for local events. Connect with organizers, fill your
           calendar, and become a cornerstone of community life.
@@ -57,22 +58,20 @@ export function VenueHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="flex flex-col items-start gap-3 sm:flex-row md:items-center md:justify-center"
         >
-          <a
-            href="https://venues.usevillage.app/sign-up"
-            className="inline-flex items-center gap-2 rounded-md bg-village-venues px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-village-venues/90 hover:shadow-lg hover:shadow-village-venues/25"
-          >
-            List Your Venue
-            <MoveRight className="h-4 w-4" />
-          </a>
-          <a
-            href="#venue-directory"
-            className="inline-flex items-center gap-2 rounded-md border border-village-venues/50 px-6 py-2.5 text-sm font-semibold text-foreground/80 transition-all hover:border-village-venues hover:bg-village-venues/10 hover:text-foreground"
-          >
-            Browse Venues
-            <MoveDown className="h-4 w-4" />
-          </a>
+          <Button variant="venues" size="default" asChild>
+            <a href="https://venues.usevillage.app/sign-up">
+              List Your Venue
+              <MoveRight className="h-4 w-4" />
+            </a>
+          </Button>
+          <Button variant="venues-outline" size="default" asChild>
+            <a href="#venue-directory">
+              Browse Venues
+              <MoveDown className="h-4 w-4" />
+            </a>
+          </Button>
         </motion.div>
       </div>
     </MotionWrapper>

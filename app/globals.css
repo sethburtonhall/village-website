@@ -140,7 +140,7 @@ p {
 
 section {
   @apply px-4 py-20;
-  @apply bg-stone-100;
+  /* @apply bg-stone-100; */
 }
 
 .privacy-section,
@@ -226,14 +226,19 @@ section {
   }
 
   .block-p {
-    @apply mx-auto;
-    @apply text-center text-base md:text-lg;
+    @apply md:mx-auto;
+    @apply md:text-center text-base md:text-lg;
     @apply sm:max-w-lg md:max-w-xl lg:max-w-2xl;
   }
 
   .gradiant-text {
     @apply inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent;
   }
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @theme inline {
