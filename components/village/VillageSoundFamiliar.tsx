@@ -27,22 +27,22 @@ const painPoints = [
 export function VillageSoundFamiliar() {
   return (
     <section className="bg-stone-50 py-16">
-      <div className="container mx-auto max-w-6xl space-y-12 md:text-center">
+      <div className="container mx-auto max-w-6xl space-y-12">
         <MotionWrapper>
-          <div className="stack">
-            <h2 className="text-3xl font-bold md:text-4xl">Sound familiar?</h2>
-          </div>
+          <h2 className="text-3xl font-bold md:text-center md:text-4xl">Sound familiar?</h2>
         </MotionWrapper>
 
-        <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
           {painPoints.map((point, index) => {
             const Icon = point.icon;
             return (
               <MotionWrapper key={index} index={index}>
-                <div className="flex h-full flex-col items-start gap-4 rounded-xl border border-stone-200 bg-white p-6 md:items-center md:text-center">
-                  <Icon className="size-8 text-red-400" />
-                  <h3 className="text-base font-semibold text-stone-800">{point.heading}</h3>
-                  <p className="text-sm leading-relaxed text-stone-500">{point.body}</p>
+                <div className="space-y-3 border-t-2 border-red-300 pt-5">
+                  <div className="flex items-center gap-2.5">
+                    <Icon className="size-5 shrink-0 text-red-400" />
+                    <h3 className="font-bold text-stone-800">{point.heading}</h3>
+                  </div>
+                  <p className="leading-relaxed text-stone-500">{point.body}</p>
                 </div>
               </MotionWrapper>
             );
@@ -50,7 +50,7 @@ export function VillageSoundFamiliar() {
         </div>
 
         <MotionWrapper>
-          <p className="ml-2 text-xl font-medium text-stone-600">
+          <p className="text-xl font-medium text-stone-600 md:text-center">
             <span className="font-bold text-primary-600">Village</span> fixes all of this.
           </p>
         </MotionWrapper>

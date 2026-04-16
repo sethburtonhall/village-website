@@ -10,6 +10,7 @@ import { VillageCommunities } from '@/components/village/VillageCommunities';
 import { VillagePricing } from '@/components/village/VillagePricing';
 import { VillageLiveAddon } from '@/components/village/VillageLiveAddon';
 import { VillageFAQ } from '@/components/village/VillageFAQ';
+import { VillageProductPreview } from '@/components/village/VillageProductPreview';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <VillageHero />
       <VillageSoundFamiliar />
       <VillageHowItWorks id="how-it-works" />
+      <VillageProductPreview />
       <VillageWaitlist />
       <VillageFeatures />
       <VillageCommunities />

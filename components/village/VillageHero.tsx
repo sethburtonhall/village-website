@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
-import { JiggleText } from '@/components/ui/jiggle-text';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { ScrollLink } from '@/components/ScrollLink';
 import { ChevronRight, MoveDown } from 'lucide-react';
@@ -28,10 +27,7 @@ export function VillageHero() {
             made simple and
             <span className="relative">
               <ConfettiButton variant="ghost" className="font-extrabold md:text-7xl">
-                <span className="flex items-baseline gap-2 text-3xl md:text-5xl lg:text-7xl">
-                  <JiggleText className="scale-80 md:scale-75" text="🎉" />
-                  <span className="text-primary-600">fun!</span>
-                </span>
+                <span className="text-3xl text-primary-600 md:text-5xl lg:text-7xl">fun!</span>
               </ConfettiButton>
             </span>
           </h1>
