@@ -21,12 +21,7 @@ export function VillageCommunities() {
 
   return (
     <section className="overflow-hidden bg-white py-16">
-      <div className="mx-auto space-y-16 md:text-center">
-        <div className="stack">
-          <p className="font-bold text-primary-600">Communities</p>
-          <h1>Churches, schools, sports teams — and everyone in between.</h1>
-          <p className="block-p">It takes a village. We&apos;re here to help you run yours.</p>
-        </div>
+      <div className="mx-auto space-y-12 md:text-center">
         <MotionWrapper>
           <div
             className="relative overflow-hidden"
@@ -57,6 +52,15 @@ export function VillageCommunities() {
                 );
               })}
             </div>
+          </div>
+        </MotionWrapper>
+
+        <MotionWrapper>
+          <div className="stack">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Churches, schools, sports teams — and everyone in between.
+            </h2>
+            <p className="block-p">It takes a village. We&apos;re here to help you run yours.</p>
           </div>
         </MotionWrapper>
       </div>

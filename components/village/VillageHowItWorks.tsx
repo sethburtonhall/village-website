@@ -1,46 +1,41 @@
-import { Fragment } from 'react';
-import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MotionWrapper } from '@/components/MotionWrapper';
-import { MagicCard } from '@/components/ui/magic-card';
-import { ArrowRight, ArrowDown } from 'lucide-react';
 import { steps } from '@/lib/data';
 
 export function VillageHowItWorks({ id }: { id?: string }) {
   return (
-    <section id={id} className="scroll-mt-[4.3rem] pt-8">
-      <MotionWrapper className="pt-8">
-        <div className="mx-auto max-w-6xl space-y-8 md:text-center">
-          <h1>How It Works</h1>
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
-            {steps.map((feature, index) => (
-              <Fragment key={index}>
-                <MotionWrapper index={index}>
-                  <MagicCard
-                    className="cursor-default"
-                    gradientColor={'#22c55e11'}
-                    gradientFrom={'#22c55e'}
-                    gradientTo={'#86efac'}
-                  >
-                    <CardHeader className="flex flex-1 flex-col justify-center">
-                      <CardTitle className="mb-2 font-signature text-4xl font-bold text-primary-600">
-                        Step {index + 1}
-                      </CardTitle>
-                      <CardTitle className="text-xl">{feature.title}</CardTitle>
-                      <CardDescription>{feature.description}</CardDescription>
-                    </CardHeader>
-                  </MagicCard>
-                </MotionWrapper>
-                {index < steps.length - 1 && (
-                  <MotionWrapper index={index} className="flex justify-center px-4">
-                    <ArrowDown className="block size-10 text-primary-600 md:hidden" />
-                    <ArrowRight className="hidden size-10 text-primary-600 md:block" />
-                  </MotionWrapper>
-                )}
-              </Fragment>
-            ))}
+    <section id={id} className="scroll-mt-[4.3rem] py-16">
+      <div className="mx-auto max-w-2xl space-y-16">
+        <MotionWrapper>
+          <div className="stack md:text-center">
+            <p className="font-bold text-primary-600">How it works</p>
+            <h2 className="text-3xl font-bold md:text-4xl">Up and running in minutes</h2>
           </div>
+        </MotionWrapper>
+
+        <div className="relative">
+          {steps.map((step, index) => (
+            <MotionWrapper key={index} index={index}>
+              <div className="relative flex gap-8">
+                {/* Step number + connecting line */}
+                <div className="flex flex-col items-center">
+                  <span className="font-signature text-5xl font-bold leading-none text-primary-600">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  {index < steps.length - 1 && (
+                    <div className="mt-3 w-px flex-1 bg-primary-600/20" />
+                  )}
+                </div>
+
+                {/* Content — pb creates the gap, line stretches to fill it */}
+                <div className={`space-y-2 pt-1 ${index < steps.length - 1 ? 'pb-16' : ''}`}>
+                  <h3 className="text-xl font-bold">{step.title}</h3>
+                  <p className="leading-relaxed text-stone-500">{step.description}</p>
+                </div>
+              </div>
+            </MotionWrapper>
+          ))}
         </div>
-      </MotionWrapper>
+      </div>
     </section>
   );
 }
