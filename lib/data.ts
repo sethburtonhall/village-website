@@ -1,10 +1,10 @@
 import {
   LayoutDashboard,
   CalendarPlus,
+  CalendarClock,
   Share2,
   Users,
   Palette,
-  Sparkles,
   Form,
   Copy,
   MailCheck,
@@ -28,13 +28,14 @@ export const steps = [
     description: 'Up and running in seconds. No credit card, no commitment.',
   },
   {
-    title: 'Create your first event',
-    description: "Set up your event in minutes. Add details, set slot limits, and you're ready.",
+    title: 'Set up your event',
+    description:
+      'Give it a name, pick your time slots, and set how many people can join each one. Done before your coffee gets cold.',
   },
   {
     title: 'Share a link',
     description:
-      'Send a clean, simple link. Participants sign up in seconds — no account needed on their end.',
+      'Drop it in a group chat, an email, a text — wherever your people are. They click, pick a slot, and you know who\'s coming.',
   },
 ];
 
@@ -60,7 +61,7 @@ export const coreFeatures = [
   {
     title: 'Notifications & Reminders',
     description:
-      'Reliable notifications andreminders go out automatically — so participants actually show up.',
+      'Reliable notifications and reminders go out automatically — so participants actually show up.',
     icon: MailCheck,
   },
   {
@@ -70,10 +71,10 @@ export const coreFeatures = [
     icon: ClockCheck,
   },
   {
-    title: 'More Features',
+    title: 'Calendar Sync',
     description:
-      'Plus timezone-aware scheduling, calendar sync, admin controls, and saved favorites — the details that make organizing smoother.',
-    icon: Sparkles,
+      'Every event syncs to Google Calendar, Apple Calendar, or Outlook — so nothing slips through the cracks.',
+    icon: CalendarClock,
   },
 ];
 

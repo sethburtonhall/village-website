@@ -1,4 +1,5 @@
 import { MotionWrapper } from '@/components/MotionWrapper';
+import { Button } from '@/components/ui/button';
 import { MoveRight } from 'lucide-react';
 
 export function VenueCTA() {
@@ -16,13 +17,12 @@ export function VenueCTA() {
           List your venue on Village Venues and connect with local organizers seeking spaces like
           yours. Fill your calendar while strengthening your community.
         </p>
-        <a
-          href="https://venues.usevillage.app/sign-up"
-          className="inline-flex items-center gap-2 rounded-md bg-village-venues px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-village-venues/90"
-        >
-          List Your Venue
-          <MoveRight className="h-4 w-4" />
-        </a>
+        <Button variant="venues" size="lg" asChild>
+          <a href="https://venues.usevillage.app/sign-up">
+            List Your Venue
+            <MoveRight className="h-4 w-4" />
+          </a>
+        </Button>
       </div>
     </MotionWrapper>
   );

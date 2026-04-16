@@ -18,6 +18,10 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
+        live: 'bg-village-live text-white shadow-sm hover:bg-village-live/90',
+        venues: 'bg-village-venues text-white shadow-sm hover:bg-village-venues/90',
+        'venues-outline':
+          'border border-village-venues/50 text-foreground/80 hover:border-village-venues hover:bg-village-venues/10 hover:text-foreground',
       },
       size: {
         default: 'h-9 px-4 py-2',

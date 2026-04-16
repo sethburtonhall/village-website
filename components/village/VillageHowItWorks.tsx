@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { MagicCard } from '@/components/ui/magic-card';
@@ -6,16 +7,16 @@ import { steps } from '@/lib/data';
 
 export function VillageHowItWorks({ id }: { id?: string }) {
   return (
-    <section id={id} className="pt-8">
+    <section id={id} className="scroll-mt-[4.3rem] pt-8">
       <MotionWrapper className="pt-8">
         <div className="mx-auto max-w-6xl space-y-8 md:text-center">
           <h1>How It Works</h1>
           <div className="grid grid-cols-1 gap-2 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
             {steps.map((feature, index) => (
-              <>
-                <MotionWrapper key={`card-${index}`} index={index}>
+              <Fragment key={index}>
+                <MotionWrapper index={index}>
                   <MagicCard
-                    className="flex h-[160px] cursor-default flex-col md:h-[260px] lg:h-[180px]"
+                    className="cursor-default"
                     gradientColor={'#22c55e11'}
                     gradientFrom={'#22c55e'}
                     gradientTo={'#86efac'}
@@ -30,16 +31,12 @@ export function VillageHowItWorks({ id }: { id?: string }) {
                   </MagicCard>
                 </MotionWrapper>
                 {index < steps.length - 1 && (
-                  <MotionWrapper
-                    key={`arrow-${index}`}
-                    index={index}
-                    className="flex justify-center px-4"
-                  >
+                  <MotionWrapper index={index} className="flex justify-center px-4">
                     <ArrowDown className="block size-10 text-primary-600 md:hidden" />
                     <ArrowRight className="hidden size-10 text-primary-600 md:block" />
                   </MotionWrapper>
                 )}
-              </>
+              </Fragment>
             ))}
           </div>
         </div>

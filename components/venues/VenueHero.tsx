@@ -1,5 +1,6 @@
 import * as motion from 'motion/react-client';
 import { MotionWrapper } from '@/components/MotionWrapper';
+import { Button } from '@/components/ui/button';
 import { MoveDown, MoveRight } from 'lucide-react';
 
 export function VenueHero() {
@@ -59,20 +60,18 @@ export function VenueHero() {
           transition={{ duration: 0.4, delay: 0.3 }}
           className="flex flex-col items-start gap-3 sm:flex-row md:items-center md:justify-center"
         >
-          <a
-            href="https://venues.usevillage.app/sign-up"
-            className="inline-flex items-center gap-2 rounded-md bg-village-venues px-6 py-2.5 text-sm font-semibold text-white transition-all hover:bg-village-venues/90 hover:shadow-lg hover:shadow-village-venues/25"
-          >
-            List Your Venue
-            <MoveRight className="h-4 w-4" />
-          </a>
-          <a
-            href="#venue-directory"
-            className="inline-flex items-center gap-2 rounded-md border border-village-venues/50 px-6 py-2.5 text-sm font-semibold text-foreground/80 transition-all hover:border-village-venues hover:bg-village-venues/10 hover:text-foreground"
-          >
-            Browse Venues
-            <MoveDown className="h-4 w-4" />
-          </a>
+          <Button variant="venues" size="default" asChild>
+            <a href="https://venues.usevillage.app/sign-up">
+              List Your Venue
+              <MoveRight className="h-4 w-4" />
+            </a>
+          </Button>
+          <Button variant="venues-outline" size="default" asChild>
+            <a href="#venue-directory">
+              Browse Venues
+              <MoveDown className="h-4 w-4" />
+            </a>
+          </Button>
         </motion.div>
       </div>
     </MotionWrapper>

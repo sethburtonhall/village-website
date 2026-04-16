@@ -30,9 +30,7 @@ export function VillageSoundFamiliar() {
       <div className="container mx-auto max-w-6xl space-y-12 md:text-center">
         <MotionWrapper>
           <div className="stack">
-            <h2 className="text-3xl font-bold md:text-4xl">
-              Organizing your community shouldn&apos;t feel like this.
-            </h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Sound familiar?</h2>
           </div>
         </MotionWrapper>
 
