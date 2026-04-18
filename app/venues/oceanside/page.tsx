@@ -1,12 +1,12 @@
 import { fetchVenuesWithFallback } from '@/lib/venue-api';
 import { VenuesHeader } from '@/components/venues/VenuesHeader';
 import { VenuesFooter } from '@/components/venues/VenuesFooter';
-import { VenueCard } from '@/components/venues/VenueCard';
+import { VenueCard, type Venue } from '@/components/venues/VenueCard';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import Link from 'next/link';
 
 export default async function OceansideVenuesPage() {
-  let venues: any[] = [];
+  let venues: Venue[] = [];
   let error = null;
 
   try {
