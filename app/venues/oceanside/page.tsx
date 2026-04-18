@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import Link from 'next/link';
 
 export default async function OceansideVenuesPage() {
-  let venues = [];
+  let venues: any[] = [];
   let error = null;
 
   try {
