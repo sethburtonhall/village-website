@@ -26,11 +26,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Village: Ad-Free Group Sign-Up Software (SignupGenius Alternative)',
+    default: 'Village – The SignupGenius Alternative',
     template: '%s',
   },
   description:
-    'Village is a modern, ad-free sign-up tool for churches, schools, and sports teams. No accounts required for participants. The SignupGenius alternative built for community organizers.',
+    'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
   keywords: [
     'SignUpGenius alternative',
     'group sign up',
@@ -55,16 +55,16 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://usevillage.app'),
   openGraph: {
-    title: 'Village: Ad-Free Group Sign-Up Software (SignupGenius Alternative)',
+    title: 'Village – The SignupGenius Alternative',
     description:
-      'Village is a modern, ad-free sign-up tool for churches, schools, and sports teams. No accounts required for participants. The SignupGenius alternative built for community organizers.',
+      'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
     url: 'https://usevillage.app',
     siteName: 'Village',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Village - Clean, ad-free group sign-ups for churches, schools & sports teams',
@@ -73,10 +73,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village: Ad-Free Group Sign-Up Software (SignupGenius Alternative)',
+    title: 'Village – The SignupGenius Alternative',
     description:
-      'Village is a modern, ad-free sign-up tool for churches, schools, and sports teams. No accounts required for participants. The SignupGenius alternative built for community organizers.',
-    images: ['/opengraph-image'],
+      'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
+    images: ['/og-image.png'],
     creator: '@usevillage',
   },
   robots: {
