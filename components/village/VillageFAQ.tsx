@@ -5,8 +5,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { generateFAQSchema, type FAQItem } from '@/lib/schemas';
 
-const faqs = [
+const faqs: FAQItem[] = [
   {
     q: 'Do my participants need to create an account?',
     a: 'No — and that\'s the point. Participants just click your link, pick a slot, and they\'re done. No account, no password, no reason to bail halfway through.',
@@ -35,34 +36,40 @@ const faqs = [
 
 export function VillageFAQ() {
   return (
-    <section className="bg-stone-50 py-16">
-      <div className="container mx-auto max-w-3xl space-y-12">
-        <MotionWrapper>
-          <div className="stack md:text-center">
-            <p className="font-bold text-primary-600">FAQ</p>
-            <h2 className="text-3xl font-bold md:text-4xl">Questions we actually get asked</h2>
-          </div>
-        </MotionWrapper>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+      />
+      <section className="bg-stone-50 py-16">
+        <div className="container mx-auto max-w-3xl space-y-12">
+          <MotionWrapper>
+            <div className="stack md:text-center">
+              <p className="font-bold text-primary-600">FAQ</p>
+              <h2 className="text-3xl font-bold md:text-4xl">Questions we actually get asked</h2>
+            </div>
+          </MotionWrapper>
 
-        <MotionWrapper>
-          <Accordion type="single" collapsible className="space-y-2">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`faq-${index}`}
-                className="rounded-xl border border-stone-200 bg-white px-6"
-              >
-                <AccordionTrigger className="text-left text-base font-semibold hover:no-underline">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-stone-600">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </MotionWrapper>
-      </div>
-    </section>
+          <MotionWrapper>
+            <Accordion type="single" collapsible className="space-y-2">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`faq-${index}`}
+                  className="rounded-xl border border-stone-200 bg-white px-6"
+                >
+                  <AccordionTrigger className="text-left text-base font-semibold hover:no-underline">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm leading-relaxed text-stone-600">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </MotionWrapper>
+        </div>
+      </section>
+    </>
   );
 }

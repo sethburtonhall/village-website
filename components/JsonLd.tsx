@@ -1,5 +1,5 @@
 export function JsonLd() {
-  const schema = {
+  const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Village',
@@ -28,10 +28,44 @@ export function JsonLd() {
     ],
   };
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Village',
+    url: 'https://usevillage.app',
+    logo: 'https://usevillage.app/logo.png',
+    description:
+      'Village is a clean, ad-free group sign-up tool for churches, schools, and sports teams.',
+    sameAs: [
+      'https://twitter.com/usevillage',
+      'https://www.linkedin.com/in/sethburtonhall/',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-919-961-4503',
+      contactType: 'Customer Service',
+      email: 'support@usevillage.app',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '516 N Nevada St',
+      addressLocality: 'Oceanside',
+      addressRegion: 'CA',
+      postalCode: '92054',
+      addressCountry: 'US',
+    },
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+    </>
   );
 }

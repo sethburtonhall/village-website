@@ -8,16 +8,16 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Village Live — Real-time Event Experiences',
+  title: 'Village Live — Real-Time Event Engagement Polls, Q&A & Check-Ins',
   description:
-    'Village Live turns any Village event into a real-time interactive experience. Go live, track check-ins, run polls, manage Q&A, and broadcast to every attendee screen — all from Mission Control.',
+    'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees from Mission Control. Perfect for churches, schools, sports teams, and conferences.',
   alternates: {
     canonical: 'https://www.usevillage.app/live',
   },
   openGraph: {
-    title: 'Village Live - Real-time Event Experiences',
+    title: 'Village Live — Real-Time Event Engagement Polls, Q&A & Check-Ins',
     description:
-      'Village handles the sign-up. Village Live runs the day. Real-time reactions, polls, Q&A, broadcasts, and more.',
+      'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees from Mission Control.',
     url: 'https://www.usevillage.app/live',
     siteName: 'Village Live',
     locale: 'en_US',
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village Live - Real-time Event Experiences',
+    title: 'Village Live — Real-Time Event Engagement Polls, Q&A & Check-Ins',
     description:
-      'Village handles the sign-up. Village Live runs the day. Real-time reactions, polls, Q&A, broadcasts, and more.',
+      'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees.',
     images: ['/live/opengraph-image'],
     creator: '@usevillage',
   },

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Noto_Sans, Nunito, Caveat } from 'next/font/google';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Toaster } from '@/components/ui/toaster';
 
 import './globals.css';
@@ -25,11 +26,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+    default: 'Village: Ad-Free Group Sign-Up Software (SignupGenius Alternative)',
     template: '%s',
   },
   description:
-    'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
+    'Village is a modern, ad-free sign-up tool for churches, schools, and sports teams. No accounts required for participants. The SignupGenius alternative built for community organizers.',
   keywords: [
     'SignUpGenius alternative',
     'group sign up',
@@ -54,9 +55,9 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://usevillage.app'),
   openGraph: {
-    title: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+    title: 'Village: Ad-Free Group Sign-Up Software (SignupGenius Alternative)',
     description:
-      'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
+      'Village is a modern, ad-free sign-up tool for churches, schools, and sports teams. No accounts required for participants. The SignupGenius alternative built for community organizers.',
     url: 'https://usevillage.app',
     siteName: 'Village',
     locale: 'en_US',
@@ -72,9 +73,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+    title: 'Village: Ad-Free Group Sign-Up Software (SignupGenius Alternative)',
     description:
-      'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
+      'Village is a modern, ad-free sign-up tool for churches, schools, and sports teams. No accounts required for participants. The SignupGenius alternative built for community organizers.',
     images: ['/opengraph-image'],
     creator: '@usevillage',
   },
@@ -103,6 +104,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${noto.variable} ${nunito.variable} ${caveat.variable} antialiased`}>
         <JsonLd />
+        <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: 'https://usevillage.app' },
+            { name: 'Venues', url: 'https://usevillage.app/venues' },
+            { name: 'Live', url: 'https://usevillage.app/live' },
+          ]}
+        />
         <main>{children}</main>
         <Toaster />
       </body>

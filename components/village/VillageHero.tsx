@@ -26,7 +26,7 @@ export function VillageHero() {
             made simple and
             <span className="relative">
               <ConfettiButton variant="ghost" className="font-extrabold md:text-7xl">
-                <span className="text-3xl text-primary-600 md:text-5xl lg:text-7xl">fun!</span>
+                <span className="text-3xl text-primary-600 md:text-5xl lg:text-7xl"> fun!</span>
               </ConfettiButton>
             </span>
           </h1>

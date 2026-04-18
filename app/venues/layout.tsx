@@ -10,16 +10,16 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: 'Village Venues — Find & List Event Spaces',
+  title: 'Village Venues — Find Event Spaces & Venue Listings',
   description:
-    'Browse unique event spaces or list your venue on Village Venues. Connect with thousands of organizers searching for the perfect place.',
+    'Find unique event spaces for your next event or list your venue on Village Venues. Connect with thousands of organizers searching for the perfect place to host. Churches, schools, sports teams, conferences, and community events.',
   alternates: {
     canonical: 'https://www.usevillage.app/venues',
   },
   openGraph: {
-    title: 'Village Venues — Find & List Event Spaces',
+    title: 'Village Venues — Find Event Spaces & Venue Listings',
     description:
-      'Browse unique event spaces or list your venue to connect with thousands of event organizers.',
+      'Find unique event spaces for your next event or list your venue on Village Venues. Connect with thousands of organizers searching for the perfect place.',
     url: 'https://www.usevillage.app/venues',
     siteName: 'Village Venues',
     locale: 'en_US',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village Venues - Find & List Event Spaces',
+    title: 'Village Venues — Find Event Spaces & Venue Listings',
     description:
-      'Browse unique event spaces or list your venue to connect with thousands of event organizers.',
+      'Find unique event spaces for your next event or list your venue on Village Venues. Connect with thousands of organizers.',
     images: ['/venues/opengraph-image'],
     creator: '@usevillage',
   },
