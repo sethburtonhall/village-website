@@ -35,11 +35,8 @@ export function JsonLd() {
     url: 'https://usevillage.app',
     logo: 'https://usevillage.app/logo.png',
     description:
-      'Village is a clean, ad-free group sign-up tool for churches, schools, and sports teams.',
-    sameAs: [
-      'https://twitter.com/usevillage',
-      'https://www.linkedin.com/in/sethburtonhall/',
-    ],
+      'Village is a modern group sign-up tool for any community or organization. No ads. No accounts required. The SignupGenius alternative.',
+    sameAs: ['https://twitter.com/usevillage', 'https://www.linkedin.com/in/sethburtonhall/'],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+1-919-961-4503',

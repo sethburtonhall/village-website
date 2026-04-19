@@ -10,7 +10,7 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: 'Village Live — Real-Time Event Engagement Polls, Q&A & Check-Ins',
   description:
-    'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees from Mission Control. Perfect for churches, schools, sports teams, and conferences.',
+    'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees from Mission Control. Perfect for communities and organizations.',
   alternates: {
     canonical: 'https://www.usevillage.app/live',
   },

@@ -1,10 +1,7 @@
 import { z } from 'zod';
 
 export const waitlistSchema = z.object({
-  email: z
-    .string()
-    .min(1, 'Email is required')
-    .email('Please enter a valid email address'),
+  email: z.string().min(1, 'Email is required').email('Please enter a valid email address'),
   website: z.string().max(0, 'Bot detected'), // Honeypot field - should be empty
 });
 
@@ -36,7 +33,7 @@ export function generateOrganizationSchema() {
     url: 'https://usevillage.app',
     logo: 'https://usevillage.app/logo.png',
     description:
-      'Village is a group sign-up tool for churches, schools, and sports teams. Clean, ad-free, no accounts required.',
+      'Village is a modern group sign-up tool for any community or organization. No ads. No accounts required. The SignupGenius alternative.',
     sameAs: ['https://twitter.com/usevillage'],
     contactPoint: {
       '@type': 'ContactPoint',

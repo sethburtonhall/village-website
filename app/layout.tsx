@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
+    'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
   keywords: [
     'SignUpGenius alternative',
     'group sign up',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Village – The SignupGenius Alternative',
     description:
-      'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
+      'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
     url: 'https://www.usevillage.app',
     siteName: 'Village',
     locale: 'en_US',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
         url: 'https://www.usevillage.app/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Village - Clean, ad-free group sign-ups for churches, schools & sports teams',
+        alt: 'Village - Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
       },
     ],
   },
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Village – The SignupGenius Alternative',
     description:
-      'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
+      'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
     creator: '@usevillage',
     images: ['https://www.usevillage.app/og-image.png'],
   },
