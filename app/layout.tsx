@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: 'Village – The SignupGenius Alternative',
     description:
       'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
-    url: 'https://usevillage.app',
+    url: 'https://www.usevillage.app',
     siteName: 'Village',
     locale: 'en_US',
     type: 'website',
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://usevillage.app',
+    canonical: 'https://www.usevillage.app',
   },
 };
 
