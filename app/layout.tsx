@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/opengraph-image',
+        url: 'https://www.usevillage.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Village - Clean, ad-free group sign-ups for churches, schools & sports teams',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     description:
       'Modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required. The SignupGenius alternative.',
     creator: '@usevillage',
-    images: ['/opengraph-image'],
+    images: ['https://www.usevillage.app/og-image.png'],
   },
   robots: {
     index: true,
