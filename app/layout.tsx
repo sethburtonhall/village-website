@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://usevillage.app'),
+  metadataBase: new URL('https://www.usevillage.app'),
   openGraph: {
     title: 'Village – The SignupGenius Alternative',
     description:
