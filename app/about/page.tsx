@@ -3,8 +3,9 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about Village and the team behind it.',
+  title: 'About',
+  description:
+    'Village is a group sign-up tool built for community organizers — no ads, no accounts required for participants, just a link worth sharing.',
 };
 
 export default function AboutPage() {
@@ -17,54 +18,63 @@ export default function AboutPage() {
 
           <div className="prose prose-stone max-w-none space-y-6 leading-relaxed text-stone-600">
             <p className="text-lg">
-              Village is a group sign-up and event management tool built for the people who keep
-              communities running — coaches, volunteers, teachers, church leaders, and everyone in
-              between.
+              Village is a group sign-up tool built for the people who keep communities running —
+              church coordinators, sports team managers, school parents, and volunteers who do it
+              all without a job title.
             </p>
 
             <p>
-              We built Village because organizing people shouldn&apos;t require a spreadsheet degree.
-              Whether you&apos;re coordinating a school bake sale, a volunteer shift schedule, or a
-              neighborhood cleanup day, Village gives you a clean, shareable sign-up link in minutes
-              — no account required for participants.
+              We built Village because the tools people were using to organize sign-ups were getting
+              in the way: ads cluttering every page, forms that confused participants, and links
+              that felt embarrassing to share. Organizers deserved something cleaner. Village gives
+              you a simple, ad-free sign-up experience your community will actually use — no account
+              required on their end.
             </p>
 
             <h2 className="mb-4 mt-10 text-2xl font-semibold text-stone-800">Our Mission</h2>
             <p>
-              To make group coordination simple, delightful, and accessible to every community —
-              regardless of size or budget.
+              To make group coordination simple and accessible — so the people who keep communities
+              running can spend less time chasing sign-ups and more time doing the thing they love.
             </p>
 
-            <h2 className="mb-4 mt-10 text-2xl font-semibold text-stone-800">The Company</h2>
+            <h2 className="mb-4 mt-10 text-2xl font-semibold text-stone-800">
+              Built by Roadshow Creative
+            </h2>
             <p>
-              Village is a product of{' '}
-              <span className="font-medium text-stone-800">Roadshow Creative LLC</span>, a small
-              software studio focused on building tools that help real people do real things. We&apos;re
-              a lean team that cares deeply about product quality and customer experience.
+              Village is built and maintained by Seth Hall, founder of{' '}
+              <a
+                href="https://roadshowcreative.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary-600 hover:underline"
+              >
+                Roadshow Creative
+              </a>{' '}
+              — a software studio in Oceanside, CA focused on building tools that help real people
+              do real things.
             </p>
 
             <h2 className="mb-4 mt-10 text-2xl font-semibold text-stone-800">Get in Touch</h2>
             <p>
-              We&apos;d love to hear from you.&nbsp;
+              Have feedback, a feature idea, or just a question?{' '}
               <a
                 href="mailto:support@usevillage.app"
                 className="font-medium text-primary-600 hover:underline"
               >
-                Contact us
-              </a>
-              &nbsp;any time. Whether it&apos;s feedback, a feature idea, or just a hello — we read every
-              message.
+                Email us
+              </a>{' '}
+              — we read and respond to every message.
             </p>
 
             <p>
-              Need documentation or help getting started? Visit our{' '}
+              Need help getting started?{' '}
               <a
                 href="https://docs.usevillage.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary-600 hover:underline"
               >
-                Help Center
+                Visit the docs
               </a>
               .
             </p>

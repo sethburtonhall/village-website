@@ -1,12 +1,13 @@
 import Link from 'next/link';
 
 import { ClipboardList } from 'lucide-react';
+import { VillageFooter } from './village/VillageFooter';
 
 export function Footer() {
   return (
-    <footer className="bg-white px-4 py-16">
+    <footer className="bg-white px-4 py-16 pb-0">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-5 md:gap-8">
+        <div className="grid grid-cols-1 gap-12 pb-6 md:grid-cols-5 md:gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="group flex items-center gap-2">
@@ -20,7 +21,7 @@ export function Footer() {
             </div>
             <p className="mt-4 text-stone-600">
               Group Sign-ups Made Simple and 🎉{' '}
-              <span className="gradiant-text font-medium">Fun!.</span>
+              <span className="gradient-text font-medium">Fun!.</span>
             </p>
           </div>
 
@@ -34,6 +35,22 @@ export function Footer() {
                   className="text-sm text-stone-500 transition-colors hover:text-primary-600"
                 >
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/live"
+                  className="text-sm text-stone-500 transition-colors hover:text-village-live"
+                >
+                  Village Live
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/venues"
+                  className="text-sm text-stone-500 transition-colors hover:text-village-venues"
+                >
+                  Village Venues
                 </Link>
               </li>
             </ul>
@@ -88,19 +105,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 border-t border-stone-200 pt-8 text-center md:text-right">
-          <p className="text-sm text-stone-500">
-            &copy; {new Date().getFullYear()}{' '}
-            <a
-              href="https://www.roadshowcreative.dev/"
-              className="text-primary-600 transition-colors hover:underline"
-            >
-              Roadshow Creative LLC
-            </a>
-            . All rights reserved.
-          </p>
-        </div>
+        <VillageFooter />
       </div>
     </footer>
   );

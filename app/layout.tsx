@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ClerkProvider } from '@clerk/nextjs';
 import { Noto_Sans, Nunito, Caveat } from 'next/font/google';
 import { JsonLd } from '@/components/JsonLd';
+import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Toaster } from '@/components/ui/toaster';
 
 import './globals.css';
@@ -26,11 +27,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
-    template: '%s | Village',
+    default: 'Village – The SignupGenius Alternative',
+    template: '%s',
   },
   description:
-    'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
+    'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
   keywords: [
     'SignUpGenius alternative',
     'group sign up',
@@ -53,31 +54,31 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://usevillage.app'),
+  metadataBase: new URL('https://www.usevillage.app'),
   openGraph: {
-    title: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+    title: 'Village – The SignupGenius Alternative',
     description:
-      'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
-    url: 'https://usevillage.app',
+      'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
+    url: 'https://www.usevillage.app',
     siteName: 'Village',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/og-image-white.jpg',
+        url: 'https://www.usevillage.app/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+        alt: 'Village - Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Village — Clean, ad-free group sign-ups for churches, schools & sports teams',
+    title: 'Village – The SignupGenius Alternative',
     description:
-      'Village is the modern sign-up tool for churches, schools, and sports teams. No ads, no accounts required for participants — just clean, simple sign-ups your community will actually use.',
-    images: ['/og-image-white.jpg'],
+      'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
     creator: '@usevillage',
+    images: ['https://www.usevillage.app/og-image.png'],
   },
   robots: {
     index: true,
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://usevillage.app',
+    canonical: 'https://www.usevillage.app',
   },
 };
 
@@ -105,6 +106,13 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${noto.variable} ${nunito.variable} ${caveat.variable} antialiased`}>
           <JsonLd />
+          <BreadcrumbSchema
+            items={[
+              { name: 'Home', url: 'https://usevillage.app' },
+              { name: 'Venues', url: 'https://usevillage.app/venues' },
+              { name: 'Live', url: 'https://usevillage.app/live' },
+            ]}
+          />
           <main>{children}</main>
           <Toaster />
         </body>

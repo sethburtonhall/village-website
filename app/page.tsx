@@ -1,68 +1,31 @@
-import { cn } from '@/lib/utils';
-
 import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
-import { SoundFamiliar } from '@/components/SoundFamiliar';
-import { HowItWorks } from '@/components/HowItWorks';
-import { Waitlist } from '@/components/Waitlist';
-import { Features } from '@/components/Features';
-import { Communities } from '@/components/Communities';
-import { Pricing } from '@/components/Pricing';
 import { Footer } from '@/components/Footer';
-import { DotPattern } from '@/components/ui/dot-pattern';
-import { WelcomeToast } from '@/components/WelcomeToast';
+
+import { VillageHero } from '@/components/village/VillageHero';
+import { VillageSoundFamiliar } from '@/components/village/VillageSoundFamiliar';
+import { VillageHowItWorks } from '@/components/village/VillageHowItWorks';
+import { VillageWaitlist } from '@/components/village/VillageWaitlist';
+import { VillageFeatures } from '@/components/village/VillageFeatures';
+import { VillageCommunities } from '@/components/village/VillageCommunities';
+import { VillagePricing } from '@/components/village/VillagePricing';
+import { VillageLiveAddon } from '@/components/village/VillageLiveAddon';
+import { VillageFAQ } from '@/components/village/VillageFAQ';
+import { VillageProductPreview } from '@/components/village/VillageProductPreview';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <WelcomeToast />
       <Header />
-
-      <div className="relative">
-        <Hero />
-        <SoundFamiliar />
-        <HowItWorks />
-        <DotPattern
-          width={20}
-          height={20}
-          cx={1}
-          cy={1}
-          cr={1}
-          className={cn('[mask-image:linear-gradient(to_bottom_right,white,transparent,white)]')}
-          // className={cn('[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]')}
-        />
-      </div>
-
-      <Waitlist />
-
-      <div className="relative">
-        <Features />
-        <DotPattern
-          width={20}
-          height={20}
-          cx={1}
-          cy={1}
-          cr={1}
-          className={cn('[mask-image:linear-gradient(to_bottom_right,white,transparent,white)]')}
-          // className={cn('[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]')}
-        />
-      </div>
-
-      <Communities />
-
-      <div className="relative">
-        <DotPattern
-          width={20}
-          height={20}
-          cx={1}
-          cy={1}
-          cr={1}
-          className={cn('[mask-image:linear-gradient(to_bottom_right,white,transparent,white)]')}
-          // className={cn('[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]')}
-        />
-        <Pricing />
-      </div>
-      <Waitlist />
+      <VillageHero />
+      <VillageSoundFamiliar />
+      <VillageHowItWorks id="how-it-works" />
+      <VillageProductPreview />
+      <VillageFeatures />
+      <VillageCommunities />
+      <VillagePricing />
+      <VillageFAQ />
+      <VillageWaitlist />
+      <VillageLiveAddon />
       <Footer />
     </div>
   );
