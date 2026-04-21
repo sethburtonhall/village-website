@@ -1,10 +1,19 @@
+'use client';
+
 import Link from 'next/link';
+import { useUser, useClerk } from '@clerk/nextjs';
 
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Building2, ClipboardList, RadioTower } from 'lucide-react';
 import { MobileNav } from '@/components/MobileNav';
 
 export function Header({ className }: { className?: string }) {
+  const { isSignedIn, isLoaded } = useUser();
+  const { signOut } = useClerk();
+
   return (
     <header
       className={cn(
@@ -27,23 +36,24 @@ export function Header({ className }: { className?: string }) {
             <Link href="/">Village</Link>
           </h1>
         </div>
+
         {/* Nav */}
         <nav className="flex items-center gap-5 text-base font-semibold">
           {/* Anchor links — hidden on small screens */}
           <Link
-            href="/#how-it-works"
+            href="#how-it-works"
             className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
           >
             How it works
           </Link>
           <Link
-            href="/#features"
+            href="#features"
             className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
           >
             Features
           </Link>
           <Link
-            href="/#pricing"
+            href="#pricing"
             className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
           >
             Pricing
@@ -66,7 +76,40 @@ export function Header({ className }: { className?: string }) {
             <Link href="/live" className="text-village-live transition-opacity hover:opacity-70">
               Live
             </Link>
+            <Separator orientation="vertical" className="ml-3 h-6" />
           </div>
+
+          {isLoaded ? (
+            isSignedIn ? (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-sm hover:no-underline"
+                  onClick={() => signOut()}
+                >
+                  Sign out
+                </Button>
+                <Button size="sm" className="text-sm hover:no-underline" asChild>
+                  <a href={process.env.NEXT_PUBLIC_APP_URL}>Dashboard</a>
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant="ghost" size="sm" className="text-sm hover:no-underline" asChild>
+                  <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}>Login</a>
+                </Button>
+                <Button variant="success" size="sm" className="text-sm" asChild>
+                  <a href="https://app.usevillage.app/register/beta">Sign Up</a>
+                </Button>
+              </>
+            )
+          ) : (
+            <div className="flex items-center gap-4">
+              <Skeleton className="h-9 w-[74px] rounded-md" />
+              <Skeleton className="h-9 w-[91px] rounded-md" />
+            </div>
+          )}
 
           {/* Mobile hamburger */}
           <MobileNav />

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ClerkProvider } from '@clerk/nextjs';
 import { Noto_Sans, Nunito, Caveat } from 'next/font/google';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
@@ -101,19 +102,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${noto.variable} ${nunito.variable} ${caveat.variable} antialiased`}>
-        <JsonLd />
-        <BreadcrumbSchema
-          items={[
-            { name: 'Home', url: 'https://usevillage.app' },
-            { name: 'Venues', url: 'https://usevillage.app/venues' },
-            { name: 'Live', url: 'https://usevillage.app/live' },
-          ]}
-        />
-        <main>{children}</main>
-        <Toaster />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${noto.variable} ${nunito.variable} ${caveat.variable} antialiased`}>
+          <JsonLd />
+          <BreadcrumbSchema
+            items={[
+              { name: 'Home', url: 'https://usevillage.app' },
+              { name: 'Venues', url: 'https://usevillage.app/venues' },
+              { name: 'Live', url: 'https://usevillage.app/live' },
+            ]}
+          />
+          <main>{children}</main>
+          <Toaster />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

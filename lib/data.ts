@@ -35,7 +35,7 @@ export const steps = [
   {
     title: 'Share a link',
     description:
-      'Drop it in a group chat, an email, a text — wherever your people are. They click, pick a slot, and you know who\'s coming.',
+      "Drop it in a group chat, an email, a text — wherever your people are. They click, pick a slot, and you know who's coming.",
   },
 ];
 
@@ -167,7 +167,11 @@ export const communities = [
 export const plans = [
   {
     title: 'Free',
-    price: 0,
+    slug: 'free',
+    signupUrl: 'https://app.usevillage.app/register/beta',
+    monthlyPrice: 0,
+    annualPrice: 0,
+    annualPriceMonthly: 0,
     subheader: 'Best for casual event organizers',
     features: [
       '1 Admin',
@@ -179,7 +183,11 @@ export const plans = [
   },
   {
     title: 'Individual',
-    price: 7,
+    slug: 'individual',
+    signupUrl: 'https://app.usevillage.app/register/beta?plan=individual',
+    monthlyPrice: 7,
+    annualPrice: 72,
+    annualPriceMonthly: 6,
     subheader: 'Best for small teams & clubs',
     features: [
       '1 Admin',
@@ -197,7 +205,11 @@ export const plans = [
   },
   {
     title: 'Organization',
-    price: 15,
+    slug: 'organization',
+    signupUrl: 'https://app.usevillage.app/register/beta?plan=organization',
+    monthlyPrice: 15,
+    annualPrice: 150,
+    annualPriceMonthly: 12.5,
     subheader: 'Best for schools, nonprofits, & orgs',
     features: [
       '1 Admin',
