@@ -4,6 +4,7 @@ import { Noto_Sans, Nunito, Caveat } from 'next/font/google';
 import { JsonLd } from '@/components/JsonLd';
 import { BreadcrumbSchema } from '@/components/BreadcrumbSchema';
 import { Toaster } from '@/components/ui/toaster';
+import { VillageWelcomeToast } from '@/components/village/VillageWelcomeToast';
 
 import './globals.css';
 
@@ -114,6 +115,7 @@ export default function RootLayout({
             ]}
           />
           <main>{children}</main>
+          <VillageWelcomeToast />
           <Toaster />
         </body>
       </html>

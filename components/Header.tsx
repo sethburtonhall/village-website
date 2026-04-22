@@ -42,24 +42,22 @@ export function Header({ className }: { className?: string }) {
           {/* Anchor links — hidden on small screens */}
           <Link
             href="#how-it-works"
-            className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
+            className="hidden font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
           >
             How it works
           </Link>
           <Link
             href="#features"
-            className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
+            className="hidden font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
           >
             Features
           </Link>
           <Link
             href="#pricing"
-            className="hidden text-sm font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
+            className="hidden font-medium text-stone-500 transition-colors hover:text-foreground lg:block"
           >
             Pricing
           </Link>
-
-          <div className="hidden h-4 w-px bg-stone-200 lg:block" />
 
           {/* Product links — desktop only */}
           <div className="hidden items-center gap-2 lg:flex">
@@ -100,7 +98,7 @@ export function Header({ className }: { className?: string }) {
                   <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}>Login</a>
                 </Button>
                 <Button variant="success" size="sm" className="text-sm" asChild>
-                  <a href="https://app.usevillage.app/register/beta">Sign Up</a>
+                  <a href="https://app.usevillage.app/register">Get Started</a>
                 </Button>
               </>
             )

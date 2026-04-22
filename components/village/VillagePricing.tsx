@@ -5,9 +5,8 @@ import { useUser } from '@clerk/nextjs';
 import { cn } from '@/lib/utils';
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MotionWrapper } from '@/components/MotionWrapper';
-import { ShineBorder } from '@/components/ui/shine-border';
 import { Button } from '@/components/ui/button';
-import { CircleCheck, Sparkles } from 'lucide-react';
+import { CircleCheck, Sparkles, Zap } from 'lucide-react';
 import { plans } from '@/lib/data';
 
 type Billing = 'monthly' | 'annual';
@@ -29,10 +28,24 @@ export function VillagePricing() {
   return (
     <section id="pricing" className="pb-28">
       <div className="mx-auto space-y-12 text-center">
-        <div className="stack mb-24">
+        <div className="stack mb-12">
           <p className="font-bold text-primary-600">Pricing</p>
           <h1>Affordable Plans, No Surprises</h1>
           <p className="block-p">Start for free. Upgrade anytime as you grow.</p>
+
+          {/* Early Adopter Banner */}
+          <div className="mx-auto mt-6 flex max-w-2xl items-center gap-3 rounded-lg border border-primary-600 bg-white px-4 py-3">
+            <Zap className="size-4 flex-shrink-0 text-primary-600" />
+            <div className="text-left">
+              <p className="text-sm font-medium text-foreground">
+                <strong>Right now, all plans are free.</strong>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                We're currently gathering feedback. Early adopters will receive special pricing when
+                plans launch.
+              </p>
+            </div>
+          </div>
 
           {/* Monthly / Annual toggle */}
           <div className="mx-auto mt-4 flex w-fit items-center justify-center gap-1 rounded-full border border-stone-200 bg-stone-100 p-1">
@@ -57,15 +70,12 @@ export function VillagePricing() {
               )}
             >
               Annual
-              <span className="ml-1.5 rounded-full bg-primary-600 px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                Save up to 17%
-              </span>
             </button>
           </div>
         </div>
 
         <div className="container mx-auto px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-0">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
             {plans.map((plan, index) => {
               const isFeatured = index === 1;
               const cta = getCtaProps(plan);
@@ -78,42 +88,63 @@ export function VillagePricing() {
                 <MotionWrapper
                   key={plan.title}
                   index={index}
-                  className={cn(
-                    'h-full',
-                    index === 0 && 'z-[1]',
-                    index === 1 ? 'z-[2]' : 'z-[1]',
-                    index === 2 && 'z-[1]'
-                  )}
+                  className={cn('h-full', isFeatured && 'z-10')}
                 >
-                  <ShineBorder
-                    color="#22c55e"
-                    borderWidth={isFeatured ? 2 : 1}
+                  <div
                     className={cn(
-                      'h-full',
-                      isFeatured && 'z-10 !scale-110 bg-slate-800 text-white shadow-2xl'
+                      'h-full rounded-lg p-8',
+                      isFeatured ? 'bg-slate-800 text-white shadow-xl' : 'bg-white shadow-md',
+                      index === 0 && 'lg:pr-4 xl:pr-6',
+                      index === 2 && 'lg:pl-4 xl:pl-6'
                     )}
                   >
-                    <div
-                      className={cn(
-                        'stack h-full text-left',
-                        index === 0 && 'lg:pr-4 xl:pr-6',
-                        index === 2 && 'lg:pl-4 xl:pl-6'
-                      )}
-                    >
+                    <div className={cn('stack h-full text-left')}>
                       <CardHeader className="space-y-8">
                         <div className="space-y-2">
-                          <CardTitle className={cn('font-logo text-2xl text-primary-600')}>
+                          <CardTitle
+                            className={cn(
+                              'font-logo text-2xl',
+                              isFeatured ? 'text-white' : 'text-primary-600'
+                            )}
+                          >
                             {plan.title}
                           </CardTitle>
-                          <CardTitle className="flex items-end gap-2 text-5xl">
-                            ${displayPrice.toFixed(displayPrice % 1 === 0 ? 0 : 2)}
-                            <span className="text-base">/ month</span>
-                          </CardTitle>
+                          <div className="space-y-1">
+                            <CardTitle
+                              className={cn(
+                                'flex items-end gap-2 text-5xl',
+                                isFeatured && 'text-white'
+                              )}
+                            >
+                              {displayPrice > 0 && (
+                                <p
+                                  className={cn(
+                                    'text-lg',
+                                    isFeatured ? 'text-slate-300' : 'text-muted-foreground'
+                                  )}
+                                >
+                                  <span className="line-through">
+                                    ${displayPrice.toFixed(displayPrice % 1 === 0 ? 0 : 2)}
+                                  </span>
+                                </p>
+                              )}
+                              $0
+                              <span className="text-base">/ month</span>
+                            </CardTitle>
+                            <p
+                              className={cn(
+                                'text-xs font-normal',
+                                isFeatured ? 'text-slate-300' : 'text-muted-foreground'
+                              )}
+                            >
+                              Currently free
+                            </p>
+                          </div>
                           {billing === 'annual' && plan.annualPrice > 0 && (
                             <p
                               className={cn(
                                 'text-xs',
-                                isFeatured ? 'text-slate-300' : 'text-muted-foreground'
+                                isFeatured ? 'text-slate-400' : 'text-muted-foreground'
                               )}
                             >
                               ${plan.annualPrice} billed annually
@@ -121,10 +152,7 @@ export function VillagePricing() {
                           )}
                         </div>
                         <p
-                          className={cn(
-                            'flex items-center gap-4 text-sm font-medium text-primary',
-                            isFeatured && 'text-white'
-                          )}
+                          className={cn('flex items-center gap-4 text-sm font-medium', isFeatured ? 'text-slate-200' : 'text-primary')}
                         >
                           {plan.subheader}
                         </p>
@@ -134,8 +162,8 @@ export function VillagePricing() {
                         <ul className="space-y-4">
                           {plan.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-center gap-2 text-sm">
-                              <CircleCheck className={cn('size-4 text-primary-600')} />
-                              <span className={cn('text-foreground', isFeatured && 'text-white')}>
+                              <CircleCheck className={cn('size-4', isFeatured ? 'text-green-400' : 'text-primary-600')} />
+                              <span className={isFeatured ? 'text-slate-100' : 'text-foreground'}>
                                 {feature.toLowerCase().includes('features') ? (
                                   <span className="text-lg font-bold">{feature}</span>
                                 ) : (
@@ -147,7 +175,7 @@ export function VillagePricing() {
                         </ul>
                         <div className="mt-auto">
                           <Button
-                            variant={isFeatured ? 'secondary' : 'success'}
+                            variant="success"
                             size="lg"
                             className="group w-full rounded-md"
                             asChild
@@ -160,7 +188,7 @@ export function VillagePricing() {
                         </div>
                       </CardContent>
                     </div>
-                  </ShineBorder>
+                  </div>
                 </MotionWrapper>
               );
             })}

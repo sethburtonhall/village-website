@@ -3,13 +3,13 @@ import { MotionWrapper } from '@/components/MotionWrapper';
 const STEPS = [
   {
     number: '01',
-    title: 'Get Village',
-    desc: 'Sign up for any paid Village plan. Clean, simple, ad-free — no participant accounts required.',
+    title: 'Create an event',
+    desc: 'Sign up for free and create your first event. Clean, simple, ad-free — no participant accounts required.',
   },
   {
     number: '02',
     title: 'Enable Village Live',
-    desc: 'Add Village Live to your plan for $5/mo. Available as an add-on — coming soon.',
+    desc: 'Turn on Village Live for your event. Launch live timelines, polls, Q&A, and more in Mission Control.',
   },
   {
     number: '03',

@@ -7,7 +7,7 @@ export function VenueHero() {
   return (
     <MotionWrapper
       type="section"
-      className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/40 to-stone-100 pt-16 pb-24 dark:from-[#0a0a0a] dark:via-[#1a0f1f] dark:to-[#0f0a1a] md:text-center"
+      className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/40 to-stone-100 pb-24 pt-16 dark:from-[#0a0a0a] dark:via-[#1a0f1f] dark:to-[#0f0a1a] md:text-center"
     >
       {/* Subtle top glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-village-venues/10 blur-3xl dark:bg-village-venues/20" />
@@ -21,7 +21,7 @@ export function VenueHero() {
           className="inline-flex w-max items-center gap-2 rounded-full border border-village-venues/30 bg-village-venues/10 px-4 py-1.5 text-sm font-medium text-village-venues/80"
         >
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-village-venues" />
-          Free to list · Early access
+          Free to list
         </motion.div>
 
         {/* Headline */}
