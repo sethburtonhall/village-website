@@ -1,22 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { MotionWrapper } from '@/components/MotionWrapper';
 import { ConfettiButton } from '@/components/ConfettiButton';
-import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
-import { ScrollLink } from '@/components/ScrollLink';
-import { ChevronRight, MoveDown } from 'lucide-react';
+import { MoveRight } from 'lucide-react';
 
 export function VillageHero() {
   return (
     <MotionWrapper type="section" className="space-y-12 pb-16">
-      <div className="space-y-4 pt-4 md:pt-12 lg:px-16">
-        <ScrollLink>
-          <AnimatedGradientText className="mx-0 md:mx-auto">
-            <span className="gradient-text">Early access</span>
-            <hr className="mx-2 h-4 w-px shrink-0 bg-gray-300" />
-            <span className="text-foreground/60">Free to join</span>
-            <ChevronRight className="mx-1 h-4 w-4 shrink-0 text-fuchsia-400" />
-          </AnimatedGradientText>
-        </ScrollLink>
+      <div className="space-y-4 pt-4 lg:px-16">
         <div className="max-w-3xl md:mx-auto md:text-center">
           <h1 className="cursor-default text-4xl leading-snug sm:text-4xl sm:leading-snug md:text-5xl md:leading-snug lg:text-7xl lg:leading-tight">
             Group{' '}
@@ -40,23 +30,13 @@ export function VillageHero() {
       </div>
       {/* CTAs */}
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:gap-4 md:items-center md:justify-center">
-        <Button
-          variant="success"
-          size="lg"
-          className="group h-10 px-4 text-sm sm:h-11 sm:px-8 sm:text-base"
-          asChild
-        >
-          <a href="#waitlist" className="flex items-center">
-            <span>Join the Beta</span>
-            <MoveDown className="h-4 w-4" />
+        <Button variant="success" className="group" asChild>
+          <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_UP_URL} className="flex items-center">
+            <span>Join as Early Adopter</span>
+            <MoveRight className="h-4 w-4" />
           </a>
         </Button>
-        <Button
-          variant="ghost"
-          size="lg"
-          className="h-10 px-4 text-sm text-stone-500 hover:text-stone-800 sm:h-11 sm:px-8 sm:text-base"
-          asChild
-        >
+        <Button variant="ghost" className="text-stone-500 hover:text-stone-800" asChild>
           <a href="#pricing">See pricing</a>
         </Button>
       </div>

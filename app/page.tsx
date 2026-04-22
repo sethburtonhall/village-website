@@ -4,7 +4,6 @@ import { Footer } from '@/components/Footer';
 import { VillageHero } from '@/components/village/VillageHero';
 import { VillageSoundFamiliar } from '@/components/village/VillageSoundFamiliar';
 import { VillageHowItWorks } from '@/components/village/VillageHowItWorks';
-import { VillageWaitlist } from '@/components/village/VillageWaitlist';
 import { VillageFeatures } from '@/components/village/VillageFeatures';
 import { VillageCommunities } from '@/components/village/VillageCommunities';
 import { VillagePricing } from '@/components/village/VillagePricing';
@@ -24,7 +23,6 @@ export default function Home() {
       <VillageCommunities />
       <VillagePricing />
       <VillageFAQ />
-      <VillageWaitlist />
       <VillageLiveAddon />
       <Footer />
     </div>

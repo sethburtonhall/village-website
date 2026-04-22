@@ -2,31 +2,41 @@
 
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { ToastAction } from '@/components/ui/toast';
+import { Button } from '@/components/ui/button';
 
 export function VillageWelcomeToast() {
   const { toast } = useToast();
 
-  const scrollToWaitlist = () => {
-    const waitlistSection = document.getElementById('waitlist');
-    if (waitlistSection) {
-      waitlistSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   useEffect(() => {
-    if (sessionStorage.getItem('isSubscribed')) return;
+    if (sessionStorage.getItem('welcomeToastDismissed')) return;
 
     const timer = setTimeout(() => {
-      toast({
-        title: 'Status: Private Beta',
-        description: 'Join our waitlist to gain access!',
+      const { dismiss } = toast({
+        title: 'Welcome to our early adopter launch',
+        description:
+          "Right now, all plans are free. Early adopters will receive special pricing when plans launch. Join now to help shape Village's future. ",
         variant: 'info',
         duration: Infinity,
+
         action: (
-          <ToastAction altText="Join the Waitlist" onClick={scrollToWaitlist}>
-            Join the Waitlist
-          </ToastAction>
+          <div className="flex justify-end gap-2">
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={() => {
+                sessionStorage.setItem('welcomeToastDismissed', 'true');
+                dismiss();
+              }}
+            >
+              Dismiss
+            </Button>
+            <Button
+              size="sm"
+              onClick={() => (window.location.href = 'https://app.usevillage.app/register')}
+            >
+              Join as Early Adopter
+            </Button>
+          </div>
         ),
       });
     }, 1000);

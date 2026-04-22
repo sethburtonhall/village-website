@@ -168,7 +168,7 @@ export const plans = [
   {
     title: 'Free',
     slug: 'free',
-    signupUrl: 'https://app.usevillage.app/register/beta',
+    signupUrl: 'https://app.usevillage.app/register',
     monthlyPrice: 0,
     annualPrice: 0,
     annualPriceMonthly: 0,
@@ -184,7 +184,7 @@ export const plans = [
   {
     title: 'Individual',
     slug: 'individual',
-    signupUrl: 'https://app.usevillage.app/register/beta?plan=individual',
+    signupUrl: 'https://app.usevillage.app/register',
     monthlyPrice: 7,
     annualPrice: 72,
     annualPriceMonthly: 6,
@@ -206,7 +206,7 @@ export const plans = [
   {
     title: 'Organization',
     slug: 'organization',
-    signupUrl: 'https://app.usevillage.app/register/beta?plan=organization',
+    signupUrl: 'https://app.usevillage.app/register',
     monthlyPrice: 15,
     annualPrice: 150,
     annualPriceMonthly: 12.5,
