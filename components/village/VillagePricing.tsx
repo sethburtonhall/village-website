@@ -8,6 +8,7 @@ import { MotionWrapper } from '@/components/MotionWrapper';
 import { Button } from '@/components/ui/button';
 import { CircleCheck, Sparkles, Zap } from 'lucide-react';
 import { plans } from '@/lib/data';
+import { getAppUrl, getAccountUrl } from '@/lib/app-urls';
 
 type Billing = 'monthly' | 'annual';
 
@@ -15,12 +16,12 @@ export function VillagePricing() {
   const [billing, setBilling] = useState<Billing>('monthly');
   const { isSignedIn, isLoaded } = useUser();
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.usevillage.app';
+  const appUrl = getAppUrl();
 
   const getCtaProps = (plan: (typeof plans)[number]) => {
     if (isLoaded && isSignedIn) {
       if (plan.slug === 'free') return { label: 'Go to Dashboard', href: appUrl };
-      return { label: 'Upgrade', href: `${appUrl}/account` };
+      return { label: 'Upgrade', href: getAccountUrl() };
     }
     return { label: 'Get Started', href: plan.signupUrl };
   };
@@ -152,7 +153,10 @@ export function VillagePricing() {
                           )}
                         </div>
                         <p
-                          className={cn('flex items-center gap-4 text-sm font-medium', isFeatured ? 'text-slate-200' : 'text-primary')}
+                          className={cn(
+                            'flex items-center gap-4 text-sm font-medium',
+                            isFeatured ? 'text-slate-200' : 'text-primary'
+                          )}
                         >
                           {plan.subheader}
                         </p>
@@ -162,7 +166,12 @@ export function VillagePricing() {
                         <ul className="space-y-4">
                           {plan.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-center gap-2 text-sm">
-                              <CircleCheck className={cn('size-4', isFeatured ? 'text-green-400' : 'text-primary-600')} />
+                              <CircleCheck
+                                className={cn(
+                                  'size-4',
+                                  isFeatured ? 'text-green-400' : 'text-primary-600'
+                                )}
+                              />
                               <span className={isFeatured ? 'text-slate-100' : 'text-foreground'}>
                                 {feature.toLowerCase().includes('features') ? (
                                   <span className="text-lg font-bold">{feature}</span>

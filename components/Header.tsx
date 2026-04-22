@@ -9,6 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Building2, ClipboardList, RadioTower } from 'lucide-react';
 import { MobileNav } from '@/components/MobileNav';
+import { getAppUrl, getSignUpUrl, getSignInUrl } from '@/lib/app-urls';
 
 export function Header({ className }: { className?: string }) {
   const { isSignedIn, isLoaded } = useUser();
@@ -89,16 +90,16 @@ export function Header({ className }: { className?: string }) {
                   Sign out
                 </Button>
                 <Button size="sm" className="text-sm hover:no-underline" asChild>
-                  <a href={process.env.NEXT_PUBLIC_APP_URL}>Dashboard</a>
+                  <a href={getAppUrl()}>Dashboard</a>
                 </Button>
               </>
             ) : (
               <>
                 <Button variant="ghost" size="sm" className="text-sm hover:no-underline" asChild>
-                  <a href={process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL}>Login</a>
+                  <a href={getSignInUrl()}>Login</a>
                 </Button>
                 <Button variant="success" size="sm" className="text-sm" asChild>
-                  <a href="https://app.usevillage.app/register">Get Started</a>
+                  <a href={getSignUpUrl()}>Get Started</a>
                 </Button>
               </>
             )

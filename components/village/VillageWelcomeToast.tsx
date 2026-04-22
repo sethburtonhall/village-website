@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
+import { getSignUpUrl } from '@/lib/app-urls';
 
 export function VillageWelcomeToast() {
   const { toast } = useToast();
@@ -30,10 +31,7 @@ export function VillageWelcomeToast() {
             >
               Dismiss
             </Button>
-            <Button
-              size="sm"
-              onClick={() => (window.location.href = 'https://app.usevillage.app/register')}
-            >
+            <Button size="sm" onClick={() => (window.location.href = getSignUpUrl())}>
               Join as Early Adopter
             </Button>
           </div>
