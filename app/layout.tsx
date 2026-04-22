@@ -103,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider allowedRedirectOrigins={['http://localhost:3001']}>
       <html lang="en">
         <body className={`${noto.variable} ${nunito.variable} ${caveat.variable} antialiased`}>
           <JsonLd />
