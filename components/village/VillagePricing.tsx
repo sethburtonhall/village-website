@@ -49,7 +49,7 @@ export function VillagePricing() {
           </div>
 
           {/* Monthly / Annual toggle */}
-          <div className="mx-auto mt-4 flex w-fit items-center justify-center gap-1 rounded-full border border-stone-200 bg-stone-100 p-1">
+          {/* <div className="mx-auto mt-4 flex w-fit items-center justify-center gap-1 rounded-full border border-stone-200 bg-stone-100 p-1">
             <button
               onClick={() => setBilling('monthly')}
               className={cn(
@@ -72,7 +72,7 @@ export function VillagePricing() {
             >
               Annual
             </button>
-          </div>
+          </div> */}
         </div>
 
         <div className="container mx-auto px-8">
