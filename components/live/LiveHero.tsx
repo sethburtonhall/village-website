@@ -1,6 +1,7 @@
 import * as motion from 'motion/react-client';
 import { MoveDown, MoveRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { getSignUpUrl } from '@/lib/app-urls';
 
 export function LiveHero() {
   return (
@@ -32,7 +33,7 @@ export function LiveHero() {
           className="flex items-center gap-4 md:flex-row md:justify-center"
         >
           <Button variant="live" asChild>
-            <a href="https://app.usevillage.app/register">
+            <a href={getSignUpUrl()}>
               Join as Early Adopter
               <MoveRight className="h-4 w-4" />
             </a>
