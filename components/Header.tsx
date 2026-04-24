@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Building2, ClipboardList, RadioTower } from 'lucide-react';
+import { ArrowRight, Building2, ClipboardList, RadioTower } from 'lucide-react';
 import { MobileNav } from '@/components/MobileNav';
 import { getAppUrl, getSignUpUrl, getSignInUrl } from '@/lib/app-urls';
 
@@ -90,7 +90,9 @@ export function Header({ className }: { className?: string }) {
                   Sign out
                 </Button>
                 <Button size="sm" className="text-sm hover:no-underline" asChild>
-                  <a href={getAppUrl()}>Dashboard</a>
+                  <a href={getAppUrl()} className="flex items-center">
+                    Go to app <ArrowRight className="ml-1 size-4" />
+                  </a>
                 </Button>
               </>
             ) : (
