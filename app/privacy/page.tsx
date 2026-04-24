@@ -55,8 +55,14 @@ export default function PrivacyPage() {
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Usage data:</span> We collect
-                  information about how you interact with Village (pages visited, features used) to
-                  improve the product.
+                  information about how you interact with Village (pages visited, features used,
+                  device information, IP address) via Vercel Analytics and Speed Insights to
+                  improve the product and monitor performance.
+                </li>
+                <li>
+                  <span className="font-medium text-stone-700">Feedback and support data:</span>{' '}
+                  When you submit feedback or contact support, we collect your message, user agent,
+                  and page URL to assist you and improve the product.
                 </li>
               </ul>
 
@@ -72,6 +78,10 @@ export default function PrivacyPage() {
                 </li>
                 <li>Team memberships: team member names, roles, and permissions</li>
                 <li>Check-in data: attendee check-in timestamps and status</li>
+                <li>
+                  Bot protection: Cloudflare Turnstile collects device fingerprint and interaction
+                  data on sign-up forms to prevent spam
+                </li>
               </ul>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Venues</h3>
@@ -220,7 +230,9 @@ export default function PrivacyPage() {
                   <span className="font-medium text-stone-700">Cloudflare (cloudflare.com)</span> —
                   powers Village Live&apos;s real-time infrastructure using Cloudflare Workers and
                   KV storage. Village Live data is processed and stored temporarily in
-                  Cloudflare&apos;s infrastructure and is not synced to our main database. See their{' '}
+                  Cloudflare&apos;s infrastructure and is not synced to our main database. Cloudflare
+                  also provides Turnstile, our bot protection service used on event sign-up forms
+                  to prevent spam and unauthorized submissions. See their{' '}
                   <a
                     href="https://www.cloudflare.com/privacy/"
                     target="_blank"
@@ -228,8 +240,8 @@ export default function PrivacyPage() {
                     className="text-primary-600 hover:underline"
                   >
                     Privacy Policy
-                  </a>{' '}
-                  and{' '}
+                  </a>
+                  ,{' '}
                   <a
                     href="https://developers.cloudflare.com/workers/reference/security-model/"
                     target="_blank"
@@ -237,6 +249,15 @@ export default function PrivacyPage() {
                     className="text-primary-600 hover:underline"
                   >
                     Workers Security
+                  </a>
+                  , and{' '}
+                  <a
+                    href="https://developers.cloudflare.com/turnstile/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 hover:underline"
+                  >
+                    Turnstile Documentation
                   </a>
                   .
                 </li>
@@ -292,6 +313,21 @@ export default function PrivacyPage() {
                   .
                 </li>
                 <li>
+                  <span className="font-medium text-stone-700">Unsplash (unsplash.com)</span> — provides
+                  a library of free stock photos that event organizers can search and use when
+                  creating events. When you search Unsplash via Village, your search queries and IP
+                  address are sent to Unsplash. See their{' '}
+                  <a
+                    href="https://unsplash.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 hover:underline"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </li>
+                <li>
                   <span className="font-medium text-stone-700">Vercel (vercel.com)</span> — hosts
                   the Village platform website and services. Vercel provides CDN, analytics, and
                   deployment infrastructure. See their{' '}
@@ -338,21 +374,22 @@ export default function PrivacyPage() {
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Venues</h3>
               <p className="mb-4">
                 Venue listings are retained while your manager account is active. You may archive or
-                delete your listings at any time. Booking inquiries are retained indefinitely unless
-                you archive them. Once you archive an inquiry, it is hidden from your view but
+                delete your listings at any time. Booking inquiries and associated messages are
+                retained for 12 months after creation to support the booking workflow and maintain
+                business records. Once you archive an inquiry, it is hidden from your view but
                 retained in our system for legal and financial records (archive does not delete
-                data). Messages are retained as part of the inquiry record until you archive the
-                inquiry. If you delete your venue manager account, all associated listings and
+                data). If you delete your venue manager account, all associated listings and
                 inquiries are immediately deleted, except as required for legal or financial
                 compliance.
               </p>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live</h3>
-              <p>
-                Village Live data is ephemeral (temporary). Real-time engagement data (check-ins,
-                reactions, Q&amp;A responses, poll votes) is stored temporarily in our real-time
-                infrastructure and deleted automatically 7 days after your event ends. Post-event
-                statistics and recaps expire with the session data and are not retained separately.
+              <p className="mb-4">
+                Village Live data includes both ephemeral real-time engagement data and separately
+                retained analytics. Real-time engagement data (check-ins, reactions, Q&amp;A
+                responses, poll votes) is stored temporarily in our real-time infrastructure and
+                deleted automatically 7 days after your event ends. Post-event statistics and recap
+                data are stored separately for 1 year to provide you with long-term event insights.
               </p>
             </section>
 
