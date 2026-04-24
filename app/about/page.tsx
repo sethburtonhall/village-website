@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ContactLink } from '@/components/ContactLink';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -56,13 +57,7 @@ export default function AboutPage() {
 
             <h2 className="mb-4 mt-10 text-2xl font-semibold text-stone-800">Get in Touch</h2>
             <p>
-              Have feedback, a feature idea, or just a question?{' '}
-              <a
-                href="mailto:support@usevillage.app"
-                className="font-medium text-primary-600 hover:underline"
-              >
-                Email us
-              </a>{' '}
+              Have feedback, a feature idea, or just a question? <ContactLink>Email us</ContactLink>{' '}
               — we read and respond to every message.
             </p>
 

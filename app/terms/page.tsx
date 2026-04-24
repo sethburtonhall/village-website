@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ContactLink } from '@/components/ContactLink';
+import { CompanyAddress } from '@/components/CompanyAddress';
+import { EffectiveDate } from '@/components/EffectiveDate';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Village Terms of Service — the rules and agreements for using Village.',
+  description:
+    'Terms of Service for Village, Village Venues, and Village Live — the rules and agreements for using the Village platform.',
 };
 
 export default function TermsPage() {
@@ -14,23 +18,32 @@ export default function TermsPage() {
       <main className="flex-1 px-4 py-20">
         <div className="container mx-auto max-w-3xl">
           <h1 className="mb-2 text-4xl font-bold text-stone-900">Terms of Service</h1>
-          <p className="mb-10 text-sm text-stone-400">Effective date: March 18, 2026</p>
+          <EffectiveDate />
 
           <div className="space-y-10 leading-relaxed text-stone-600">
             <section className="terms-section">
               <p>
-                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of Village, operated by
-                Roadshow Creative (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By
-                creating an account or using Village, you agree to these Terms. If you do not agree,
-                do not use Village.
+                These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the Village
+                platform, including Village, Village Venues, and Village Live, operated by Roadshow
+                Creative (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By creating an
+                account or using Village, you agree to these Terms. If you do not agree, do not use
+                Village.
+              </p>
+              <p className="mt-3">
+                <strong>Early Access Notice:</strong> The Village platform is currently in Early
+                Access. These Terms, our Privacy Policy, and our service offerings are subject to
+                change at any time. We will notify you of material changes via email or by posting
+                updates on this page. Your continued use constitutes acceptance of updated terms.
               </p>
             </section>
 
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">1. Use of Service</h2>
               <p>
-                Village is a group event and sign-up management platform. You may use Village for
-                lawful purposes only. You agree not to use Village to:
+                The Village platform consists of three interconnected products operated by Roadshow
+                Creative: Village (event management), Village Venues (venue discovery and booking),
+                and Village Live (real-time event engagement). You may use these services for lawful
+                purposes only. You agree not to use Village to:
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-5">
                 <li>Violate any applicable laws or regulations</li>
@@ -39,6 +52,30 @@ export default function TermsPage() {
                 <li>Collect personal data from users without appropriate consent</li>
                 <li>Attempt to gain unauthorized access to Village&apos;s systems</li>
               </ul>
+              <h3 className="mt-4 text-lg font-medium text-stone-700">
+                Village (Event Management)
+              </h3>
+              <p>
+                Village enables event organizers to create events, design custom sign-up forms,
+                manage attendees, and collaborate with team members. Event organizers are
+                responsible for ensuring their use complies with applicable laws.
+              </p>
+              <h3 className="mt-4 text-lg font-medium text-stone-700">Village Venues</h3>
+              <p>
+                Village Venues is a venue discovery and booking inquiry platform. Venue managers may
+                publish their venue listings (name, photos, capacity, amenities, availability) to
+                help organizers find spaces. Venue managers can control which listings are published
+                and manage booking inquiries. Organizers searching venues agree to share their
+                contact information (email, event details) with venue managers when submitting
+                inquiries.
+              </p>
+              <h3 className="mt-4 text-lg font-medium text-stone-700">Village Live</h3>
+              <p>
+                Village Live provides real-time event dashboards for attendee engagement and
+                organizer mission control. Organizers can view live attendance, run polls, field
+                Q&amp;A, broadcast updates, and monitor engagement. Attendees can check in, react,
+                submit questions, and vote on polls.
+              </p>
             </section>
 
             <section className="terms-section">
@@ -55,14 +92,24 @@ export default function TermsPage() {
               <h2 className="mb-3 text-xl font-semibold text-stone-800">
                 3. Subscriptions and Billing
               </h2>
-              <p className="mb-3">
-                Village offers both free and paid subscription plans. Paid plans are billed on a
-                monthly or annual basis, depending on the plan you select at checkout.
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Current Status</h3>
+              <p className="mb-4">
+                All Village products (Village, Village Venues, and Village Live) are currently free
+                to use during the Early Access period. Paid subscription plans will be introduced in
+                the future. We will provide advance notice and an opportunity to continue using the
+                free tier or upgrade to a paid plan.
               </p>
-              <ul className="list-disc space-y-2 pl-5">
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Future Billing</h3>
+              <p className="mb-3">
+                When paid subscription plans are introduced, they will be billed on a monthly or
+                annual basis, depending on the plan you select at checkout.
+              </p>
+              <ul className="mb-4 list-disc space-y-2 pl-5">
                 <li>
                   <span className="font-medium text-stone-700">Billing cycle:</span> Subscriptions
-                  are billed in advance at the start of each billing period (monthly or annual).
+                  will be billed in advance at the start of each billing period (monthly or annual).
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Automatic renewal:</span> Your
@@ -76,16 +123,25 @@ export default function TermsPage() {
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Payment processing:</span> All
-                  payments are processed by Stripe. We do not store your credit card information.
+                  payments will be processed through Clerk, which handles billing and payment
+                  processing. We do not store your credit card information.
                 </li>
               </ul>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live Add-On</h3>
+              <p>
+                Village Live is a separate add-on within the Village billing system. When paid plans
+                are introduced, Village Live will have its own pricing tier separate from the base
+                Village plan options. You will be able to add Village Live to your Village
+                subscription at checkout.
+              </p>
             </section>
 
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">
                 4. Cancellation & Refund Policy
               </h2>
-              <h3 className="mb-2 text-lg font-medium text-stone-700">Subscriptions & Billing</h3>
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Village Subscriptions</h3>
               <p className="mb-4">
                 Village provides services on a subscription basis (Monthly or Annual). Your
                 subscription will automatically renew at the end of each billing cycle unless
@@ -94,30 +150,37 @@ export default function TermsPage() {
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Cancellation</h3>
               <p className="mb-4">
-                You may cancel your subscription at any time. To avoid being charged for the next
-                billing period, you must cancel at least 24 hours before your renewal date. Upon
-                cancellation, you will continue to have access to the premium features of Village
-                until the end of your current paid billing period.
+                When paid subscription plans are available, you may cancel your subscription at any
+                time. To avoid being charged for the next billing period, you must cancel at least
+                24 hours before your renewal date. Upon cancellation, you will continue to have
+                access to the paid tier features until the end of your current paid billing period.
               </p>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Refunds</h3>
               <p className="mb-4">
-                All sales are final. Because our services are digital and granted immediately upon
-                payment, we do not offer refunds, credits, or prorated billing for subscriptions
-                that are cancelled mid-month.
+                When paid subscription plans are available, all sales will be final. Because our
+                services are digital and granted immediately upon payment, we will not offer
+                refunds, credits, or prorated billing for subscriptions that are cancelled
+                mid-month.
+              </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">
+                Village Venues Booking Inquiries
+              </h3>
+              <p className="mb-4">
+                Booking inquiries in Village Venues follow a workflow: New → Viewed → Accepted →
+                (optional: Reschedule Requested) → Completed or Declined. Venue managers may decline
+                pending inquiries at any time. Venue managers may request rescheduling or decline
+                bookings based on mutual agreement with organizers. Disputes regarding declined or
+                rescheduled bookings should be <ContactLink>reported to us</ContactLink> for
+                mediation.
               </p>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Exceptions</h3>
               <p>
                 In the event of a technical billing error or a failure to provide service as
-                described, please{' '}
-                <a
-                  href="mailto:support@usevillage.app"
-                  className="text-primary-600 hover:underline"
-                >
-                  contact us
-                </a>{' '}
-                within 7 days of the transaction for a manual review of your account.
+                described, please <ContactLink>contact us</ContactLink> within 7 days of the
+                transaction for a manual review of your account.
               </p>
             </section>
 
@@ -134,17 +197,61 @@ export default function TermsPage() {
 
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">6. Your Content</h2>
+              <p className="mb-3">
+                You retain ownership of all content you create across the Village platform. By using
+                Village, you grant us a limited license to store, display, and process your content
+                solely to provide the services. We do not claim ownership of your data and will not
+                use it for any purpose beyond operating Village.
+              </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Village</h3>
+              <p className="mb-3">
+                You own your events, sign-up forms, and custom form fields. Attendee responses to
+                your sign-ups are stored and managed on your behalf.
+              </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Village Venues</h3>
+              <p className="mb-3">
+                Venue managers own their venue listings (name, description, photos, amenities,
+                capacity, availability calendar). Organizers own their booking inquiry submissions.
+                Venue managers may archive or delete their venue listings at any time. Messages
+                between venue managers and organizers are retained until the venue manager archives
+                the inquiry.
+              </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live</h3>
               <p>
-                You retain ownership of the content you create in Village (events, sign-up forms,
-                etc.). By using Village, you grant us a limited license to store, display, and
-                process your content solely to provide the service. We do not claim ownership of
-                your data and will not use it for any purpose beyond operating Village.
+                Village Live displays real-time event data (attendee check-ins, reactions, Q&amp;A
+                responses, poll votes) during and after your events. This data is stored temporarily
+                and automatically deleted 7 days after your event ends. You are responsible for
+                ensuring attendees consent to real-time engagement tracking during your event.
               </p>
             </section>
 
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">
-                7. Disclaimer of Warranties
+                7. Data Processing & GDPR
+              </h2>
+              <p className="mb-3">
+                For users in the European Union, United Kingdom, and other jurisdictions with data
+                protection laws: We process your personal data as a service provider under contract
+                with you. Our{' '}
+                <a
+                  href="https://usevillage.app/privacy"
+                  className="text-primary-600 hover:underline"
+                >
+                  Privacy Policy
+                </a>{' '}
+                describes our data processing practices, including your rights (access, correction,
+                erasure, portability, objection). If you have concerns about our data handling,
+                please <ContactLink>contact us</ContactLink>. For GDPR inquiries, we maintain a Data
+                Processing Agreement available upon request.
+              </p>
+            </section>
+
+            <section className="terms-section">
+              <h2 className="mb-3 text-xl font-semibold text-stone-800">
+                8. Disclaimer of Warranties
               </h2>
               <p>
                 Village is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without
@@ -156,7 +263,7 @@ export default function TermsPage() {
 
             <section className="terms-section">
               <h2 className="mb-3 text-xl font-semibold text-stone-800">
-                8. Limitation of Liability
+                9. Limitation of Liability
               </h2>
               <p>
                 To the fullest extent permitted by law, Roadshow Creative shall not be liable for
@@ -168,16 +275,18 @@ export default function TermsPage() {
             </section>
 
             <section className="terms-section">
-              <h2 className="mb-3 text-xl font-semibold text-stone-800">9. Governing Law</h2>
+              <h2 className="mb-3 text-xl font-semibold text-stone-800">10. Governing Law</h2>
               <p>
-                These Terms are governed by the laws of the United States. Any disputes arising from
-                these Terms or your use of Village shall be resolved in the courts of competent
-                jurisdiction.
+                These Terms are governed by the laws of the State of California, without regard to
+                its conflict of law principles. Any disputes arising from these Terms or your use of
+                Village shall be resolved in the state or federal courts located in San Diego
+                County, California. You agree to submit to the exclusive jurisdiction of such
+                courts.
               </p>
             </section>
 
             <section className="terms-section">
-              <h2 className="mb-3 text-xl font-semibold text-stone-800">10. Changes to Terms</h2>
+              <h2 className="mb-3 text-xl font-semibold text-stone-800">11. Changes to Terms</h2>
               <p>
                 We may update these Terms from time to time. We will notify you of material changes
                 by posting the new Terms on this page with an updated effective date. Continued use
@@ -186,25 +295,11 @@ export default function TermsPage() {
             </section>
 
             <section className="terms-section">
-              <h2 className="mb-3 text-xl font-semibold text-stone-800">11. Contact Us</h2>
+              <h2 className="mb-3 text-xl font-semibold text-stone-800">12. Contact Us</h2>
               <p>
-                Questions about these Terms?{' '}
-                <a
-                  href="mailto:support@usevillage.app"
-                  className="text-primary-600 hover:underline"
-                >
-                  Contact us
-                </a>
-                .
+                Questions about these Terms? <ContactLink>Contact us</ContactLink>.
               </p>
-              <address className="mt-4 text-sm not-italic leading-relaxed text-stone-500">
-                Roadshow Creative
-                <br />
-                519 N Nevada St., Apt D<br />
-                Oceanside, CA 92054
-                <br />
-                United States
-              </address>
+              <CompanyAddress className="mt-4" />
             </section>
           </div>
         </div>

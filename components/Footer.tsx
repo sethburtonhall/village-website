@@ -2,6 +2,101 @@ import Link from 'next/link';
 
 import { ClipboardList } from 'lucide-react';
 import { VillageFooter } from './village/VillageFooter';
+import { ContactLink } from './ContactLink';
+
+interface FooterLinkProps {
+  href: string;
+  children: React.ReactNode;
+  hoverColor?: 'primary' | 'live' | 'venues';
+  external?: boolean;
+  className?: string;
+}
+
+function FooterLink({
+  href,
+  children,
+  hoverColor = 'primary',
+  external = false,
+  className = '',
+}: FooterLinkProps) {
+  const hoverColors = {
+    primary: 'hover:text-primary-600',
+    live: 'hover:text-village-live',
+    venues: 'hover:text-village-venues',
+  };
+
+  const linkClass = `text-sm text-stone-500 transition-colors ${hoverColors[hoverColor]} ${className}`;
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={linkClass}>
+      {children}
+    </Link>
+  );
+}
+
+interface FooterSectionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+function FooterSection({ title, children }: FooterSectionProps) {
+  return (
+    <div>
+      <h3 className="mb-4 font-semibold text-stone-900">{title}</h3>
+      <ul className="space-y-3">{children}</ul>
+    </div>
+  );
+}
+
+interface LinkItem {
+  label: string;
+  href: string;
+  hoverColor?: 'primary' | 'live' | 'venues';
+  external?: boolean;
+  custom?: boolean;
+  className?: string;
+}
+
+const footerSections: Array<{
+  title: string;
+  links: LinkItem[];
+}> = [
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Village Live', href: '/live', hoverColor: 'live' },
+      { label: 'Village Venues', href: '/venues', hoverColor: 'venues' },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { label: 'Help Center', href: 'https://docs.usevillage.app', external: true },
+      {
+        label: 'Contact Us',
+        href: 'contact',
+        custom: true,
+        className: 'text-sm text-stone-500 transition-colors hover:text-primary-600',
+      },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Terms', href: '/terms' },
+    ],
+  },
+];
 
 export function Footer() {
   return (
@@ -25,84 +120,27 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Company Links */}
-          <div>
-            <h3 className="mb-4 font-semibold text-stone-900">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/about"
-                  className="text-sm text-stone-500 transition-colors hover:text-primary-600"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/live"
-                  className="text-sm text-stone-500 transition-colors hover:text-village-live"
-                >
-                  Village Live
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/venues"
-                  className="text-sm text-stone-500 transition-colors hover:text-village-venues"
-                >
-                  Village Venues
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support Links */}
-          <div>
-            <h3 className="mb-4 font-semibold text-stone-900">Support</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://docs.usevillage.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-stone-500 transition-colors hover:text-primary-600"
-                >
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:support@usevillage.app"
-                  className="text-sm text-stone-500 transition-colors hover:text-primary-600"
-                >
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h3 className="mb-4 font-semibold text-stone-900">Legal</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-stone-500 transition-colors hover:text-primary-600"
-                >
-                  Privacy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm text-stone-500 transition-colors hover:text-primary-600"
-                >
-                  Terms
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Footer Sections */}
+          {footerSections.map((section) => (
+            <FooterSection key={section.title} title={section.title}>
+              {section.links.map((link) => (
+                <li key={link.label}>
+                  {link.custom ? (
+                    <ContactLink className={link.className}>{link.label}</ContactLink>
+                  ) : (
+                    <FooterLink
+                      href={link.href}
+                      hoverColor={link.hoverColor}
+                      external={link.external}
+                      className={link.className}
+                    >
+                      {link.label}
+                    </FooterLink>
+                  )}
+                </li>
+              ))}
+            </FooterSection>
+          ))}
         </div>
 
         <VillageFooter />
