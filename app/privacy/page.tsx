@@ -88,7 +88,7 @@ export default function PrivacyPage() {
               <ul className="mb-4 list-disc space-y-2 pl-5">
                 <li>
                   <span className="font-medium text-stone-700">Venue manager information:</span>{' '}
-                  Name, email, phone number (if provided)
+                  Name, email
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Venue listing data:</span> Venue
@@ -99,34 +99,38 @@ export default function PrivacyPage() {
                   marked as available or unavailable by venue managers
                 </li>
                 <li>
-                  <span className="font-medium text-stone-700">Booking inquiries:</span> Organizer
-                  name, email, event type, guest count, requested event date(s), message/notes
+                  <span className="font-medium text-stone-700">Booking inquiries:</span> From event
+                  organizers (authenticated) and unauthenticated guests: name, email, event type,
+                  guest count, requested event date(s), message/notes
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Messages:</span> Communications
                   between venue managers and organizers regarding booking inquiries
+                </li>
+                <li>
+                  <span className="font-medium text-stone-700">Guest access tokens:</span> When an
+                  unauthenticated guest submits a booking inquiry, they receive a unique access
+                  token that allows them to view and manage their inquiry. This token persists for
+                  the lifetime of the booking inquiry.
                 </li>
               </ul>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live</h3>
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <span className="font-medium text-stone-700">Check-in data:</span> Timestamps when
-                  attendees check into your event
+                  <span className="font-medium text-stone-700">Check-in data:</span> Timestamps and
+                  status when attendees check into your event. Check-in data is stored in our main
+                  database and retained for the lifetime of your event record.
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Engagement data:</span> Emoji
-                  reactions, Q&amp;A submissions, poll responses
+                  reactions, Q&amp;A submissions, poll responses. Reactions, Q&amp;A questions, and
+                  poll responses are stored in our real-time infrastructure and automatically deleted
+                  7 days after your event ends.
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Attendance tracking:</span> Real-time
-                  attendee count and presence
-                </li>
-                <li>
-                  <span className="font-medium text-stone-700">Note:</span> Village Live data is
-                  ephemeral (temporary) and stored in our real-time infrastructure. This data is not
-                  synced to our main database and is automatically deleted 7 days after your event
-                  ends.
+                  attendee count and presence during your event.
                 </li>
               </ul>
             </section>
@@ -206,7 +210,8 @@ export default function PrivacyPage() {
                   <span className="font-medium text-stone-700">Clerk (clerk.com)</span> — handles
                   user authentication, session management, and billing across all Village products.
                   Your login credentials, session cookies, and payment information are managed by
-                  Clerk. We do not store your credit card information. See their{' '}
+                  Clerk, which uses Stripe as the payment processor. We do not store your credit
+                  card information. See their{' '}
                   <a
                     href="https://clerk.com/privacy"
                     target="_blank"
@@ -230,9 +235,11 @@ export default function PrivacyPage() {
                   <span className="font-medium text-stone-700">Cloudflare (cloudflare.com)</span> —
                   powers Village Live&apos;s real-time infrastructure using Cloudflare Workers and
                   KV storage. Village Live data is processed and stored temporarily in
-                  Cloudflare&apos;s infrastructure and is not synced to our main database. Cloudflare
-                  also provides Turnstile, our bot protection service used on event sign-up forms
-                  to prevent spam and unauthorized submissions. See their{' '}
+                  Cloudflare&apos;s infrastructure. Cloudflare also provides R2 object storage for
+                  venue photos in Village Venues; photos are persisted in R2 until deleted by the
+                  venue manager. Additionally, Cloudflare provides Turnstile, our bot protection
+                  service used on event sign-up forms to prevent spam and unauthorized submissions.
+                  See their{' '}
                   <a
                     href="https://www.cloudflare.com/privacy/"
                     target="_blank"
@@ -285,9 +292,12 @@ export default function PrivacyPage() {
                   .
                 </li>
                 <li>
-                  <span className="font-medium text-stone-700">Loops (loops.so)</span> — sends
-                  transactional emails (confirmations, receipts, notifications). Loops does not use
-                  your email data for marketing purposes. See their{' '}
+                  <span className="font-medium text-stone-700">Loops (loops.so)</span> — handles
+                  transactional emails (confirmations, receipts, notifications) and maintains a
+                  customer relationship management (CRM) system with your contact information. Loops
+                  stores your profile data (name, email, user ID) and manages mailing lists for
+                  product updates. Loops does not use your data for third-party marketing purposes.
+                  See their{' '}
                   <a
                     href="https://loops.so/privacy"
                     target="_blank"
@@ -385,11 +395,12 @@ export default function PrivacyPage() {
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live</h3>
               <p className="mb-4">
-                Village Live data includes both ephemeral real-time engagement data and separately
-                retained analytics. Real-time engagement data (check-ins, reactions, Q&amp;A
-                responses, poll votes) is stored temporarily in our real-time infrastructure and
-                deleted automatically 7 days after your event ends. Post-event statistics and recap
-                data are stored separately for 1 year to provide you with long-term event insights.
+                Village Live engagement data is handled in two ways. Check-in timestamps are stored
+                in our main database and retained for the lifetime of your event record. Engagement
+                data (emoji reactions, Q&amp;A submissions, poll responses) is stored in our real-time
+                infrastructure and automatically deleted 7 days after your event ends. Post-event
+                statistics and recap data are stored separately for 1 year to provide you with
+                long-term event insights and analytics.
               </p>
             </section>
 
@@ -467,9 +478,10 @@ export default function PrivacyPage() {
                 <li>
                   <span className="font-medium text-stone-700">Village Live:</span> Event organizers
                   see real-time attendee check-ins, engagement (reactions, Q&amp;A, polls), and
-                  attendance count during and after events. Attendees only see the live event
-                  dashboard; they cannot see other attendees&apos; participation unless the
-                  organizer enables that feature.
+                  attendance count during and after events. Village Live accesses attendee names and
+                  form responses from the main Village database to power the organizer&apos;s Mission
+                  Control dashboard. Attendees only see the live event dashboard; they cannot see
+                  other attendees&apos; participation unless the organizer enables that feature.
                 </li>
               </ul>
             </section>

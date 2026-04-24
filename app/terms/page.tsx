@@ -65,9 +65,9 @@ export default function TermsPage() {
                 Village Venues is a venue discovery and booking inquiry platform. Venue managers may
                 publish their venue listings (name, photos, capacity, amenities, availability) to
                 help organizers find spaces. Venue managers can control which listings are published
-                and manage booking inquiries. Organizers searching venues agree to share their
-                contact information (email, event details) with venue managers when submitting
-                inquiries.
+                and manage booking inquiries. Anyone searching venues (including unauthenticated
+                guests) may submit booking inquiries and agree to share their contact information
+                (email, event details) with venue managers.
               </p>
               <h3 className="mt-4 text-lg font-medium text-stone-700">Village Live</h3>
               <p>
@@ -129,11 +129,27 @@ export default function TermsPage() {
               </ul>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live Add-On</h3>
-              <p>
+              <p className="mb-4">
                 Village Live is a separate add-on within the Village billing system. When paid plans
                 are introduced, Village Live will have its own pricing tier separate from the base
                 Village plan options. You will be able to add Village Live to your Village
                 subscription at checkout.
+              </p>
+
+              <h3 className="mb-2 text-lg font-medium text-stone-700">Early Access Benefits</h3>
+              <p className="mb-3">
+                All users who create accounts during the Early Access period have Village Live
+                enabled by default at no additional cost. Once paid subscription plans are
+                introduced, current Early Access users who have been invited to teams before the
+                launch of paid plans will not be subject to seat-count billing limits on those teams
+                (grandfathering). This benefit is non-transferable and applies only to the original
+                invited user on the original team.
+              </p>
+              <p>
+                Additionally, during Early Access, users are added to our early adopter mailing list
+                to receive product updates, feature announcements, and invitations to participate in
+                user research. You may unsubscribe from marketing communications at any time while
+                remaining a user of Village.
               </p>
             </section>
 
@@ -168,8 +184,9 @@ export default function TermsPage() {
                 Village Venues Booking Inquiries
               </h3>
               <p className="mb-4">
-                Booking inquiries in Village Venues follow a workflow: New → Viewed → Accepted →
-                (optional: Reschedule Requested) → Completed or Declined. Venue managers may decline
+                Booking inquiries in Village Venues follow a workflow: New → Viewed → Accepted
+                (booking confirmed), Declined, or Canceled. Venue managers may optionally request
+                Reschedule Requested for further discussion. Venue managers may decline or cancel
                 pending inquiries at any time. Venue managers may request rescheduling or decline
                 bookings based on mutual agreement with organizers. Disputes regarding declined or
                 rescheduled bookings should be <ContactLink>reported to us</ContactLink> for
