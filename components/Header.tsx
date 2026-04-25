@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ArrowRight, Building2, ClipboardList, RadioTower } from 'lucide-react';
+import { ArrowRight, Building2, ClipboardList, LogOut, RadioTower } from 'lucide-react';
 import { MobileNav } from '@/components/MobileNav';
 import { getAppUrl, getSignUpUrl, getSignInUrl } from '@/lib/app-urls';
 
@@ -80,21 +80,23 @@ export function Header({ className }: { className?: string }) {
 
           {isLoaded ? (
             isSignedIn ? (
-              <>
+              <div className="flex items-center gap-2">
                 <Button
                   variant="ghost"
                   size="sm"
                   className="text-sm hover:no-underline"
                   onClick={() => signOut()}
                 >
-                  Sign out
+                  <span className="hidden md:inline">Sign out</span>
+                  <LogOut className="size-4 md:hidden" />
                 </Button>
                 <Button size="sm" className="text-sm hover:no-underline" asChild>
                   <a href={getAppUrl()} className="flex items-center">
-                    Go to app <ArrowRight className="ml-1 size-4" />
+                    <span className="">Go to app</span>
+                    <ArrowRight className="size-4" />
                   </a>
                 </Button>
-              </>
+              </div>
             ) : (
               <>
                 <Button variant="ghost" size="sm" className="text-sm hover:no-underline" asChild>
