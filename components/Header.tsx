@@ -2,18 +2,40 @@
 
 import Link from 'next/link';
 import { useUser, useClerk } from '@clerk/nextjs';
+import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ArrowRight, Building2, ClipboardList, LogOut, RadioTower } from 'lucide-react';
+import {
+  ArrowRight,
+  Building2,
+  ClipboardList,
+  Loader2,
+  LogOut,
+  LogIn,
+  RadioTower,
+  UserPlus,
+} from 'lucide-react';
 import { MobileNav } from '@/components/MobileNav';
 import { getAppUrl, getSignUpUrl, getSignInUrl } from '@/lib/app-urls';
 
 export function Header({ className }: { className?: string }) {
   const { isSignedIn, isLoaded } = useUser();
   const { signOut } = useClerk();
+  const [isSigningOut, setIsSigningOut] = useState(false);
+
+  const handleSignOut = async () => {
+    setIsSigningOut(true);
+    try {
+      await signOut();
+    } catch (error) {
+      console.error('Sign out error:', error);
+    } finally {
+      setIsSigningOut(false);
+    }
+  };
 
   return (
     <header
@@ -85,27 +107,43 @@ export function Header({ className }: { className?: string }) {
                   variant="ghost"
                   size="sm"
                   className="text-sm hover:no-underline"
-                  onClick={() => signOut()}
+                  onClick={handleSignOut}
+                  disabled={isSigningOut}
                 >
-                  <span className="hidden md:inline">Sign out</span>
-                  <LogOut className="size-4 md:hidden" />
+                  {isSigningOut ? (
+                    <>
+                      <Loader2 className="size-4 animate-spin" />
+                      <span className="ml-2 hidden md:inline">Signing out...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="hidden md:inline">Sign out</span>
+                      <LogOut className="size-4 md:hidden" />
+                    </>
+                  )}
                 </Button>
                 <Button size="sm" className="text-sm hover:no-underline" asChild>
                   <a href={getAppUrl()} className="flex items-center">
-                    <span className="">Go to app</span>
+                    Go to app
                     <ArrowRight className="size-4" />
                   </a>
                 </Button>
               </div>
             ) : (
-              <>
+              <div className="flex items-center gap-2">
                 <Button variant="ghost" size="sm" className="text-sm hover:no-underline" asChild>
-                  <a href={getSignInUrl()}>Login</a>
+                  <a href={getSignInUrl()}>
+                    <span className="hidden md:inline">Login</span>
+                    <LogIn className="size-4 md:hidden" />
+                  </a>
                 </Button>
                 <Button variant="success" size="sm" className="text-sm" asChild>
-                  <a href={getSignUpUrl()}>Get Started</a>
+                  <a href={getSignUpUrl()} className="flex items-center">
+                    Get Started
+                    <ArrowRight className="size-4" />
+                  </a>
                 </Button>
-              </>
+              </div>
             )
           ) : (
             <div className="flex items-center gap-4">
