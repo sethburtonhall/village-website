@@ -56,8 +56,8 @@ export default function PrivacyPage() {
                 <li>
                   <span className="font-medium text-stone-700">Usage data:</span> We collect
                   information about how you interact with Village (pages visited, features used,
-                  device information, IP address) via Vercel Analytics and Speed Insights to
-                  improve the product and monitor performance.
+                  device information, IP address) via Vercel Analytics and Speed Insights to improve
+                  the product and monitor performance.
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Feedback and support data:</span>{' '}
@@ -125,8 +125,8 @@ export default function PrivacyPage() {
                 <li>
                   <span className="font-medium text-stone-700">Engagement data:</span> Emoji
                   reactions, Q&amp;A submissions, poll responses. Reactions, Q&amp;A questions, and
-                  poll responses are stored in our real-time infrastructure and automatically deleted
-                  7 days after your event ends.
+                  poll responses are stored in our real-time infrastructure and automatically
+                  deleted 7 days after your event ends.
                 </li>
                 <li>
                   <span className="font-medium text-stone-700">Attendance tracking:</span> Real-time
@@ -323,10 +323,10 @@ export default function PrivacyPage() {
                   .
                 </li>
                 <li>
-                  <span className="font-medium text-stone-700">Unsplash (unsplash.com)</span> — provides
-                  a library of free stock photos that event organizers can search and use when
-                  creating events. When you search Unsplash via Village, your search queries and IP
-                  address are sent to Unsplash. See their{' '}
+                  <span className="font-medium text-stone-700">Unsplash (unsplash.com)</span> —
+                  provides a library of free stock photos that event organizers can search and use
+                  when creating events. When you search Unsplash via Village, your search queries
+                  and IP address are sent to Unsplash. See their{' '}
                   <a
                     href="https://unsplash.com/privacy"
                     target="_blank"
@@ -383,24 +383,22 @@ export default function PrivacyPage() {
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Venues</h3>
               <p className="mb-4">
-                Venue listings are retained while your manager account is active. You may archive or
-                delete your listings at any time. Booking inquiries and associated messages are
-                retained for 12 months after creation to support the booking workflow and maintain
-                business records. Once you archive an inquiry, it is hidden from your view but
-                retained in our system for legal and financial records (archive does not delete
-                data). If you delete your venue manager account, all associated listings and
-                inquiries are immediately deleted, except as required for legal or financial
-                compliance.
+                Venue listings are retained while your manager account is active. Venue managers may
+                archive (hide) or delete (remove) inquiries anytime. Once you archive an inquiry, it
+                is hidden from your view but retained in our system for legal and financial records
+                (archive does not delete data). If you delete your venue manager account, all
+                associated listings and inquiries are immediately deleted, except as required for
+                legal or financial compliance.
               </p>
 
               <h3 className="mb-2 text-lg font-medium text-stone-700">Village Live</h3>
               <p className="mb-4">
                 Village Live engagement data is handled in two ways. Check-in timestamps are stored
                 in our main database and retained for the lifetime of your event record. Engagement
-                data (emoji reactions, Q&amp;A submissions, poll responses) is stored in our real-time
-                infrastructure and automatically deleted 7 days after your event ends. Post-event
-                statistics and recap data are stored separately for 1 year to provide you with
-                long-term event insights and analytics.
+                data (emoji reactions, Q&amp;A submissions, poll responses) is stored in our
+                real-time infrastructure and automatically deleted 7 days after your event ends.
+                Village Live recap displays attendee participation (check-ins, reactions, Q&amp;A
+                responses) for 7 days after your event ends.
               </p>
             </section>
 
@@ -479,9 +477,10 @@ export default function PrivacyPage() {
                   <span className="font-medium text-stone-700">Village Live:</span> Event organizers
                   see real-time attendee check-ins, engagement (reactions, Q&amp;A, polls), and
                   attendance count during and after events. Village Live accesses attendee names and
-                  form responses from the main Village database to power the organizer&apos;s Mission
-                  Control dashboard. Attendees only see the live event dashboard; they cannot see
-                  other attendees&apos; participation unless the organizer enables that feature.
+                  form responses from the main Village database to power the organizer&apos;s
+                  Mission Control dashboard. Attendees only see the live event dashboard; they
+                  cannot see other attendees&apos; participation unless the organizer enables that
+                  feature.
                 </li>
               </ul>
             </section>
