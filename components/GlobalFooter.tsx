@@ -31,7 +31,7 @@ export function GlobalFooter({
         <p className="text-sm">
           &copy; {new Date().getFullYear()}{' '}
           <Link
-            href="https://www.roadshowcreative.dev/"
+            href="https://roadshowcreative.dev/"
             className={cn(`${brandColor}`, 'font-medium transition-colors hover:underline')}
           >
             Roadshow Creative
