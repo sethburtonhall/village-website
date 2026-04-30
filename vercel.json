@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.usevillage.app"
+        }
+      ],
+      "destination": "https://usevillage.app/:path",
+      "permanent": true
+    }
+  ]
+}

@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   description:
     'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees from Mission Control. Perfect for communities and organizations.',
   alternates: {
-    canonical: 'https://www.usevillage.app/live',
+    canonical: 'https://usevillage.app/live',
   },
   openGraph: {
     title: 'Village Live — Real-Time Event Engagement Polls, Q&A & Check-Ins',
     description:
       'Village Live turns events into real-time interactive experiences. Run live polls, Q&A sessions, track check-ins, and broadcast to attendees from Mission Control.',
-    url: 'https://www.usevillage.app/live',
+    url: 'https://usevillage.app/live',
     siteName: 'Village Live',
     locale: 'en_US',
     type: 'website',

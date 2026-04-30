@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   description:
     'Find unique event spaces for your next event or list your venue on Village Venues. Connect with thousands of organizers searching for the perfect place to host. Churches, schools, sports teams, conferences, and community events.',
   alternates: {
-    canonical: 'https://www.usevillage.app/venues',
+    canonical: 'https://usevillage.app/venues',
   },
   openGraph: {
     title: 'Village Venues — Find Event Spaces & Venue Listings',
     description:
       'Find unique event spaces for your next event or list your venue on Village Venues. Connect with thousands of organizers searching for the perfect place.',
-    url: 'https://www.usevillage.app/venues',
+    url: 'https://usevillage.app/venues',
     siteName: 'Village Venues',
     locale: 'en_US',
     type: 'website',

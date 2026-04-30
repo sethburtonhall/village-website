@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   description:
     'Find and book unique event venues in Oceanside, California. Browse beachfront event spaces, reception halls, and venues perfect for weddings, conferences, and community events.',
   alternates: {
-    canonical: 'https://www.usevillage.app/venues/oceanside',
+    canonical: 'https://usevillage.app/venues/oceanside',
   },
   openGraph: {
     title: 'Event Venues in Oceanside, CA | Village Venues',
     description:
       'Find unique event venues in Oceanside. Browse beachfront spaces, reception halls, and venues for any occasion.',
-    url: 'https://www.usevillage.app/venues/oceanside',
+    url: 'https://usevillage.app/venues/oceanside',
     siteName: 'Village Venues',
     locale: 'en_US',
     type: 'website',

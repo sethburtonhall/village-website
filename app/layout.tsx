@@ -55,18 +55,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.usevillage.app'),
+  metadataBase: new URL('https://usevillage.app'),
   openGraph: {
     title: 'Village – The SignupGenius Alternative',
     description:
       'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
-    url: 'https://www.usevillage.app',
+    url: 'https://usevillage.app',
     siteName: 'Village',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://www.usevillage.app/og-image.png',
+        url: 'https://usevillage.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Village - Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     description:
       'Modern group sign-up tool for any community or organization. No ads, no accounts required. The SignupGenius alternative.',
     creator: '@usevillage',
-    images: ['https://www.usevillage.app/og-image.png'],
+    images: ['https://usevillage.app/og-image.png'],
   },
   robots: {
     index: true,
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.usevillage.app',
+    canonical: 'https://usevillage.app',
   },
 };
 
